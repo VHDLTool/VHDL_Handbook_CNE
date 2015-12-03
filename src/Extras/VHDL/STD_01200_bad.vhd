@@ -65,7 +65,7 @@ begin
    P_FlipFlop : process(i_Clock, i_Reset_n)
    begin
       if (i_Reset_n = '0') then Q <= '0'; else
-                                             if (rising_edge(i_Clock)) then Q <= i_D; end if;
+      if (rising_edge(i_Clock)) then Q <= i_D; end if;
    end if;
 end process;
 --CODE
