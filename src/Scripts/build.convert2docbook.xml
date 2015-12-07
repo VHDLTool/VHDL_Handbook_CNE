@@ -24,12 +24,7 @@
 			<param name="Standart_to_pdf" expression="${file.export_std_rules_pdf}"/>	
 			<param name="Custom_to_pdf" expression="${file.export_custom_rules_pdf}"/>
 			<param name="Subtitle" expression="${file.subtitle_edition}"/>
-			<param name="VHDL_tag" expression="${VHDL.tag}"/>
-			
-			<!-- Use fop extensions to have bookmarks in TOC -->
-			<xsl:param name="fop.extensions" select="0"/>
-			<xsl:param name="fop1.extensions" select="1"/>
-			
+			<param name="VHDL_tag" expression="${VHDL.tag}"/>		
 			<include name="${file.main_name}.merged.sorted.${file.main_name_extension}" />
 		</xslt>
 

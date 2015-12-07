@@ -18,6 +18,9 @@
 			<classpath refid="saxon.classpath" />
 	   		<param name="paper.type" expression="A4"/>
 	   		<param name="body.start.indent" expression="0pt"/>
+	   		<!-- add bookmarks in pdf -->
+	   	    <param name="fop.extensions" expression="0"/>
+	   	    <param name="fop1.extensions" expression="1"/>
 			<include name="${file.main_name}.merged.sorted.docbook.${file.main_name_extension}" />
 	   </xslt>
     </target>
