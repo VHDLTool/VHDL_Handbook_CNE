@@ -2,60 +2,56 @@
 <!--
   - Authors:  Florian JUGE <florian.juge@altran.com> and Baptiste CORVE <baptiste.corve@altran.com>
   - Description: This file contains all the different parameters which are used in the various scripts
-  -->
+-->
 <project name="handbook"> 
 	<!-- Project settings -->
 	<property name="folder.src" value="src" /> <!-- input folder -->
 	<property name="folder.out" value="output" /> <!-- output folder -->
 	<property name="folder.scripts" value="${folder.src}/Scripts" /> <!-- scripts folder -->
 	<property name="folder.home" value="../.." /> <!-- home folder - used for the individual builds-->
-
 	<property name="folder.vhdl" value="../${folder.src}/Extras/VHDL/" /> <!-- VHDL folder from stylesheet folder-->
 	<property name="folder.text" value="../${folder.src}/Extras/Text/" /> <!-- Text folder from stylesheet folder-->
 	<property name="folder.images" value="${folder.home}/${folder.src}/Extras/Images/" /> <!-- Images folder from script source folder-->
 	<property name="folder.ruleset" value="../${folder.src}/RuleSets" /> <!-- RuleSet folder from stylesheet folder-->
-
 	<property name="folder.out.temp" value="${folder.home}/${folder.out}/TEMP" /> <!-- temp folder -->
 	<property name="folder.src.rulesets" value="${folder.home}/${folder.src}/RuleSets" /> <!-- RuleSet folder -->	
 	<property name="folder.stylesheet" value="${folder.home}/stylesheets" /> <!-- stylesheet folder -->	
-
+	
 	<!-- Tag between which is the VHDL code to be embedded in the handbook -->
 	<property name="VHDL.tag" value="--CODE" />
-
+	
 	<!-- Input file settings -->
 	<property name="file.main_name" value="handbook_header_for_CNE" /> <!-- input file, this file have to contain one RuleSetHist field, this RuleSetHist is the kept RuleSetHist after merging -->
 	<property name="file.main_name_extension" value="xml" /> <!-- Input file extension -->
 	<property name="file.export_std_rules_pdf" value="true" /> <!-- Standart rules present in RuleSet folder? -->
 	<property name="file.export_custom_rules_pdf" value="true" /> <!-- Custom rules present in RuleSet folder? -->
 	
-	<property name="file.handbookPDF_name" value="handbook_CNES_Edition" /> <!-- Final name of the handbook, without extension .pdf -->
+	<property name="file.handbookPDF_name" value="handbookCNE_Edition" /> <!-- Final name of the handbook, without extension .pdf -->
 	<property name="file.subtitle_edition" value="CNES Edition" /> <!-- Subtitle of PDF to indicate Standard Edition or Custom Edition Information -->
-
+	
 	<!-- Stylesheets -->
 	<!-- merge stylesheet -->
 	<property name="file.xsl.merge" value="${folder.stylesheet}/merge.xsl" /> <!-- stylesheet for the script: merge -->
-
+	
 	<!-- sorting stylesheet -->
 	<property name="file.xsl.sorting" value="${folder.stylesheet}/sorting.xsl" /> <!-- stylesheet for the script: sorting -->
-
+	
 	<!-- convert2docbook stylesheet -->
 	<property name="file.xsl.convert2docbook" value="${folder.stylesheet}/convert2docbook.xsl" /> <!-- stylesheet for the script: sorting -->
-
+	
 	<!-- docbook stylesheet -->
 	<property name="docbook.xsl.dir" value="${folder.stylesheet}/docbook" />
 	<property name="fo.stylesheet" value="${docbook.xsl.dir}/fo/docbook.xsl" /> <!-- FO stylesheet for docbook -->
-
-
+	
 	<!-- Libraries path -->
 	<property name="saxon.lib.dir" value="${folder.home}/lib/SaxonHE9-6-0-5J" />
 	<property name="fop.home" value="${folder.home}/lib/fop-1.1" />
-
-
+	
 	<!-- Classpath for the different libraries -->
 	<path id="saxon.classpath">
 		<fileset dir="${saxon.lib.dir}" id="saxon.fileset">
-			<include name="*.jar" />        	
+			<include name="*.jar" />
 		</fileset>
 	</path>
-
-</project>	
+	
+</project>
