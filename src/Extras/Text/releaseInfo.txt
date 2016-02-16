@@ -1,8 +1,0 @@
-This PDF file is automatically created with Apache FOP version 1.1 from XML handbooks transformed with Saxonica XSLT saxon opensource version HE9-6-0-1J through IDE Eclipse Luna version "Luna Service Release 1 (4.4.1)" from the Eclipse Foundation.
-All marks mentioned may be trademarks or registered trademarks of their respective owners.
-
-Apache FOP is licensed under the Apache License, Version 2.0.
-Saxon XSLT is licensed under the Mozilla Public License 1.0 (MPL), Mozilla Public License 2.0 (MPL 2.0)
-Eclipse Luna is licensed under the Eclipse Public License Version 1.0
-Veditor is licensed under the Eclipse Public License, GNU General Public License version 2.0 (GPLv2)
-
