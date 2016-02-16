@@ -1,4 +1,4 @@
-# Standard Ruleset
+# CNES Ruleset
 This repository stores the CNES VHDL Ruleset for the Design and VHDL handbook for VLSI development project
 
 ## Introduction
@@ -13,7 +13,7 @@ This repository host the CNES custom rules.
 
 ## Dependencies
 
-To create a pdf the toolchain must be used
+To create a pdf the toolchain must be used.
 
 ## Project structure
 
