@@ -73,8 +73,7 @@ begin
       if (i_Reset_n='0') then
          D <= (others => '0');
          Data <= '0';
-      else
-         if (rising_edge(i_Clock)) then
+      elsif (rising_edge(i_Clock)) then
             if (i_Rd='1') then
             -- Read memory
                Data <= D(to_integer(unsigned(i_Addr)));
@@ -82,7 +81,6 @@ begin
             -- Write memory
                D(to_integer(unsigned(i_Addr))) <= i_Data;
             end if;
-         end if;
       end if;
    end process;
    

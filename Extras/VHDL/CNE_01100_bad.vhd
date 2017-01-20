@@ -68,10 +68,8 @@ begin
    begin
       if (Reset_n='0') then
          Q_temp <= '0';
-      else
-         if (rising_edge(Clock)) then
+      elsif (rising_edge(Clock)) then
             Q_temp <= D;
-         end if;
       end if;
    end process;
    

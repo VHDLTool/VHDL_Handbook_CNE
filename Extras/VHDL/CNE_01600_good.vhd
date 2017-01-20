@@ -74,8 +74,7 @@ begin
          Count <= (others => '0');
          Length <= (others => '0');
          Done <= '0';
-      else
-         if (rising_edge(i_Clock)) then
+      elsif (rising_edge(i_Clock)) then
             if (i_Raz='1') then
             -- Reset the counting
                Length <= signed(i_Length);
@@ -90,7 +89,6 @@ begin
             else
                Done <= '0';
             end if;
-         end if;
       end if;
    end process;
    

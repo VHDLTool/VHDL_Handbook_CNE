@@ -67,14 +67,12 @@ begin
    begin
       if (i_Reset_n='0') then
          Count <= (others => '0');
-      else
-         if (rising_edge(i_Clock)) then
+      elsif (rising_edge(i_Clock)) then
             if (Count>=Length) then -- Counter restarts from 0
                Count <= (others => '0');
             elsif (i_Enable='1') then -- Increment counter value
                Count <= Count + 1;
             end if;
-         end if;
       end if;
    end process;
 

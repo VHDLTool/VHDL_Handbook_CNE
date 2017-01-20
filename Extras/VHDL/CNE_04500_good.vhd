@@ -72,13 +72,11 @@ begin
    begin
       if (i_Reset_n='0') then
          Data_Reg <= (others => (others => '0'));
-      else
-         if (rising_edge(i_Clock)) then
+      elsif (rising_edge(i_Clock)) then
             Data_Reg(3) <= Data_Reg(2);
             Data_Reg(2) <= Data_Reg(1);
             Data_Reg(1) <= Data_Reg(0);
             Data_Reg(0) <= i_Data;
-         end if;
       end if;
    end process;
    
@@ -88,10 +86,8 @@ begin
    begin
       if (i_Reset_n='0') then
          Sum_r <= (others => '0');
-      else
-         if (rising_edge(i_Clock)) then
+      elsif (rising_edge(i_Clock)) then
             Sum_r <= Sum;
-         end if;
       end if;
    end process;
    

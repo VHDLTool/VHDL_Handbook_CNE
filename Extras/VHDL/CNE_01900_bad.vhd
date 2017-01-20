@@ -69,11 +69,9 @@ begin
       if (i_Reset_n='0') then
          D_clocked <= '0';
          D_clocked2 <= '0';
-      else
-         if (rising_edge(i_Clock)) then
+      elsif (rising_edge(i_Clock)) then
             D_clocked <= i_D;
             D_clocked2 <= D_clocked;
-         end if;
       end if;
    end process;
    

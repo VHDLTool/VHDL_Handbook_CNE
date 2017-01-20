@@ -85,10 +85,8 @@ begin
    begin
       if (i_Reset_n='0') then
          Nb_One <= (others => '0');
-      else
-         if (rising_edge(i_Clock)) then
+      elsif (rising_edge(i_Clock)) then
             Nb_One <= std_logic_vector(to_unsigned(Get_Ones(i_Data),Nb_One'length));
-         end if;
       end if;
    end process;
    

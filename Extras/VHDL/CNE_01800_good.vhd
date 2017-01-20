@@ -69,11 +69,9 @@ begin
       if (i_Reset_n='0') then
          D_r1 <= '0';
          D_r2 <= '0';
-      else
-         if (rising_edge(i_Clock)) then
+      elsif (rising_edge(i_Clock)) then
             D_r1 <= i_D;
             D_r2 <= D_r1;
-         end if;
       end if;
    end process;
    

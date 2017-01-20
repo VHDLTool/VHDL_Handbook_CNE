@@ -86,8 +86,7 @@ begin
    begin
       if (i_Reset_n='0') then
          State <= init;
-      else
-         if (rising_edge(i_Clock)) then
+      elsif (rising_edge(i_Clock)) then
             case State is
                when init => 
                -- Set the length value
@@ -110,7 +109,6 @@ begin
                when others =>
                   State <= init;
             end case;
-         end if;
       end if;
    end process;
 end Behavioral;

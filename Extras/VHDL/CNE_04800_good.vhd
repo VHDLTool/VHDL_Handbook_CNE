@@ -87,10 +87,8 @@ begin
    begin
       if (i_Reset_n='0') then
          sm_State <= init;
-      else
-         if (rising_edge(i_Clock)) then
+      elsif (rising_edge(i_Clock)) then
             sm_State <= sm_Next_State;
-         end if;
       end if;
    end process;
    

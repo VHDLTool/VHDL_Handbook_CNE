@@ -68,10 +68,8 @@ begin
    begin
       if (i_Reset_n='0') then
          Q <= '0';
-      else
-         if (rising_edge(i_Clock_div2)) then
+      elsif (rising_edge(i_Clock_div2)) then
             Q <= i_D;
-         end if;
       end if;
    end process;
    
