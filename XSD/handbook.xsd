@@ -1,174 +1,262 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="HANDBOOK" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	elementFormDefault="qualified" xmlns:hb="HANDBOOK">
-
-
-<!-- ======================= -->
-<!--    Element definition   -->
-<!-- ======================= -->
-	<xs:element name="RuleSet" type="hb:TRuleSet"/>
-
-<!-- ======================= -->
-<!-- Complex type definition -->
-<!-- ======================= -->
-	<xs:complexType name="TRuleSet">
-		<xs:sequence>
-			<xs:element name="Rule" type="hb:TRule" maxOccurs="unbounded" minOccurs="1"/>
-			<xs:element name="RuleSetHist" type="hb:TRuleSetHist" maxOccurs="1" minOccurs="1"/>
-		</xs:sequence>
-	</xs:complexType>
-
-	<xs:complexType name="TRuleSetHist">
-		<xs:sequence>
-			<xs:element name="Version" type="xs:positiveInteger" maxOccurs="1" minOccurs="1"/>
-			<xs:element name="Creation" type="xs:date" maxOccurs="1" minOccurs="1"/>
-			<xs:element name="Modified" type="xs:date" maxOccurs="1" minOccurs="1"/>
-			<xs:element name="Revision" type="xs:string" maxOccurs="1" minOccurs="1"/>
-		</xs:sequence>
-	</xs:complexType>
-
-	<xs:complexType name="TRule">
-		<xs:sequence>
-			<xs:element name="RuleUID" maxOccurs="1" minOccurs="1">
-				<xs:simpleType>
-					<xs:restriction base="xs:ID">
-						<xs:pattern value="[A-Z]{3}_[0-9]{5}" />
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:element>
-			<xs:element name="RuleHist" type="hb:TRuleHist"	maxOccurs="1" minOccurs="1"/>
-			<xs:element name="RuleContent" type="hb:TRuleContent" maxOccurs="1" minOccurs="1"/>
-			<xs:element name="RuleDesc" type="hb:TRuleDesc"	maxOccurs="1" minOccurs="0"/>
-		</xs:sequence>
-		<xs:attribute name="UID" type="hb:TRuleUID"/>
-	</xs:complexType>
-
-	<xs:complexType name="TRuleHist">
-		<xs:sequence>
-			<xs:element name="Status" type="hb:EnumRuleStatus" maxOccurs="1" minOccurs="1"/>
-			<xs:element name="Version" type="xs:positiveInteger" maxOccurs="1" minOccurs="1"/>
-			<xs:element name="Creation" type="xs:date" maxOccurs="1" minOccurs="1"/>
-			<xs:element name="Modified" type="xs:date" maxOccurs="1" minOccurs="1"/>
-			<xs:element name="Revision" type="xs:string" maxOccurs="1" minOccurs="1"/>
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="TRuleDesc">
-		<xs:sequence>
-			<xs:element name="GoodExDesc" type="xs:string" maxOccurs="1" minOccurs="1" nillable="true"/>
-			<xs:element name="GoodExample" type="xs:string"	maxOccurs="1" minOccurs="1" nillable="true"/>
-			<xs:element name="BadExDesc" type="xs:string" maxOccurs="1"	minOccurs="1" nillable="true"/>
-			<xs:element name="BadExample" type="xs:string" maxOccurs="1" minOccurs="1" nillable="true"/>
-			<xs:element name="FigureDesc" type="xs:string" maxOccurs="1" minOccurs="1" nillable="true"/>
-			<xs:element name="Figure" type="hb:TFigure" maxOccurs="1" minOccurs="1" nillable="true"/>
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="TFigure">
-		<xs:attribute name="fileref" type="xs:anySimpleType"/>
-		<xs:attribute name="height" type="xs:string"/>
-		<xs:attribute name="width" type="xs:string"/>
-	</xs:complexType>
-	
-	<xs:complexType name="TRuleContent">
-		<xs:sequence>
-			<xs:element name="Name" type="xs:string" maxOccurs="1" minOccurs="1"/>
+<xs:schema targetNamespace="HANDBOOK" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+ 	elementFormDefault="qualified" xmlns:hb="HANDBOOK">
+    <!-- ======================= -->
+    <!--    Element definition   -->
+    <!-- ======================= -->
+    <xs:element name="RuleSet" type="hb:TRuleSet"/>
+    <!-- ======================= -->
+    <!-- Complex type definition -->
+    <!-- ======================= -->
+    <xs:complexType name="TRuleSet">
+        <xs:sequence>
+            <xs:element name="Rule" type="hb:TRule" maxOccurs="unbounded" minOccurs="1"/>
+            <xs:element name="RuleSetHist" type="hb:TRuleSetHist" maxOccurs="1" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TRuleSetHist">
+        <xs:sequence>
+            <xs:element name="Version" type="xs:positiveInteger" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="Creation" type="xs:date" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="Modified" type="xs:date" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="Revision" type="xs:string" maxOccurs="1" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TRule">
+        <xs:sequence>
+            <xs:element name="RuleUID" maxOccurs="1" minOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:ID">
+                        <xs:pattern value="[A-Z]{3}_[0-9]{5}" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="RuleHist" type="hb:TRuleHist"	maxOccurs="1" minOccurs="1"/>
+            <xs:element name="RuleContent" type="hb:TRuleContent" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="RuleDebt" type="hb:TRuleDebt" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="RuleDesc" type="hb:TRuleDesc"	maxOccurs="1" minOccurs="0"/>
+            <xs:element name="RuleParams" type="hb:TRuleParams" maxOccurs="1" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="UID" type="hb:TRuleUID"/>
+    </xs:complexType>
+    <xs:complexType name="TRuleHist">
+        <xs:sequence>
+            <xs:element name="Status" type="hb:EnumRuleStatus" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="Version" type="xs:positiveInteger" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="Creation" type="xs:date" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="Modified" type="xs:date" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="Revision" type="xs:string" maxOccurs="1" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TRuleContent">
+        <xs:sequence>
+            <xs:element name="Name" type="xs:string" maxOccurs="1" minOccurs="1"/>
             <xs:element name="IsParent" type="xs:boolean" maxOccurs="1" minOccurs="1"/>
             <xs:element name="IsSon" type="xs:boolean" maxOccurs="1" minOccurs="1"/>
             <xs:element name="ParentUID" type="hb:TRuleUID" maxOccurs="1" minOccurs="1" nillable="true"/>
-			<xs:element name="Technology" type="hb:EnumTech" maxOccurs="1" minOccurs="1"/>
-			<xs:element name="ApplicationFields" type="hb:ListAppliFields" maxOccurs="1" minOccurs="1"/>
-			<xs:element name="Category" type="hb:EnumCat" maxOccurs="1"	minOccurs="1"/>
-			<xs:element name="SubCategory" type="hb:EnumSubCat"	maxOccurs="1" minOccurs="1"/>
-			<xs:element name="Severity" type="hb:EnumSeverity" maxOccurs="1" minOccurs="1"/>
-			<xs:element name="Rationale" type="xs:string" maxOccurs="1"	minOccurs="1"/>
-			<xs:element name="ShortDesc" type="xs:string" maxOccurs="1"	minOccurs="1"/>
-			<xs:element name="LongDesc" type="xs:string" maxOccurs="1" minOccurs="1"/>
-		</xs:sequence>
-	</xs:complexType>
-	
-<!-- ======================= -->
-<!-- Simple type definition  -->	
-<!-- ======================= -->
-
-	<xs:simpleType name="TRuleUID">
-		<xs:restriction base="xs:string">
-			<xs:pattern value="[A-Z]{3}_[0-9]{5}"/>
-		</xs:restriction>
-	</xs:simpleType>
-
-	<xs:simpleType name="EnumRuleStatus">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="Draft"/>
-			<xs:enumeration value="In progress"/>
-			<xs:enumeration value="Release candidate"/>
-			<xs:enumeration value="Validated"/>
-			<xs:enumeration value="Rejected"/>
-			<xs:enumeration value="Active"/>
-			<xs:enumeration value="Deleted"/>
-			<xs:enumeration value="To be discussed"/>
-			<xs:enumeration value="Modified"/>
-		</xs:restriction>
-	</xs:simpleType>
-
-	<xs:simpleType name="EnumTech">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="FPGA"/>
-			<xs:enumeration value="ASIC"/>
-			<xs:enumeration value="VLSI"/>
-		</xs:restriction>
-	</xs:simpleType>
-	
-	<xs:simpleType name="EnumCat">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="Traceability"/>
-			<xs:enumeration value="Formatting"/>
-			<xs:enumeration value="Design"/>
-			<xs:enumeration value="Simulation"/>
-		</xs:restriction>
-	</xs:simpleType>
-	
-	<xs:simpleType name="EnumSubCat">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="Versioning"/>
-			<xs:enumeration value="Reuse"/>
-			<xs:enumeration value="Requirement"/>
-			<xs:enumeration value="Miscellaneous"/>
-			<xs:enumeration value="Naming"/>
-			<xs:enumeration value="FileStructure"/>
-			<xs:enumeration value="StateMachine"/>
-			<xs:enumeration value="Reset"/>
-			<xs:enumeration value="Clocking"/>
-			<xs:enumeration value="I/O"/>
-			<xs:enumeration value="Synchronous"/>
-			<xs:enumeration value="Combinational"/>
-			<xs:enumeration value="Type"/>
-			<xs:enumeration value="Reliability"/>	
-		</xs:restriction>
-	</xs:simpleType>
-
-	<xs:simpleType name="EnumSeverity">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="Note"/>
-			<xs:enumeration value="Minor"/>
-			<xs:enumeration value="Major"/>
-		</xs:restriction>
-	</xs:simpleType>
-	
-	<xs:simpleType name="ListAppliFields">
-		<xs:list itemType="hb:EnumAppliFieds"/>
-	</xs:simpleType>
-
-	<xs:simpleType name="EnumAppliFieds">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="General"/>
-			<xs:enumeration value="Spatial"/>
-			<xs:enumeration value="Avionic"/>
-			<xs:enumeration value="Nuclear"/>
-			<xs:enumeration value="Railway"/>
-			<xs:enumeration value="Defense"/>
-			<xs:enumeration value="Telecom"/>
-			<xs:enumeration value="Media"/>
-		</xs:restriction>
-	</xs:simpleType>
+            <xs:element name="Technology" type="hb:EnumTech" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="ApplicationFields" type="hb:ListAppliFields" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="Category" type="hb:EnumCat" maxOccurs="1"	minOccurs="1"/>
+            <xs:element name="SubCategory" type="hb:EnumSubCat"	maxOccurs="1" minOccurs="1"/>
+            <xs:element name="Severity" type="hb:EnumSeverity" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="Rationale" type="xs:string" maxOccurs="1"	minOccurs="1"/>
+            <xs:element name="ShortDesc" type="xs:string" maxOccurs="1"	minOccurs="1"/>
+            <xs:element name="LongDesc" type="xs:string" maxOccurs="1" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TRuleDebt">
+        <xs:sequence>
+            <xs:element name="RemediationEffort" type="hb:EnumEffort" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="SonarSeverity" type="hb:EnumSonarSeverity" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="Tag" type="hb:EnumTag" maxOccurs="1" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TRuleDesc">
+        <xs:sequence>
+            <xs:element name="GoodExDesc" type="xs:string" maxOccurs="1" minOccurs="1" nillable="true"/>
+            <xs:element name="GoodExample" type="xs:string"	maxOccurs="1" minOccurs="1" nillable="true"/>
+            <xs:element name="BadExDesc" type="xs:string" maxOccurs="1"	minOccurs="1" nillable="true"/>
+            <xs:element name="BadExample" type="xs:string" maxOccurs="1" minOccurs="1" nillable="true"/>
+            <xs:element name="FigureDesc" type="xs:string" maxOccurs="1" minOccurs="1" nillable="true"/>
+            <xs:element name="Figure" type="hb:TFigure" maxOccurs="1" minOccurs="1" nillable="true"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TFigure">
+        <xs:attribute name="fileref" type="xs:anySimpleType"/>
+        <xs:attribute name="height" type="xs:string"/>
+        <xs:attribute name="width" type="xs:string"/>
+    </xs:complexType>
+    <xs:complexType name="TRuleParams">
+        <xs:sequence>
+            <xs:element name="IntParam" type="hb:TIntParam" maxOccurs="unbounded" minOccurs="0" />
+            <xs:element name="StringParam" type="hb:TStringParam" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="RangeParam" type="hb:TRangeParam" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TIntParam">
+        <xs:sequence>
+            <xs:element name="ParamID" type="hb:TParamID" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="Relation" type="hb:EnumRelation" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="Value" type="xs:positiveInteger" maxOccurs="1" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TStringParam">
+        <xs:sequence>
+            <xs:element name="ParamID" type="hb:TParamID" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="Position" type="hb:EnumPosition" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="Value" type="xs:string" maxOccurs="1" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TRangeParam">
+        <xs:sequence>
+            <xs:element name="ParamID" type="hb:TParamID" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="Range" type="hb:EnumRange" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="ValueMin" type="xs:integer" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="ValueMax" type="xs:integer" maxOccurs="1" minOccurs="1"/>
+        </xs:sequence>
+<!--    <xs:assert test="@ValueMax > @ValueMin"/> -->
+    </xs:complexType>
+    <!-- ======================= -->
+    <!-- Simple type definition  -->
+    <!-- ======================= -->
+    <xs:simpleType name="TRuleUID">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{3}_[0-9]{5}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TParamID">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="P[0-9]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="EnumRuleStatus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Draft"/>
+            <xs:enumeration value="In progress"/>
+            <xs:enumeration value="Release candidate"/>
+            <xs:enumeration value="Validated"/>
+            <xs:enumeration value="Rejected"/>
+            <xs:enumeration value="Active"/>
+            <xs:enumeration value="Deleted"/>
+            <xs:enumeration value="To be discussed"/>
+            <xs:enumeration value="Modified"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="EnumTech">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="FPGA"/>
+            <xs:enumeration value="ASIC"/>
+            <xs:enumeration value="VLSI"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="EnumCat">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Traceability"/>
+            <xs:enumeration value="Formatting"/>
+            <xs:enumeration value="Design"/>
+            <xs:enumeration value="Simulation"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="EnumSubCat">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Versioning"/>
+            <xs:enumeration value="Reuse"/>
+            <xs:enumeration value="Requirement"/>
+            <xs:enumeration value="Miscellaneous"/>
+            <xs:enumeration value="Naming"/>
+            <xs:enumeration value="FileStructure"/>
+            <xs:enumeration value="StateMachine"/>
+            <xs:enumeration value="Reset"/>
+            <xs:enumeration value="Clocking"/>
+            <xs:enumeration value="I/O"/>
+            <xs:enumeration value="Synchronous"/>
+            <xs:enumeration value="Combinational"/>
+            <xs:enumeration value="Type"/>
+            <xs:enumeration value="Reliability"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="EnumSeverity">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Note"/>
+            <xs:enumeration value="Minor"/>
+            <xs:enumeration value="Major"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="EnumEffort">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Trivial"/>
+            <xs:enumeration value="Easy"/>
+            <xs:enumeration value="Medium"/>
+            <xs:enumeration value="Major"/>
+            <xs:enumeration value="High"/>
+            <xs:enumeration value="Complex"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="EnumTag">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Brain-overload"/>
+            <xs:enumeration value="Bad-practice"/>
+            <xs:enumeration value="Bug"/>
+            <xs:enumeration value="Clumsty"/>
+            <xs:enumeration value="Confusing"/>
+            <xs:enumeration value="Convention"/>
+            <xs:enumeration value="Design"/>
+            <xs:enumeration value="Lock-in"/>
+            <xs:enumeration value="Pittfall"/>
+            <xs:enumeration value="Security"/>
+            <xs:enumeration value="Suspicious"/>
+            <xs:enumeration value="Unpredictable"/>
+            <xs:enumeration value="Unused"/>
+            <xs:enumeration value="User-experience"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="EnumSonarSeverity">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Blocker"/>
+            <xs:enumeration value="Critical"/>
+            <xs:enumeration value="Major"/>
+            <xs:enumeration value="Minor"/>
+            <xs:enumeration value="Info"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="EnumRelation">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LT"/>
+            <xs:enumeration value="LET"/>
+            <xs:enumeration value="E"/>
+            <xs:enumeration value="GET"/>
+            <xs:enumeration value="GT"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="EnumPosition">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Prefix"/>
+            <xs:enumeration value="Contain"/>
+            <xs:enumeration value="Equal"/>
+            <xs:enumeration value="Suffix"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="EnumRange">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LT_GT"/>
+            <xs:enumeration value="LET_GT"/>
+            <xs:enumeration value="LET_GET"/>
+            <xs:enumeration value="LT_GET"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ListAppliFields">
+        <xs:list itemType="hb:EnumAppliFieds"/>
+    </xs:simpleType>
+    <xs:simpleType name="EnumAppliFieds">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="General"/>
+            <xs:enumeration value="Spatial"/>
+            <xs:enumeration value="Avionic"/>
+            <xs:enumeration value="Nuclear"/>
+            <xs:enumeration value="Railway"/>
+            <xs:enumeration value="Defense"/>
+            <xs:enumeration value="Telecom"/>
+            <xs:enumeration value="Media"/>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>
