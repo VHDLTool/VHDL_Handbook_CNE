@@ -33,7 +33,7 @@
             </xs:element>
             <xs:element name="RuleHist" type="hb:TRuleHist"	maxOccurs="1" minOccurs="1"/>
             <xs:element name="RuleContent" type="hb:TRuleContent" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="RuleDebt" type="hb:TRuleDebt" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="Sonarqube" type="hb:TSonarqube" maxOccurs="1" minOccurs="0"/>
             <xs:element name="RuleDesc" type="hb:TRuleDesc"	maxOccurs="1" minOccurs="0"/>
             <xs:element name="RuleParams" type="hb:TRuleParams" maxOccurs="1" minOccurs="0"/>
         </xs:sequence>
@@ -64,11 +64,12 @@
             <xs:element name="LongDesc" type="xs:string" maxOccurs="1" minOccurs="1"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="TRuleDebt">
+    <xs:complexType name="TSonarqube">
         <xs:sequence>
+			<xs:element name="SonarType" type="hb:EnumSonarType" maxOccurs="1" minOccurs="1" />
+            <xs:element name="SonarSeverity" type="hb:EnumSonarSeverity" maxOccurs="1" minOccurs="1"/>			
             <xs:element name="RemediationEffort" type="hb:EnumEffort" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="SonarSeverity" type="hb:EnumSonarSeverity" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="Tag" type="hb:EnumTag" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="SonarTag" type="hb:EnumTag" maxOccurs="1" minOccurs="1"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="TRuleDesc">
@@ -182,6 +183,13 @@
             <xs:enumeration value="Major"/>
         </xs:restriction>
     </xs:simpleType>
+	<xs:simpleType name="EnumSonarType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Vulnerability"/>
+			<xs:enumeration value="Bug"/>
+			<xs:enumeration value="Code_Smell"/>
+		</xs:restriction>
+	</xs:simpleType>
     <xs:simpleType name="EnumEffort">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Trivial"/>

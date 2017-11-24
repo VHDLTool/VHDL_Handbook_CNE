@@ -265,62 +265,69 @@
 									</xsl:call-template>
 								</xsl:element>
 							</hb:RuleContent>
-							<hb:RuleDebt>
-								<xsl:element name="hb:RemediationEffort">
+							<hb:Sonarqube>
+								<xsl:element name="hb:SonarType">
 									<xsl:call-template name="getColumnValue">
 										<xsl:with-param name="tableRow" select="." />
 										<xsl:with-param name="colIndex" select="20"/>
 										<xsl:with-param name="currentIndex" select="1"/>
 									</xsl:call-template>
 								</xsl:element>
-								<xsl:element name="hb:SonarSeverity">
+								<xsl:element name="hb:RemediationEffort">
 									<xsl:call-template name="getColumnValue">
 										<xsl:with-param name="tableRow" select="." />
 										<xsl:with-param name="colIndex" select="21"/>
 										<xsl:with-param name="currentIndex" select="1"/>
 									</xsl:call-template>
 								</xsl:element>
-								<xsl:element name="hb:Tag">
+								<xsl:element name="hb:SonarSeverity">
 									<xsl:call-template name="getColumnValue">
 										<xsl:with-param name="tableRow" select="." />
 										<xsl:with-param name="colIndex" select="22"/>
 										<xsl:with-param name="currentIndex" select="1"/>
 									</xsl:call-template>
 								</xsl:element>
-							</hb:RuleDebt>
-							<hb:RuleDesc>
-								<xsl:element name="hb:GoodExDesc">
+								<xsl:element name="hb:SonarTag">
 									<xsl:call-template name="getColumnValue">
 										<xsl:with-param name="tableRow" select="." />
 										<xsl:with-param name="colIndex" select="23"/>
 										<xsl:with-param name="currentIndex" select="1"/>
 									</xsl:call-template>
 								</xsl:element>
-								<xsl:element name="hb:GoodExample">
+							</hb:Sonarqube>
+							<hb:RuleDesc>
+								<xsl:element name="hb:GoodExDesc">
 									<xsl:call-template name="getColumnValue">
 										<xsl:with-param name="tableRow" select="." />
 										<xsl:with-param name="colIndex" select="24"/>
 										<xsl:with-param name="currentIndex" select="1"/>
 									</xsl:call-template>
 								</xsl:element>
-								<xsl:element name="hb:BadExDesc">
+								<xsl:element name="hb:GoodExample">
 									<xsl:call-template name="getColumnValue">
 										<xsl:with-param name="tableRow" select="." />
 										<xsl:with-param name="colIndex" select="25"/>
 										<xsl:with-param name="currentIndex" select="1"/>
 									</xsl:call-template>
 								</xsl:element>
-								<xsl:element name="hb:BadExample">
+								<xsl:element name="hb:BadExDesc">
 									<xsl:call-template name="getColumnValue">
 										<xsl:with-param name="tableRow" select="." />
 										<xsl:with-param name="colIndex" select="26"/>
 										<xsl:with-param name="currentIndex" select="1"/>
 									</xsl:call-template>
 								</xsl:element>
-								<xsl:element name="hb:FigureDesc">
+								<xsl:element name="hb:BadExample">
 									<xsl:call-template name="getColumnValue">
 										<xsl:with-param name="tableRow" select="." />
 										<xsl:with-param name="colIndex" select="27"/>
+										<xsl:with-param name="currentIndex" select="1"/>
+									</xsl:call-template>
+								</xsl:element>
+								<xsl:element name="hb:FigureDesc">
+									<xsl:call-template name="getColumnValue">
+										<xsl:with-param name="tableRow" select="." />
+										<xsl:with-param name="colIndex" select="28"/>
 										<xsl:with-param name="currentIndex" select="1"/>
 									</xsl:call-template>
 								</xsl:element>
@@ -328,7 +335,7 @@
 									<xsl:variable name="filename">
 										<xsl:call-template name="getColumnValue">
 											<xsl:with-param name="tableRow" select="." />
-											<xsl:with-param name="colIndex" select="28"/>
+											<xsl:with-param name="colIndex" select="29"/>
 											<xsl:with-param name="currentIndex" select="1"/>
 										</xsl:call-template>
 									</xsl:variable>
@@ -340,14 +347,14 @@
 										<xsl:attribute name="height">
 											<xsl:call-template name="getColumnValue">
 												<xsl:with-param name="tableRow" select="." />
-												<xsl:with-param name="colIndex" select="29"/>
+												<xsl:with-param name="colIndex" select="30"/>
 												<xsl:with-param name="currentIndex" select="1"/>
 											</xsl:call-template>
 										</xsl:attribute>
 										<xsl:attribute name="width">
 											<xsl:call-template name="getColumnValue">
 												<xsl:with-param name="tableRow" select="." />
-												<xsl:with-param name="colIndex" select="30"/>
+												<xsl:with-param name="colIndex" select="31"/>
 												<xsl:with-param name="currentIndex" select="1"/>
 											</xsl:call-template>
 										</xsl:attribute>
@@ -357,7 +364,7 @@
 							<xsl:variable name="paramId">
 								<xsl:call-template name="getColumnValue">
 									<xsl:with-param name="tableRow" select="." />
-									<xsl:with-param name="colIndex" select="31"/>
+									<xsl:with-param name="colIndex" select="32"/>
 									<xsl:with-param name="currentIndex" select="1"/>
 								</xsl:call-template>
 							</xsl:variable>
@@ -399,28 +406,28 @@
 				<xsl:element name="hb:Version">
 					<xsl:call-template name="getColumnValue">
 						<xsl:with-param name="tableRow" select="table:table-row[1]" />
-						<xsl:with-param name="colIndex" select="35"/>
+						<xsl:with-param name="colIndex" select="36"/>
 						<xsl:with-param name="currentIndex" select="1"/>
 					</xsl:call-template>
 				</xsl:element>
 				<xsl:element name="hb:Creation">
 					<xsl:call-template name="getColumnValue">
 						<xsl:with-param name="tableRow" select="table:table-row[1]" />
-						<xsl:with-param name="colIndex" select="36"/>
+						<xsl:with-param name="colIndex" select="37"/>
 						<xsl:with-param name="currentIndex" select="1"/>
 					</xsl:call-template>
 				</xsl:element>
 				<xsl:element name="hb:Modified">
 					<xsl:call-template name="getColumnValue">
 						<xsl:with-param name="tableRow" select="table:table-row[1]" />
-						<xsl:with-param name="colIndex" select="37"/>
+						<xsl:with-param name="colIndex" select="38"/>
 						<xsl:with-param name="currentIndex" select="1"/>
 					</xsl:call-template>
 				</xsl:element>
 				<xsl:element name="hb:Revision">
 					<xsl:call-template name="getColumnValue">
 						<xsl:with-param name="tableRow" select="table:table-row[1]" />
-						<xsl:with-param name="colIndex" select="38"/>
+						<xsl:with-param name="colIndex" select="39"/>
 						<xsl:with-param name="currentIndex" select="1"/>
 					</xsl:call-template>
 				</xsl:element>
@@ -437,7 +444,7 @@
 	<xsl:variable name="paramId">
 		<xsl:call-template name="getColumnValue">
 			<xsl:with-param name="tableRow" select="$currentRow" />
-			<xsl:with-param name="colIndex" select="31"/>
+			<xsl:with-param name="colIndex" select="32"/>
 			<xsl:with-param name="currentIndex" select="1"/>
 		</xsl:call-template>
 	</xsl:variable>
@@ -446,7 +453,7 @@
 	<xsl:variable name="paramRelation">
 		<xsl:call-template name="getColumnValue">
 			<xsl:with-param name="tableRow" select="$currentRow" />
-			<xsl:with-param name="colIndex" select="32"/>
+			<xsl:with-param name="colIndex" select="33"/>
 			<xsl:with-param name="currentIndex" select="1"/>
 		</xsl:call-template>
 	</xsl:variable>
@@ -459,7 +466,7 @@
 			<xsl:element name="hb:Value">
 				<xsl:call-template name="getColumnValue">
 					<xsl:with-param name="tableRow" select="$currentRow" />
-					<xsl:with-param name="colIndex" select="33"/>
+					<xsl:with-param name="colIndex" select="34"/>
 					<xsl:with-param name="currentIndex" select="1"/>
 				</xsl:call-template>
 			</xsl:element>
@@ -474,7 +481,7 @@
 			<xsl:element name="hb:Value">
 				<xsl:call-template name="getColumnValue">
 					<xsl:with-param name="tableRow" select="$currentRow" />
-					<xsl:with-param name="colIndex" select="33"/>
+					<xsl:with-param name="colIndex" select="34"/>
 					<xsl:with-param name="currentIndex" select="1"/>
 				</xsl:call-template>
 			</xsl:element>
@@ -489,7 +496,7 @@
 			<xsl:element name="hb:ValueMin">
 				<xsl:call-template name="getColumnValue">
 					<xsl:with-param name="tableRow" select="$currentRow" />
-					<xsl:with-param name="colIndex" select="33"/>
+					<xsl:with-param name="colIndex" select="34"/>
 					<xsl:with-param name="currentIndex" select="1"/>
 				</xsl:call-template>
 			</xsl:element>
