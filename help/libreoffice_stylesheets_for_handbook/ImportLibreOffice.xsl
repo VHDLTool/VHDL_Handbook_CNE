@@ -29,8 +29,8 @@
 	<table:table-column table:style-name="co3" table:default-cell-style-name="Default"/> <!-- ShortDesc -->
 	<table:table-column table:style-name="co1" table:default-cell-style-name="Default"/> <!-- LongDesc -->
 	<table:table-column table:style-name="co5" table:default-cell-style-name="Default"/> <!-- SonarType -->
-	<table:table-column table:style-name="co5" table:default-cell-style-name="Default"/> <!-- RemediationEffort -->
 	<table:table-column table:style-name="co4" table:default-cell-style-name="Default"/> <!-- SonarSeverity -->
+	<table:table-column table:style-name="co5" table:default-cell-style-name="Default"/> <!-- RemediationEffort -->
 	<table:table-column table:style-name="co2" table:default-cell-style-name="Default"/> <!-- Sonar Tag -->
 	<table:table-column table:style-name="co3" table:default-cell-style-name="Default"/> <!-- GoodExDesc -->
 	<table:table-column table:style-name="co4" table:default-cell-style-name="Default"/> <!-- GoodExample -->
@@ -75,8 +75,8 @@
 			<table:table-cell table:style-name="handbookHeader" office:value-type="string"><text:p>LongDesc</text:p></table:table-cell>
 			<!-- Sonarqube -->
 			<table:table-cell table:style-name="handbookHeader" office:value-type="string"><text:p>SonarType</text:p></table:table-cell>
-			<table:table-cell table:style-name="handbookHeader" office:value-type="string"><text:p>RemediationEffort</text:p></table:table-cell>
 			<table:table-cell table:style-name="handbookHeader" office:value-type="string"><text:p>SonarSeverity</text:p></table:table-cell>
+			<table:table-cell table:style-name="handbookHeader" office:value-type="string"><text:p>RemediationEffort</text:p></table:table-cell>
 			<table:table-cell table:style-name="handbookHeader" office:value-type="string"><text:p>Tag</text:p></table:table-cell>
 			<!-- Rule Desc -->
 			<table:table-cell table:style-name="handbookHeader" office:value-type="string"><text:p>GoodExDesc</text:p></table:table-cell>
@@ -192,8 +192,8 @@
 
 	<!-- Sonarqube -->
 	<table:table-cell><text:p><xsl:value-of select="$rootNode/hb:Sonarqube/hb:SonarType"/></text:p></table:table-cell>
-	<table:table-cell><text:p><xsl:value-of select="$rootNode/hb:Sonarqube/hb:RemediationEffort"/></text:p></table:table-cell>
 	<table:table-cell><text:p><xsl:value-of select="$rootNode/hb:Sonarqube/hb:SonarSeverity"/></text:p></table:table-cell>
+	<table:table-cell><text:p><xsl:value-of select="$rootNode/hb:Sonarqube/hb:RemediationEffort"/></text:p></table:table-cell>
 	<table:table-cell><text:p><xsl:value-of select="$rootNode/hb:Sonarqube/hb:SonarTag"/></text:p></table:table-cell>
 
 	<!-- Rule Desc -->

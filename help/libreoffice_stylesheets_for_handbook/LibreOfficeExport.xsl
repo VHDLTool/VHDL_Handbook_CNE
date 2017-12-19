@@ -273,14 +273,14 @@
 										<xsl:with-param name="currentIndex" select="1"/>
 									</xsl:call-template>
 								</xsl:element>
-								<xsl:element name="hb:RemediationEffort">
+								<xsl:element name="hb:SonarSeverity">
 									<xsl:call-template name="getColumnValue">
 										<xsl:with-param name="tableRow" select="." />
 										<xsl:with-param name="colIndex" select="21"/>
 										<xsl:with-param name="currentIndex" select="1"/>
 									</xsl:call-template>
 								</xsl:element>
-								<xsl:element name="hb:SonarSeverity">
+								<xsl:element name="hb:RemediationEffort">
 									<xsl:call-template name="getColumnValue">
 										<xsl:with-param name="tableRow" select="." />
 										<xsl:with-param name="colIndex" select="22"/>
