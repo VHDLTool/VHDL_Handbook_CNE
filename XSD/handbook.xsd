@@ -138,6 +138,7 @@
             <xs:enumeration value="Validated"/>
             <xs:enumeration value="Rejected"/>
             <xs:enumeration value="Active"/>
+	    <xs:enumeration value="Implemented"/>
             <xs:enumeration value="Deleted"/>
             <xs:enumeration value="To be discussed"/>
             <xs:enumeration value="Modified"/>
