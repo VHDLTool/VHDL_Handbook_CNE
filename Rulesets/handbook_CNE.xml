@@ -3,8 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="HANDBOOK ../XSD/handbook.xsd">
 	
-	<hb:Rule UID="CNE_01000">
-		<hb:RuleUID>CNE_01000</hb:RuleUID>
+	<hb:Rule UID="CNE_00100">
+		<hb:RuleUID>CNE_00100</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
 			<hb:Version>5</hb:Version>
@@ -12,14 +12,14 @@
 			<hb:Modified>2017-11-24</hb:Modified>
 			<hb:Revision>
 				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Name ; Rationale ; Severity  
+				V2 : 2014-12-01 : Status ; Name   
 				V3 : 2015-02-17 : Technology
 				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
 				V5 : 2017-11-24 : Sonarqube
 			</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
-			<hb:Name>Identification of variable name</hb:Name>
+			<hb:Name>Identification of active low signal</hb:Name>
 			<hb:IsParent>false</hb:IsParent>
 			<hb:IsSon>true</hb:IsSon>
 			<hb:ParentUID>STD_00100</hb:ParentUID>
@@ -27,10 +27,98 @@
 			<hb:ApplicationFields>General</hb:ApplicationFields>
 			<hb:Category>Formatting</hb:Category>
 			<hb:SubCategory>Naming</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>When an unique naming convention is applied to the whole source files from the design, then the resulting code is homogenized which increases readability.
-With this convention, designer will be able to track synthesis of variable and especially identify if a variable created some unwanted flip-flops.</hb:Rationale>
-			<hb:ShortDesc>The name of a variable use "v_" prefix.</hb:ShortDesc>
+			<hb:Severity>Major</hb:Severity>
+			<hb:Rationale>Identifying signal active level by reading its name allows better readability and maintainability.</hb:Rationale>
+			<hb:ShortDesc>Active low signal ends by a suffix: "_n".</hb:ShortDesc>
+			<hb:LongDesc> By default, all signals are considered as active high signals.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc>Extracted from CNE_00100_good.vhd</hb:GoodExDesc>
+			<hb:GoodExample>CNE_00100_good</hb:GoodExample>
+			<hb:BadExDesc>Extracted from CNE_00100_bad.vhd</hb:BadExDesc>
+			<hb:BadExample>CNE_00100_bad</hb:BadExample>
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule>
+	
+	<hb:Rule UID="CNE_00200">
+		<hb:RuleUID>CNE_00200</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>5</hb:Version>
+			<hb:Creation>2014-09-30</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-09-30 : Creation
+				V2 : 2014-12-01 : Status ; ShortDesc ; LongDesc ; GoodExDesc ; BadExDesc 
+				V3 : 2015-02-17 : Technology
+				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
+				V5 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Unsuitability of frequency in clock name</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_00100</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Formatting</hb:Category>
+			<hb:SubCategory>Naming</hb:SubCategory>
+			<hb:Severity>Major</hb:Severity>
+			<hb:Rationale>Clock frequency can be changed during the development (for power consumption reason...). In such a case, if the clock signal name contains frequency value, it can lead to major code modification to update this value, or lead to misunderstanding.
+			</hb:Rationale>
+			<hb:ShortDesc>The clock signal name does not contain the clock frequency value.</hb:ShortDesc>
+			<hb:LongDesc>The clock relation for derivative clock, like mainclk_div2 for mainclk with a frequency divided by two, is a good way to show relation between clocks.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc>Extracted from CNE_00200_good.vhd</hb:GoodExDesc>
+			<hb:GoodExample>CNE_00200_good</hb:GoodExample>
+			<hb:BadExDesc>Extracted from CNE_00200_bad.vhd</hb:BadExDesc>
+			<hb:BadExample>CNE_00200_bad</hb:BadExample>
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_00300">
+		<hb:RuleUID>CNE_00300</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>5</hb:Version>
+			<hb:Creation>2014-09-30</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-09-30 : Creation
+				V2 : 2014-12-01 : Status ; Rationale ; GoodExDesc ; BadExDesc 
+				V3 : 2015-02-17 : Technology
+				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
+				V5 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Unsuitability of pin number in signal name</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_00100</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Formatting</hb:Category>
+			<hb:SubCategory>Naming</hb:SubCategory>
+			<hb:Severity>Major</hb:Severity>
+			<hb:Rationale>Board layout optimization can lead to FPGA/ASIC pins swapping. ASIC/FPGA development often needs several targets with pinout mismatching. In such a case, if the VHDL code contains signal with FPGA/ASIC pins number information, it can lead to major code modification to update this value or lead to misunderstanding.</hb:Rationale>
+			<hb:ShortDesc>Signal name does not contain FPGA/ASIC pin number value.</hb:ShortDesc>
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
@@ -40,16 +128,55 @@ With this convention, designer will be able to track synthesis of variable and e
 			<hb:SonarTag>TBD</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
-			<hb:GoodExDesc>Extracted from CNE_01000_good.vhd</hb:GoodExDesc>
-			<hb:GoodExample >CNE_01000_good</hb:GoodExample>
-			<hb:BadExDesc>Extracted from CNE_01000_bad.vhd</hb:BadExDesc>
-			<hb:BadExample >CNE_01000_bad</hb:BadExample>
+			<hb:GoodExDesc>Extracted from CNE_00300_good.vhd</hb:GoodExDesc>
+			<hb:GoodExample>CNE_00300_good</hb:GoodExample>
+			<hb:BadExDesc>Extracted from CNE_00300_bad.vhd</hb:BadExDesc>
+			<hb:BadExample>CNE_00300_bad</hb:BadExample>
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule>
-	
-	<hb:Rule UID="CNE_00500">
+	</hb:Rule><hb:Rule UID="CNE_00400">
+		<hb:RuleUID>CNE_00400</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>3</hb:Version>
+			<hb:Creation>2014-09-30</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-09-30 : Creation
+				V2 : 2014-12-01 : Status ; RuleUID ; Name ; Technology ; Severity ; Rationale
+				V3 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Name of testbench entity</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_00100</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Formatting</hb:Category>
+			<hb:SubCategory>Naming</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Identification (suffix or prefix) for testbench entity improves the identification of which entity is the testbench of which entity.</hb:Rationale>
+			<hb:ShortDesc>The suffix of testbench entity name is "_tb".</hb:ShortDesc>
+			<hb:LongDesc>No additional information.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_00500">
 		<hb:RuleUID>CNE_00500</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
@@ -272,6 +399,191 @@ The separation by uppercase (NameOfTheCustomtype) is not used.</hb:LongDesc>
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_01000">
+		<hb:RuleUID>CNE_01000</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Version>5</hb:Version>
+			<hb:Creation>2014-09-30</hb:Creation>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-09-30 : Creation
+				V2 : 2014-12-01 : Status ; Name ; Rationale ; Severity  
+				V3 : 2015-02-17 : Technology
+				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
+				V5 : 2017-11-24 : Sonarqube
+				V6 : 2020-04-23 : Status
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Identification of variable name</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_00100</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Formatting</hb:Category>
+			<hb:SubCategory>Naming</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>When an unique naming convention is applied to the whole source files from the design, then the resulting code is homogenized which increases readability.
+With this convention, designer will be able to track synthesis of variable and especially identify if a variable created some unwanted flip-flops.</hb:Rationale>
+			<hb:ShortDesc>The name of a variable use "v_" prefix.</hb:ShortDesc>
+			<hb:LongDesc>No additional information.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc>Extracted from CNE_01000_good.vhd</hb:GoodExDesc>
+			<hb:GoodExample>CNE_01000_good</hb:GoodExample>
+			<hb:BadExDesc>Extracted from CNE_01000_bad.vhd</hb:BadExDesc>
+			<hb:BadExample>CNE_01000_bad</hb:BadExample>
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_01100">
+		<hb:RuleUID>CNE_01100</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>5</hb:Version>
+			<hb:Creation>2014-09-30</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-09-30 : Creation
+				V2 : 2014-12-01 : Status ; Name ; Severity ; Rationale ; ShortDesc ; LongDesc 
+				V3 : 2015-02-17 : Technology ; Severity
+				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
+				V5 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Identification of ports direction inside entity port name</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_00100</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Formatting</hb:Category>
+			<hb:SubCategory>Naming</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Indicating the port direction inside the port name improves readability.</hb:Rationale>
+			<hb:ShortDesc>Entity port name uses prefix to determine the port direction.</hb:ShortDesc>
+			<hb:LongDesc>Prefixes are: 
+				"i_" for input port, 
+				"o_" for output port, 
+				"b_" for bidirectional port.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc>Extracted from CNE_01100_good.vhd</hb:GoodExDesc>
+			<hb:GoodExample>CNE_01100_good</hb:GoodExample>
+			<hb:BadExDesc>Extracted from CNE_01100_bad.vhd</hb:BadExDesc>
+			<hb:BadExample>CNE_01100_bad</hb:BadExample>
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_01200">
+		<hb:RuleUID>CNE_01200</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Version>6</hb:Version>
+			<hb:Creation>2014-09-30</hb:Creation>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-09-30 : Creation
+				V2 : 2014-12-01 : Status ; Name ; Rationale 
+				V3 : 2015-02-17 : Technology
+				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
+				V5 : 2017-11-24 : Sonarqube ; Status
+				V6 : 2020-04-23 : Status
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Identification of process label</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_00100</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Formatting</hb:Category>
+			<hb:SubCategory>Naming</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Differentiating process label from other VHDL object improves readability.</hb:Rationale>
+			<hb:ShortDesc>Process label name starts by a prefix: "P_".</hb:ShortDesc>
+			<hb:LongDesc>No additional information.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Minor</hb:SonarSeverity>
+			<hb:RemediationEffort>Easy</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc>Extracted from CNE_01200_good.vhd</hb:GoodExDesc>
+			<hb:GoodExample>CNE_01200_good</hb:GoodExample>
+			<hb:BadExDesc>Extracted from CNE_01200_bad.vhd</hb:BadExDesc>
+			<hb:BadExample>CNE_01200_bad</hb:BadExample>
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+		<hb:RuleParams>
+			<hb:StringParam>
+				<hb:ParamID>P1</hb:ParamID>
+				<hb:Position>Prefix</hb:Position>
+				<hb:Value>p_</hb:Value>
+			</hb:StringParam>
+		</hb:RuleParams>
+	</hb:Rule><hb:Rule UID="CNE_01300">
+		<hb:RuleUID>CNE_01300</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>5</hb:Version>
+			<hb:Creation>2014-09-30</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-09-30 : Creation
+				V2 : 2014-12-01 : Status ; Name ; Rationale 
+				V3 : 2015-02-17 : Technology
+				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
+				V5 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Identification of constant name</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_00100</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Formatting</hb:Category>
+			<hb:SubCategory>Naming</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Differentiating constant object from other VHDL object improves readability.</hb:Rationale>
+			<hb:ShortDesc>Constant name starts by a prefix: "c_".</hb:ShortDesc>
+			<hb:LongDesc>No additional information.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc>Extracted from CNE_01300_good.vhd</hb:GoodExDesc>
+			<hb:GoodExample>CNE_01300_good</hb:GoodExample>
+			<hb:BadExDesc>Extracted from CNE_01300_bad.vhd</hb:BadExDesc>
+			<hb:BadExample>CNE_01300_bad</hb:BadExample>
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
 	</hb:Rule>
 	
 	<hb:Rule UID="CNE_01400">
@@ -365,64 +677,22 @@ The separation by uppercase (NameOfTheCustomtype) is not used.</hb:LongDesc>
 		</hb:RuleDesc>
 	</hb:Rule>
 	
-	<hb:Rule UID="CNE_00100">
-		<hb:RuleUID>CNE_00100</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>5</hb:Version>
-			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Name   
-				V3 : 2015-02-17 : Technology
-				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V5 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Identification of active low signal</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_00100</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Formatting</hb:Category>
-			<hb:SubCategory>Naming</hb:SubCategory>
-			<hb:Severity>Major</hb:Severity>
-			<hb:Rationale>Identifying signal active level by reading its name allows better readability and maintainability.</hb:Rationale>
-			<hb:ShortDesc>Active low signal ends by a suffix: "_n".</hb:ShortDesc>
-			<hb:LongDesc> By default, all signals are considered as active high signals.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc>Extracted from CNE_00100_good.vhd</hb:GoodExDesc>
-			<hb:GoodExample >CNE_00100_good</hb:GoodExample>
-			<hb:BadExDesc>Extracted from CNE_00100_bad.vhd</hb:BadExDesc>
-			<hb:BadExample >CNE_00100_bad</hb:BadExample>
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
+	
 	
 	<hb:Rule UID="CNE_01600">
 		<hb:RuleUID>CNE_01600</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>5</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Modified>2020-04-23</hb:Modified>
 			<hb:Revision>
 				V1 : 2014-09-30 : Creation
 				V2 : 2014-12-01 : Status ; Name ; Rationale 
 				V3 : 2015-02-17 : Technology ; Severity ; ShortDesc
 				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
 				V5 : 2017-11-24 : Sonarqube
+				V6 : 2020-04-23 : Status
 			</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -544,10 +814,8 @@ Thus, a signal that represents a falling edge of a signal named My_Sig is My_Sig
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule>
-	
-	<hb:Rule UID="CNE_00200">
-		<hb:RuleUID>CNE_00200</hb:RuleUID>
+	</hb:Rule><hb:Rule UID="CNE_01900">
+		<hb:RuleUID>CNE_01900</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
 			<hb:Version>5</hb:Version>
@@ -555,14 +823,14 @@ Thus, a signal that represents a falling edge of a signal named My_Sig is My_Sig
 			<hb:Modified>2017-11-24</hb:Modified>
 			<hb:Revision>
 				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; ShortDesc ; LongDesc ; GoodExDesc ; BadExDesc 
-				V3 : 2015-02-17 : Technology
+				V2 : 2014-12-01 : Status ; Name ; Severity ; Rationale ; LongDesc
+				V3 : 2015-02-17 : Technology ; Severity
 				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
 				V5 : 2017-11-24 : Sonarqube
 			</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
-			<hb:Name>Unsuitability of frequency in clock name</hb:Name>
+			<hb:Name>Identification of registered signals</hb:Name>
 			<hb:IsParent>false</hb:IsParent>
 			<hb:IsSon>true</hb:IsSon>
 			<hb:ParentUID>STD_00100</hb:ParentUID>
@@ -570,11 +838,13 @@ Thus, a signal that represents a falling edge of a signal named My_Sig is My_Sig
 			<hb:ApplicationFields>General</hb:ApplicationFields>
 			<hb:Category>Formatting</hb:Category>
 			<hb:SubCategory>Naming</hb:SubCategory>
-			<hb:Severity>Major</hb:Severity>
-			<hb:Rationale>Clock frequency can be changed during the development (for power consumption reason...). In such a case, if the clock signal name contains frequency value, it can lead to major code modification to update this value, or lead to misunderstanding.
-			</hb:Rationale>
-			<hb:ShortDesc>The clock signal name does not contain the clock frequency value.</hb:ShortDesc>
-			<hb:LongDesc>The clock relation for derivative clock, like mainclk_div2 for mainclk with a frequency divided by two, is a good way to show relation between clocks.</hb:LongDesc>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Identifying signal that is clock delayed of another one by reading its name improves readability.</hb:Rationale>
+			<hb:ShortDesc>The suffix of a signal that is a registration of another one is: "_r".</hb:ShortDesc>
+			<hb:LongDesc>The signal source is also included inside the signal name.
+Thus, a signal that is clock delayed of a signal named My_Signal is My_Signal_r.
+If a small number of registration of a same signal is used (less or equal to 3), SIGNAL_r can become SIGNAL_rx where x is the number of registration stage.
+If a significant number of registration of a same signal is used, use an array for registration level instead of different signals.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
 			<hb:SonarType>TBD</hb:SonarType>
@@ -583,59 +853,18 @@ Thus, a signal that represents a falling edge of a signal named My_Sig is My_Sig
 			<hb:SonarTag>TBD</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
-			<hb:GoodExDesc>Extracted from CNE_00200_good.vhd</hb:GoodExDesc>
-			<hb:GoodExample >CNE_00200_good</hb:GoodExample>
-			<hb:BadExDesc>Extracted from CNE_00200_bad.vhd</hb:BadExDesc>
-			<hb:BadExample >CNE_00200_bad</hb:BadExample>
-			<hb:FigureDesc />
+			<hb:GoodExDesc>Extracted from CNE_01900_good.vhd</hb:GoodExDesc>
+			<hb:GoodExample>CNE_01900_good</hb:GoodExample>
+			<hb:BadExDesc>Extracted from CNE_01900_bad.vhd</hb:BadExDesc>
+			<hb:BadExample>CNE_01900_bad</hb:BadExample>
+			<hb:FigureDesc></hb:FigureDesc>
 			<hb:Figure />
 		</hb:RuleDesc>
 	</hb:Rule>
 	
-	<hb:Rule UID="CNE_00300">
-		<hb:RuleUID>CNE_00300</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>5</hb:Version>
-			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Rationale ; GoodExDesc ; BadExDesc 
-				V3 : 2015-02-17 : Technology
-				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V5 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Unsuitability of pin number in signal name</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_00100</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Formatting</hb:Category>
-			<hb:SubCategory>Naming</hb:SubCategory>
-			<hb:Severity>Major</hb:Severity>
-			<hb:Rationale>Board layout optimization can lead to FPGA/ASIC pins swapping. ASIC/FPGA development often needs several targets with pinout mismatching. In such a case, if the VHDL code contains signal with FPGA/ASIC pins number information, it can lead to major code modification to update this value or lead to misunderstanding.</hb:Rationale>
-			<hb:ShortDesc>Signal name does not contain FPGA/ASIC pin number value.</hb:ShortDesc>
-			<hb:LongDesc>No additional information.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc>Extracted from CNE_00300_good.vhd</hb:GoodExDesc>
-			<hb:GoodExample >CNE_00300_good</hb:GoodExample>
-			<hb:BadExDesc>Extracted from CNE_00300_bad.vhd</hb:BadExDesc>
-			<hb:BadExample >CNE_00300_bad</hb:BadExample>
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
+	
+	
+	
 	
 	<hb:Rule UID="CNE_02000">
 		<hb:RuleUID>CNE_02000</hb:RuleUID>
@@ -681,213 +910,21 @@ Thus, a signal that represents a falling edge of a signal named My_Sig is My_Sig
 			<hb:Figure />
 		</hb:RuleDesc>
 	</hb:Rule>
-	
-	<hb:Rule UID="CNE_01100">
-		<hb:RuleUID>CNE_01100</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>5</hb:Version>
-			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Name ; Severity ; Rationale ; ShortDesc ; LongDesc 
-				V3 : 2015-02-17 : Technology ; Severity
-				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V5 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Identification of ports direction inside entity port name</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_00100</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Formatting</hb:Category>
-			<hb:SubCategory>Naming</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Indicating the port direction inside the port name improves readability.</hb:Rationale>
-			<hb:ShortDesc>Entity port name uses prefix to determine the port direction.</hb:ShortDesc>
-			<hb:LongDesc>Prefixes are: 
-				"i_" for input port, 
-				"o_" for output port, 
-				"b_" for bidirectional port.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc>Extracted from CNE_01100_good.vhd</hb:GoodExDesc>
-			<hb:GoodExample >CNE_01100_good</hb:GoodExample>
-			<hb:BadExDesc>Extracted from CNE_01100_bad.vhd</hb:BadExDesc>
-			<hb:BadExample >CNE_01100_bad</hb:BadExample>
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
-	
-	<hb:Rule UID="CNE_01200">
-		<hb:RuleUID>CNE_01200</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Active</hb:Status>
-			<hb:Version>5</hb:Version>
-			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Name ; Rationale 
-				V3 : 2015-02-17 : Technology
-				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V5 : 2017-11-24 : Sonarqube ; Status
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Identification of process label</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_00100</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Formatting</hb:Category>
-			<hb:SubCategory>Naming</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Differentiating process label from other VHDL object improves readability.</hb:Rationale>
-			<hb:ShortDesc>Process label name starts by a prefix: "P_".</hb:ShortDesc>
-			<hb:LongDesc>No additional information.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>Code_Smell</hb:SonarType>
-			<hb:SonarSeverity>Minor</hb:SonarSeverity>
-			<hb:RemediationEffort>Easy</hb:RemediationEffort>
-			<hb:SonarTag>Convention</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc>Extracted from CNE_01200_good.vhd</hb:GoodExDesc>
-			<hb:GoodExample >CNE_01200_good</hb:GoodExample>
-			<hb:BadExDesc>Extracted from CNE_01200_bad.vhd</hb:BadExDesc>
-			<hb:BadExample >CNE_01200_bad</hb:BadExample>
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-		<hb:RuleParams>
-			<hb:StringParam>
-				<hb:ParamID>P1</hb:ParamID>
-				<hb:Position>Prefix</hb:Position>
-				<hb:Value>p_</hb:Value>
-			</hb:StringParam>
-		</hb:RuleParams>
-	</hb:Rule>
-	
-	<hb:Rule UID="CNE_01300">
-		<hb:RuleUID>CNE_01300</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>5</hb:Version>
-			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Name ; Rationale 
-				V3 : 2015-02-17 : Technology
-				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V5 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Identification of constant name</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_00100</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Formatting</hb:Category>
-			<hb:SubCategory>Naming</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Differentiating constant object from other VHDL object improves readability.</hb:Rationale>
-			<hb:ShortDesc>Constant name starts by a prefix: "c_".</hb:ShortDesc>
-			<hb:LongDesc>No additional information.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc>Extracted from CNE_01300_good.vhd</hb:GoodExDesc>
-			<hb:GoodExample >CNE_01300_good</hb:GoodExample>
-			<hb:BadExDesc>Extracted from CNE_01300_bad.vhd</hb:BadExDesc>
-			<hb:BadExample >CNE_01300_bad</hb:BadExample>
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
-	
-	<hb:Rule UID="CNE_01900">
-		<hb:RuleUID>CNE_01900</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>5</hb:Version>
-			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Name ; Severity ; Rationale ; LongDesc
-				V3 : 2015-02-17 : Technology ; Severity
-				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V5 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Identification of registered signals</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_00100</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Formatting</hb:Category>
-			<hb:SubCategory>Naming</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Identifying signal that is clock delayed of another one by reading its name improves readability.</hb:Rationale>
-			<hb:ShortDesc>The suffix of a signal that is a registration of another one is: "_r".</hb:ShortDesc>
-			<hb:LongDesc>The signal source is also included inside the signal name.
-Thus, a signal that is clock delayed of a signal named My_Signal is My_Signal_r.
-If a small number of registration of a same signal is used (less or equal to 3), SIGNAL_r can become SIGNAL_rx where x is the number of registration stage.
-If a significant number of registration of a same signal is used, use an array for registration level instead of different signals.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc>Extracted from CNE_01900_good.vhd</hb:GoodExDesc>
-			<hb:GoodExample >CNE_01900_good</hb:GoodExample>
-			<hb:BadExDesc>Extracted from CNE_01900_bad.vhd</hb:BadExDesc>
-			<hb:BadExample >CNE_01900_bad</hb:BadExample>
-			<hb:FigureDesc></hb:FigureDesc>
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
-	
+
 	<hb:Rule UID="CNE_02100">
 		<hb:RuleUID>CNE_02100</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>5</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Modified>2020-04-23</hb:Modified>
 			<hb:Revision>
 				V1 : 2014-09-30 : Creation
 				V2 : 2014-12-01 : Status 
 				V3 : 2015-02-17 : Technology
 				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
 				V5 : 2017-11-24 : Sonarqube
+				V6 : 2020-04-23 : Status
 			</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -918,9 +955,591 @@ If a significant number of registration of a same signal is used, use an array f
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_02200">
+		<hb:RuleUID>CNE_02200</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>3</hb:Version>
+			<hb:Creation>2014-09-30</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-09-30 : Creation
+				V2 : 2014-12-01 : Status ; RuleUID ; Name ; Technology ; Severity ; Rationale ; LongDesc
+				V3 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Name of configuration entity</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_00800</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Formatting</hb:Category>
+			<hb:SubCategory>Naming</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Identification of configuration entity name improves the identification of this file inside the project.</hb:Rationale>
+			<hb:ShortDesc>The suffix of configuration entity name is "_cfg".</hb:ShortDesc>
+			<hb:LongDesc>No additional information.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule>
+	<hb:Rule UID="CNE_02300">
+		<hb:RuleUID>CNE_02300</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Version>4</hb:Version>
+			<hb:Creation>2015-02-17</hb:Creation>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>
+				V1 : 2015-02-17 : Creation
+				V2 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
+				V3 : 2017-11-24 : Sonarqube ; Status
+				V4 : 2020-04-23 : Status
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Preservation of clock name</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_00700</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Formatting</hb:Category>
+			<hb:SubCategory>Naming</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Change of name through affectation of a signal to another one without any logical modification can lead to simulation mismatch as this affectation take an additional simulator tick to be processed. </hb:Rationale>
+			<hb:ShortDesc>Clock signal keeps its name through hierarchy levels.</hb:ShortDesc>
+			<hb:LongDesc>Clock signal is not renamed inside an entity through signal affectation. 
+It is also best practice to keep the clock name the same between entity ports within a project.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Minor</hb:SonarSeverity>
+			<hb:RemediationEffort>Medium</hb:RemediationEffort>
+			<hb:SonarTag>Bad-practice</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc>Extracted from CNE_02300_good.vhd</hb:GoodExDesc>
+			<hb:GoodExample>CNE_02300_good</hb:GoodExample>
+			<hb:BadExDesc>Extracted from CNE_02300_bad.vhd</hb:BadExDesc>
+			<hb:BadExample>CNE_02300_bad</hb:BadExample>
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule>
+	<hb:Rule UID="CNE_02400">
+		<hb:RuleUID>CNE_02400</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Version>4</hb:Version>
+			<hb:Creation>2015-02-17</hb:Creation>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>
+				V1 : 2015-02-17 : Creation
+				V2 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
+				V3 : 2017-11-24 : Sonarqube ; Status
+				V4 : 2020-04-23 : Status
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Preservation of reset name</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_00700</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Formatting</hb:Category>
+			<hb:SubCategory>Naming</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Change of name through affectation of a signal to another one without any logical modification can lead to simulation mismatch as this affectation take an additional simulator tick to be processed. Moreover, renaming a reset signal can lead to break the reset tree.</hb:Rationale>
+			<hb:ShortDesc>Reset signal keeps its name through hierarchy levels.</hb:ShortDesc>
+			<hb:LongDesc>Reset signal is not renamed inside an entity through signal affectation. 
+It is also best practice to keep the reset name the same between entity ports within a project.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Minor</hb:SonarSeverity>
+			<hb:RemediationEffort>Medium</hb:RemediationEffort>
+			<hb:SonarTag>Bad-practice</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc>Extracted from CNE_02400_good.vhd</hb:GoodExDesc>
+			<hb:GoodExample>CNE_02400_good</hb:GoodExample>
+			<hb:BadExDesc>Extracted from CNE_02400_bad.vhd</hb:BadExDesc>
+			<hb:BadExample>CNE_02400_bad</hb:BadExample>
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_02500">
+		<hb:RuleUID>CNE_02500</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>3</hb:Version>
+			<hb:Creation>2014-09-30</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-09-30 : Creation
+				V2 : 2014-12-01 : Status ; Technology
+				V3 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Length of entities name</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_02100</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Formatting</hb:Category>
+			<hb:SubCategory>FileStructure</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Compact entity names ensures compact tree structure which improves readability inside the different software.</hb:Rationale>
+			<hb:ShortDesc>Hierarchical level entity's names length is less than 20 characters.</hb:ShortDesc>
+			<hb:LongDesc>No additional information.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_02600">
+		<hb:RuleUID>CNE_02600</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>3</hb:Version>
+			<hb:Creation>2014-09-30</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-09-30 : Creation
+				V2 : 2014-12-01 : Status ; Technology
+				V3 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Length of signals name</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_02100</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Formatting</hb:Category>
+			<hb:SubCategory>FileStructure</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Compact signal names improve readability.</hb:Rationale>
+			<hb:ShortDesc>Internal signal names length is less than 20 characters.</hb:ShortDesc>
+			<hb:LongDesc>No additional information.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_02700">
+		<hb:RuleUID>CNE_02700</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>4</hb:Version>
+			<hb:Creation>2014-09-30</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-09-30 : Creation
+				V2 : 2014-12-01 : Status ; Technology ; ShortDesc ; LongDesc
+				V3 : 2015-02-17 : LongDesc
+				V4 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Number of lines in file</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_02100</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Formatting</hb:Category>
+			<hb:SubCategory>FileStructure</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Compact VHDL files reduce the complexity of the function defined and thus the risk of a bug.
+Too many lines inside a VHDL file might depict a badly designed module or an architecture definition problem.</hb:Rationale>
+			<hb:ShortDesc>The HDL architectural code have a limited number of lines set to 450.</hb:ShortDesc>
+			<hb:LongDesc>HDL architectural code are the VHDL statements included between the begin statement and the end statement of the architecture. 
+The definition area (for signals, constants components...) is not included in this area, nor are the comments lines.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_02800">
+		<hb:RuleUID>CNE_02800</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>3</hb:Version>
+			<hb:Creation>2014-09-30</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-09-30 : Creation
+				V2 : 2014-12-01 : Status ; RuleUID ; IsSon ; ParentUID ; Technology ; Name ; SubCategory ; Rationale ; ShortDesc ; Severity
+				V3 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Software VHDL generator in header of file</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_02400</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Traceability</hb:Category>
+			<hb:SubCategory>Versioning</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Inserting information about the automatic tool used for VHDL file generation improves code review (as the reviewer doesn't want to check automatically generated code if not modified by hand) and reusability (as it can secure which software version has been used to create the file).</hb:Rationale>
+			<hb:ShortDesc>Header of file includes references to the automatic VHDL files generator.</hb:ShortDesc>
+			<hb:LongDesc>When a VHDL code file is generated automatically by a software then the header of this file includes information about the software used and its version.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc> 
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
 	</hb:Rule>
 	
-	<hb:Rule UID="CNE_03600">
+	<hb:Rule UID="CNE_02900">
+		<hb:RuleUID>CNE_02900</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>3</hb:Version>
+			<hb:Creation>2014-09-30</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-09-30 : Creation
+				V2 : 2014-12-01 : Status ; RuleUID ; ParentUID ; Technology ; Rationale
+				V3 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>File name in the header of file</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_02400</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Traceability</hb:Category>
+			<hb:SubCategory>Versioning</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>File name in the header ensures that the header really applies to the current file and is not a copy/paste header.</hb:Rationale>
+			<hb:ShortDesc>Header of file includes the name of the file.</hb:ShortDesc>
+			<hb:LongDesc>No additional information.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_03000">
+		<hb:RuleUID>CNE_03000</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>4</hb:Version>
+			<hb:Creation>2014-09-30</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-09-30 : Creation
+				V2 : 2014-12-01 : Status ; Rationale ; ParentUID 
+				V3 : 2015-02-17 : Technology
+				V4 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Creation date in the header of file</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_02400</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Traceability</hb:Category>
+			<hb:SubCategory>Versioning</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Creation date in the header of file improves traceability.</hb:Rationale>
+			<hb:ShortDesc>Header of file includes the file creation date.</hb:ShortDesc>
+			<hb:LongDesc>No additional information.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_03100">
+		<hb:RuleUID>CNE_03100</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>3</hb:Version>
+			<hb:Creation>2014-12-01</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-12-01 : Creation 
+				V2 : 2015-02-17 : Technology ; LongDesc
+				V3 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Project name in the header of file</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_02400</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Traceability</hb:Category>
+			<hb:SubCategory>Versioning</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Project name in the header of file improves traceability.</hb:Rationale>
+			<hb:ShortDesc>Header of file includes the targeted project name.</hb:ShortDesc>
+			<hb:LongDesc>The project name could be an ID or a code name for critical projects.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_03200">
+		<hb:RuleUID>CNE_03200</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>3</hb:Version>
+			<hb:Creation>2014-09-30</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-09-30 : Creation
+				V2 : 2014-12-01 : RuleUID ; ParentUID ; Technology ; Rationale
+				V3 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Author in the header of file</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_02400</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Traceability</hb:Category>
+			<hb:SubCategory>Versioning</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Author in the header of file improves traceability.</hb:Rationale>
+			<hb:ShortDesc>Header of file includes author name of file.</hb:ShortDesc>
+			<hb:LongDesc>No additional information.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_03300">
+		<hb:RuleUID>CNE_03300</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>3</hb:Version>
+			<hb:Creation>2014-09-30</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-09-30 : Creation
+				V2 : 2014-12-01 : IsParent ; IsSon ; ParentUID ; Technology
+				V3 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Functional description in the header of file</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_02500</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Traceability</hb:Category>
+			<hb:SubCategory>Versioning</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Functional description in the header of file allows peer reviewer to gain a minimum knowledge of the functionality without having to seek for design document.</hb:Rationale>
+			<hb:ShortDesc>Header of file includes a brief functional description of the entity.</hb:ShortDesc>
+			<hb:LongDesc>No additional information.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_03400">
+		<hb:RuleUID>CNE_03400</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>2</hb:Version>
+			<hb:Creation>2014-12-01</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-12-01 : Creation
+				V2 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Naming convention in the header of file</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_02500</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Traceability</hb:Category>
+			<hb:SubCategory>Versioning</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Naming convention summary in the header of file improves the understanding of the code by the peer reviewer.</hb:Rationale>
+			<hb:ShortDesc>Header of file includes the commonly used naming convention.</hb:ShortDesc>
+			<hb:LongDesc>No additional information.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_03500">
+		<hb:RuleUID>CNE_03500</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>2</hb:Version>
+			<hb:Creation>2014-12-01</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-12-01 : Creation
+				V2 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Functional limitation in the header of file</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_02500</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Traceability</hb:Category>
+			<hb:SubCategory>Versioning</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Functional limitation information reduces the possibility of introducing a bug when doing an update of the VHDL code.</hb:Rationale>
+			<hb:ShortDesc>Header of file includes functional limitations of the entity.</hb:ShortDesc>
+			<hb:LongDesc>The limitation could be an assumption taken by the designer regarding an unclear specification that leads to a specific implementation.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_03600">
 		<hb:RuleUID>CNE_03600</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
@@ -963,7 +1582,377 @@ If a significant number of registration of a same signal is used, use an array f
 		</hb:RuleDesc>
 	</hb:Rule>
 	
-	<hb:Rule UID="CNE_04600">
+	<hb:Rule UID="CNE_03700">
+		<hb:RuleUID>CNE_03700</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>3</hb:Version>
+			<hb:Creation>2014-09-30</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-09-30 : Creation
+				V2 : 2014-12-01 : Status ; RuleUID ; Technology ; ShortDesc ; Rationale
+				V3 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Author of modification(s) in the header of file</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_02200</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Traceability</hb:Category>
+			<hb:SubCategory>Versioning</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Listing of the author of the modification allows matching of author coding style profile with the produced VHDL during code analysis.</hb:Rationale>
+			<hb:ShortDesc>Header of file includes the name of the author of the modification(s).</hb:ShortDesc>
+			<hb:LongDesc>This information is added for each new version of the file.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_03800">
+		<hb:RuleUID>CNE_03800</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>4</hb:Version>
+			<hb:Creation>2014-09-30</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-09-30 : Creation
+				V2 : 2014-12-01 : Status ; RuleUID ; Technology ; ShortDesc ; LongDesc 
+				V3 : 2015-02-17 : Severity
+				V4 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Version history in the header of file</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_02200</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Traceability</hb:Category>
+			<hb:SubCategory>Versioning</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Revision control improves IP integration time.
+Understanding the last modifications allows integrator to know if a bug was corrected or if the modification will produce a problem.</hb:Rationale>
+			<hb:ShortDesc>Header of file includes current and previous file version ID and date.</hb:ShortDesc>
+			<hb:LongDesc>The header of the file includes a version tag (like number, letters..) with a modification date that identifies the current and previous version of the code.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_03900">
+		<hb:RuleUID>CNE_03900</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>3</hb:Version>
+			<hb:Creation>2014-09-30</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-09-30 : Creation
+				V2 : 2014-12-01 : Status ; RuleUID ; Technology; LongDesc
+				V3 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Reason(s) of modification(s) in the header of file</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_02200</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Traceability</hb:Category>
+			<hb:SubCategory>Versioning</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Reason(s) of modification(s) in the header of file improves traceability and reuse.</hb:Rationale>
+			<hb:ShortDesc>Header of file includes the reason(s) of the modification(s).</hb:ShortDesc>
+			<hb:LongDesc>This information is added for each new version of the file. The reason could be, for example, a change in the specification document, a bug correction, an improvement...</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_04000">
+		<hb:RuleUID>CNE_04000</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>4</hb:Version>
+			<hb:Creation>2014-09-30</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-09-30 : Creation
+				V2 : 2014-12-01 : Status ; RuleUID ; Technology ; LongDesc
+				V3 : 2015-02-17 : Severity
+				V4 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Functional impact(s) of modifications in the header of file</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_02200</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Traceability</hb:Category>
+			<hb:SubCategory>Versioning</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Functional impact(s) in the versioning of file improves traceability.</hb:Rationale>
+			<hb:ShortDesc>Header of file includes the functional impacts of a modification.</hb:ShortDesc>
+			<hb:LongDesc>This information is added for each new version of the file. The functional impact could be, for example, a change of output signal activation from edge to level, a change of compatible technology (from Xilinx to Atmel FPGAs)...</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_04100">
+		<hb:RuleUID>CNE_04100</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>2</hb:Version>
+			<hb:Creation>2014-12-01</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-12-01 : Creation
+				V2 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Functional description of modifications in the header of file</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_02200</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Traceability</hb:Category>
+			<hb:SubCategory>Versioning</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Revision control improves IP integration time.
+Understanding the last modifications allows integrator to know if a bug was corrected or if the modification will produce a problem.</hb:Rationale>
+			<hb:ShortDesc>Header of file includes a functional description of modifications.</hb:ShortDesc>
+			<hb:LongDesc>This information is added for each new version of the file.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_04200">
+		<hb:RuleUID>CNE_04200</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>2</hb:Version>
+			<hb:Creation>2014-12-01</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-12-01 : Creation
+				V2 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Applicable license in header of file</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_02300</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Traceability</hb:Category>
+			<hb:SubCategory>Versioning</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Writing license in the header informs a third party reader what can be done with the file.</hb:Rationale>
+			<hb:ShortDesc>Header of file includes a license.</hb:ShortDesc>
+			<hb:LongDesc>The license could be a GNU public one, all right reserved to the company owner or any additional information regarding the reuse, the transfer of the file by a third party to an other one.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_04300">
+		<hb:RuleUID>CNE_04300</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>2</hb:Version>
+			<hb:Creation>2014-12-01</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-12-01 : Creation
+				V2 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Company coding in the header of file</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_02300</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Traceability</hb:Category>
+			<hb:SubCategory>Versioning</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>This information improves understanding of the project context.</hb:Rationale>
+			<hb:ShortDesc>Header of file includes the company name developing the code.</hb:ShortDesc>
+			<hb:LongDesc>If the VHDL is developed by a subcontractor, the name of this company will be written in the header.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_04400">
+		<hb:RuleUID>CNE_04400</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>2</hb:Version>
+			<hb:Creation>2014-12-01</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2014-12-01 : Creation
+				V2 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Company owner of code in the header of file</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_02300</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Traceability</hb:Category>
+			<hb:SubCategory>Versioning</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>This information improves understanding of the project context.</hb:Rationale>
+			<hb:ShortDesc>Header of file includes the company for which the code is developed.</hb:ShortDesc>
+			<hb:LongDesc>The name of the company responsible for this FPGA is written in the header.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_04500">
+		<hb:RuleUID>CNE_04500</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Validated</hb:Status>
+			<hb:Version>3</hb:Version>
+			<hb:Creation>2015-02-17</hb:Creation>
+			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Revision>
+				V1 : 2015-02-17 : Creation
+				V2 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
+				V3 : 2017-11-24 : Sonarqube
+			</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>Reset registers</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>false</hb:IsSon>
+			<hb:ParentUID xsi:nil="true" />
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Design</hb:Category>
+			<hb:SubCategory>Reset</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Registers which are not reset, will cause Post layout simulation mismatch. Thus these signals will have to be handled with a special attention. 
+Isolating them from initialized signal improves identification of these signals while reading VHDL code, or within the netlist (if label are used for the process).</hb:Rationale>
+			<hb:ShortDesc>Do not assign in the same process initialized signals with non-initialized ones.</hb:ShortDesc>
+			<hb:LongDesc>Signal registers which are not initialized (by a reset signal) within a synchronous process are not located in the same process as initialized register signals.</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>TBD</hb:SonarType>
+			<hb:SonarSeverity>TBD</hb:SonarSeverity>
+			<hb:RemediationEffort>TBD</hb:RemediationEffort>
+			<hb:SonarTag>TBD</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc>Extracted from CNE_04500_good.vhd</hb:GoodExDesc>
+			<hb:GoodExample>CNE_04500_good</hb:GoodExample>
+			<hb:BadExDesc>Extracted from CNE_04500_bad.vhd</hb:BadExDesc>
+			<hb:BadExample>CNE_04500_bad</hb:BadExample>
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule><hb:Rule UID="CNE_04600">
 		<hb:RuleUID>CNE_04600</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
@@ -1100,16 +2089,17 @@ If a significant number of registration of a same signal is used, use an array f
 	<hb:Rule UID="CNE_04900">
 		<hb:RuleUID>CNE_04900</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Active</hb:Status>
-			<hb:Version>5</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
+			<hb:Modified>2020-04-23</hb:Modified>
 			<hb:Revision>
 				V1 : 2014-09-30 : Creation
 				V2: Status ; Severity ; Rationale  
 				V3 : 2015-02-17 : Technology
 				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
 				V5 : 2017-11-24 : Sonarqube ; Status
+				V6 : 2020-04-23 : Status
 			</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -1276,910 +2266,47 @@ If a significant number of registration of a same signal is used, use an array f
 		</hb:RuleDesc>
 	</hb:Rule>
 	
-	<hb:Rule UID="CNE_02500">
-		<hb:RuleUID>CNE_02500</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
-			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Technology
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Length of entities name</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_02100</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Formatting</hb:Category>
-			<hb:SubCategory>FileStructure</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Compact entity names ensures compact tree structure which improves readability inside the different software.</hb:Rationale>
-			<hb:ShortDesc>Hierarchical level entity's names length is less than 20 characters.</hb:ShortDesc>
-			<hb:LongDesc>No additional information.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc />
-			<hb:GoodExample />
-			<hb:BadExDesc />
-			<hb:BadExample />
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-	<hb:Rule UID="CNE_02600">
-		<hb:RuleUID>CNE_02600</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
-			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Technology
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Length of signals name</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_02100</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Formatting</hb:Category>
-			<hb:SubCategory>FileStructure</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Compact signal names improve readability.</hb:Rationale>
-			<hb:ShortDesc>Internal signal names length is less than 20 characters.</hb:ShortDesc>
-			<hb:LongDesc>No additional information.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc />
-			<hb:GoodExample />
-			<hb:BadExDesc />
-			<hb:BadExample />
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-	<hb:Rule UID="CNE_02700">
-		<hb:RuleUID>CNE_02700</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>4</hb:Version>
-			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Technology ; ShortDesc ; LongDesc
-				V3 : 2015-02-17 : LongDesc
-				V4 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Number of lines in file</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_02100</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Formatting</hb:Category>
-			<hb:SubCategory>FileStructure</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Compact VHDL files reduce the complexity of the function defined and thus the risk of a bug.
-Too many lines inside a VHDL file might depict a badly designed module or an architecture definition problem.</hb:Rationale>
-			<hb:ShortDesc>The HDL architectural code have a limited number of lines set to 450.</hb:ShortDesc>
-			<hb:LongDesc>HDL architectural code are the VHDL statements included between the begin statement and the end statement of the architecture. 
-The definition area (for signals, constants components...) is not included in this area, nor are the comments lines.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc />
-			<hb:GoodExample />
-			<hb:BadExDesc />
-			<hb:BadExample />
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-	<hb:Rule UID="CNE_02900">
-		<hb:RuleUID>CNE_02900</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
-			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; RuleUID ; ParentUID ; Technology ; Rationale
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>File name in the header of file</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_02400</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Traceability</hb:Category>
-			<hb:SubCategory>Versioning</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>File name in the header ensures that the header really applies to the current file and is not a copy/paste header.</hb:Rationale>
-			<hb:ShortDesc>Header of file includes the name of the file.</hb:ShortDesc>
-			<hb:LongDesc>No additional information.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc />
-			<hb:GoodExample />
-			<hb:BadExDesc />
-			<hb:BadExample />
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-	<hb:Rule UID="CNE_03200">
-		<hb:RuleUID>CNE_03200</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
-			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : RuleUID ; ParentUID ; Technology ; Rationale
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Author in the header of file</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_02400</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Traceability</hb:Category>
-			<hb:SubCategory>Versioning</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Author in the header of file improves traceability.</hb:Rationale>
-			<hb:ShortDesc>Header of file includes author name of file.</hb:ShortDesc>
-			<hb:LongDesc>No additional information.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc />
-			<hb:GoodExample />
-			<hb:BadExDesc />
-			<hb:BadExample />
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-	<hb:Rule UID="CNE_03000">
-		<hb:RuleUID>CNE_03000</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>4</hb:Version>
-			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Rationale ; ParentUID 
-				V3 : 2015-02-17 : Technology
-				V4 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Creation date in the header of file</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_02400</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Traceability</hb:Category>
-			<hb:SubCategory>Versioning</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Creation date in the header of file improves traceability.</hb:Rationale>
-			<hb:ShortDesc>Header of file includes the file creation date.</hb:ShortDesc>
-			<hb:LongDesc>No additional information.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc />
-			<hb:GoodExample />
-			<hb:BadExDesc />
-			<hb:BadExample />
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-	<hb:Rule UID="CNE_02800">
-		<hb:RuleUID>CNE_02800</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
-			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; RuleUID ; IsSon ; ParentUID ; Technology ; Name ; SubCategory ; Rationale ; ShortDesc ; Severity
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Software VHDL generator in header of file</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_02400</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Traceability</hb:Category>
-			<hb:SubCategory>Versioning</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Inserting information about the automatic tool used for VHDL file generation improves code review (as the reviewer doesn't want to check automatically generated code if not modified by hand) and reusability (as it can secure which software version has been used to create the file).</hb:Rationale>
-			<hb:ShortDesc>Header of file includes references to the automatic VHDL files generator.</hb:ShortDesc>
-			<hb:LongDesc>When a VHDL code file is generated automatically by a software then the header of this file includes information about the software used and its version.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc> 
-			<hb:GoodExDesc />
-			<hb:GoodExample />
-			<hb:BadExDesc />
-			<hb:BadExample />
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-	<hb:Rule UID="CNE_03100">
-		<hb:RuleUID>CNE_03100</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
-			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-12-01 : Creation 
-				V2 : 2015-02-17 : Technology ; LongDesc
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Project name in the header of file</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_02400</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Traceability</hb:Category>
-			<hb:SubCategory>Versioning</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Project name in the header of file improves traceability.</hb:Rationale>
-			<hb:ShortDesc>Header of file includes the targeted project name.</hb:ShortDesc>
-			<hb:LongDesc>The project name could be an ID or a code name for critical projects.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc />
-			<hb:GoodExample />
-			<hb:BadExDesc />
-			<hb:BadExample />
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-	<hb:Rule UID="CNE_03700">
-		<hb:RuleUID>CNE_03700</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
-			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; RuleUID ; Technology ; ShortDesc ; Rationale
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Author of modification(s) in the header of file</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_02200</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Traceability</hb:Category>
-			<hb:SubCategory>Versioning</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Listing of the author of the modification allows matching of author coding style profile with the produced VHDL during code analysis.</hb:Rationale>
-			<hb:ShortDesc>Header of file includes the name of the author of the modification(s).</hb:ShortDesc>
-			<hb:LongDesc>This information is added for each new version of the file.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc />
-			<hb:GoodExample />
-			<hb:BadExDesc />
-			<hb:BadExample />
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-	<hb:Rule UID="CNE_03800">
-		<hb:RuleUID>CNE_03800</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>4</hb:Version>
-			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; RuleUID ; Technology ; ShortDesc ; LongDesc 
-				V3 : 2015-02-17 : Severity
-				V4 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Version history in the header of file</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_02200</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Traceability</hb:Category>
-			<hb:SubCategory>Versioning</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Revision control improves IP integration time.
-Understanding the last modifications allows integrator to know if a bug was corrected or if the modification will produce a problem.</hb:Rationale>
-			<hb:ShortDesc>Header of file includes current and previous file version ID and date.</hb:ShortDesc>
-			<hb:LongDesc>The header of the file includes a version tag (like number, letters..) with a modification date that identifies the current and previous version of the code.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc />
-			<hb:GoodExample />
-			<hb:BadExDesc />
-			<hb:BadExample />
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-	<hb:Rule UID="CNE_03900">
-		<hb:RuleUID>CNE_03900</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
-			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; RuleUID ; Technology; LongDesc
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Reason(s) of modification(s) in the header of file</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_02200</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Traceability</hb:Category>
-			<hb:SubCategory>Versioning</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Reason(s) of modification(s) in the header of file improves traceability and reuse.</hb:Rationale>
-			<hb:ShortDesc>Header of file includes the reason(s) of the modification(s).</hb:ShortDesc>
-			<hb:LongDesc>This information is added for each new version of the file. The reason could be, for example, a change in the specification document, a bug correction, an improvement...</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc />
-			<hb:GoodExample />
-			<hb:BadExDesc />
-			<hb:BadExample />
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-	<hb:Rule UID="CNE_04000">
-		<hb:RuleUID>CNE_04000</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>4</hb:Version>
-			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; RuleUID ; Technology ; LongDesc
-				V3 : 2015-02-17 : Severity
-				V4 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Functional impact(s) of modifications in the header of file</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_02200</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Traceability</hb:Category>
-			<hb:SubCategory>Versioning</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Functional impact(s) in the versioning of file improves traceability.</hb:Rationale>
-			<hb:ShortDesc>Header of file includes the functional impacts of a modification.</hb:ShortDesc>
-			<hb:LongDesc>This information is added for each new version of the file. The functional impact could be, for example, a change of output signal activation from edge to level, a change of compatible technology (from Xilinx to Atmel FPGAs)...</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc />
-			<hb:GoodExample />
-			<hb:BadExDesc />
-			<hb:BadExample />
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-	<hb:Rule UID="CNE_04100">
-		<hb:RuleUID>CNE_04100</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>2</hb:Version>
-			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-12-01 : Creation
-				V2 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Functional description of modifications in the header of file</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_02200</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Traceability</hb:Category>
-			<hb:SubCategory>Versioning</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Revision control improves IP integration time.
-Understanding the last modifications allows integrator to know if a bug was corrected or if the modification will produce a problem.</hb:Rationale>
-			<hb:ShortDesc>Header of file includes a functional description of modifications.</hb:ShortDesc>
-			<hb:LongDesc>This information is added for each new version of the file.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc />
-			<hb:GoodExample />
-			<hb:BadExDesc />
-			<hb:BadExample />
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-	<hb:Rule UID="CNE_04200">
-		<hb:RuleUID>CNE_04200</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>2</hb:Version>
-			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-12-01 : Creation
-				V2 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Applicable license in header of file</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_02300</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Traceability</hb:Category>
-			<hb:SubCategory>Versioning</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Writing license in the header informs a third party reader what can be done with the file.</hb:Rationale>
-			<hb:ShortDesc>Header of file includes a license.</hb:ShortDesc>
-			<hb:LongDesc>The license could be a GNU public one, all right reserved to the company owner or any additional information regarding the reuse, the transfer of the file by a third party to an other one.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc />
-			<hb:GoodExample />
-			<hb:BadExDesc />
-			<hb:BadExample />
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-	<hb:Rule UID="CNE_04300">
-		<hb:RuleUID>CNE_04300</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>2</hb:Version>
-			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-12-01 : Creation
-				V2 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Company coding in the header of file</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_02300</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Traceability</hb:Category>
-			<hb:SubCategory>Versioning</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>This information improves understanding of the project context.</hb:Rationale>
-			<hb:ShortDesc>Header of file includes the company name developing the code.</hb:ShortDesc>
-			<hb:LongDesc>If the VHDL is developed by a subcontractor, the name of this company will be written in the header.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc />
-			<hb:GoodExample />
-			<hb:BadExDesc />
-			<hb:BadExample />
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-	<hb:Rule UID="CNE_04400">
-		<hb:RuleUID>CNE_04400</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>2</hb:Version>
-			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-12-01 : Creation
-				V2 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Company owner of code in the header of file</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_02300</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Traceability</hb:Category>
-			<hb:SubCategory>Versioning</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>This information improves understanding of the project context.</hb:Rationale>
-			<hb:ShortDesc>Header of file includes the company for which the code is developed.</hb:ShortDesc>
-			<hb:LongDesc>The name of the company responsible for this FPGA is written in the header.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc />
-			<hb:GoodExample />
-			<hb:BadExDesc />
-			<hb:BadExample />
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-	<hb:Rule UID="CNE_03400">
-		<hb:RuleUID>CNE_03400</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>2</hb:Version>
-			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-12-01 : Creation
-				V2 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Naming convention in the header of file</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_02500</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Traceability</hb:Category>
-			<hb:SubCategory>Versioning</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Naming convention summary in the header of file improves the understanding of the code by the peer reviewer.</hb:Rationale>
-			<hb:ShortDesc>Header of file includes the commonly used naming convention.</hb:ShortDesc>
-			<hb:LongDesc>No additional information.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc />
-			<hb:GoodExample />
-			<hb:BadExDesc />
-			<hb:BadExample />
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-	<hb:Rule UID="CNE_03300">
-		<hb:RuleUID>CNE_03300</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
-			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : IsParent ; IsSon ; ParentUID ; Technology
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Functional description in the header of file</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_02500</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Traceability</hb:Category>
-			<hb:SubCategory>Versioning</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Functional description in the header of file allows peer reviewer to gain a minimum knowledge of the functionality without having to seek for design document.</hb:Rationale>
-			<hb:ShortDesc>Header of file includes a brief functional description of the entity.</hb:ShortDesc>
-			<hb:LongDesc>No additional information.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc />
-			<hb:GoodExample />
-			<hb:BadExDesc />
-			<hb:BadExample />
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-	<hb:Rule UID="CNE_03500">
-		<hb:RuleUID>CNE_03500</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>2</hb:Version>
-			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-12-01 : Creation
-				V2 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Functional limitation in the header of file</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_02500</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Traceability</hb:Category>
-			<hb:SubCategory>Versioning</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Functional limitation information reduces the possibility of introducing a bug when doing an update of the VHDL code.</hb:Rationale>
-			<hb:ShortDesc>Header of file includes functional limitations of the entity.</hb:ShortDesc>
-			<hb:LongDesc>The limitation could be an assumption taken by the designer regarding an unclear specification that leads to a specific implementation.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc />
-			<hb:GoodExample />
-			<hb:BadExDesc />
-			<hb:BadExample />
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-	<hb:Rule UID="CNE_02200">
-		<hb:RuleUID>CNE_02200</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
-			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; RuleUID ; Name ; Technology ; Severity ; Rationale ; LongDesc
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Name of configuration entity</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_00800</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Formatting</hb:Category>
-			<hb:SubCategory>Naming</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Identification of configuration entity name improves the identification of this file inside the project.</hb:Rationale>
-			<hb:ShortDesc>The suffix of configuration entity name is "_cfg".</hb:ShortDesc>
-			<hb:LongDesc>No additional information.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc />
-			<hb:GoodExample />
-			<hb:BadExDesc />
-			<hb:BadExample />
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-	<hb:Rule UID="CNE_00400">
-		<hb:RuleUID>CNE_00400</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
-			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; RuleUID ; Name ; Technology ; Severity ; Rationale
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Name of testbench entity</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_00100</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Formatting</hb:Category>
-			<hb:SubCategory>Naming</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Identification (suffix or prefix) for testbench entity improves the identification of which entity is the testbench of which entity.</hb:Rationale>
-			<hb:ShortDesc>The suffix of testbench entity name is "_tb".</hb:ShortDesc>
-			<hb:LongDesc>No additional information.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc />
-			<hb:GoodExample />
-			<hb:BadExDesc />
-			<hb:BadExample />
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
   
 	<hb:Rule UID="CNE_05300">
 		<hb:RuleUID>CNE_05300</hb:RuleUID>
@@ -2307,137 +2434,11 @@ Understanding the last modifications allows integrator to know if a bug was corr
 		</hb:RuleDesc>
 	</hb:Rule>
 	
-	<hb:Rule UID="CNE_04500">
-		<hb:RuleUID>CNE_04500</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
-			<hb:Creation>2015-02-17</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2015-02-17 : Creation
-				V2 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Reset registers</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>false</hb:IsSon>
-			<hb:ParentUID xsi:nil="true" />
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Design</hb:Category>
-			<hb:SubCategory>Reset</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Registers which are not reset, will cause Post layout simulation mismatch. Thus these signals will have to be handled with a special attention. 
-Isolating them from initialized signal improves identification of these signals while reading VHDL code, or within the netlist (if label are used for the process).</hb:Rationale>
-			<hb:ShortDesc>Do not assign in the same process initialized signals with non-initialized ones.</hb:ShortDesc>
-			<hb:LongDesc>Signal registers which are not initialized (by a reset signal) within a synchronous process are not located in the same process as initialized register signals.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc>Extracted from CNE_04500_good.vhd</hb:GoodExDesc>
-			<hb:GoodExample >CNE_04500_good</hb:GoodExample>
-			<hb:BadExDesc>Extracted from CNE_04500_bad.vhd</hb:BadExDesc>
-			<hb:BadExample >CNE_04500_bad</hb:BadExample>
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-	<hb:Rule UID="CNE_02300">
-		<hb:RuleUID>CNE_02300</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Active</hb:Status>
-			<hb:Version>3</hb:Version>
-			<hb:Creation>2015-02-17</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2015-02-17 : Creation
-				V2 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V3 : 2017-11-24 : Sonarqube ; Status
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Preservation of clock name</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_00700</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Formatting</hb:Category>
-			<hb:SubCategory>Naming</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Change of name through affectation of a signal to another one without any logical modification can lead to simulation mismatch as this affectation take an additional simulator tick to be processed. </hb:Rationale>
-			<hb:ShortDesc>Clock signal keeps its name through hierarchy levels.</hb:ShortDesc>
-			<hb:LongDesc>Clock signal is not renamed inside an entity through signal affectation. 
-It is also best practice to keep the clock name the same between entity ports within a project.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>Code_Smell</hb:SonarType>
-			<hb:SonarSeverity>Minor</hb:SonarSeverity>
-			<hb:RemediationEffort>Medium</hb:RemediationEffort>
-			<hb:SonarTag>Bad-practice</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc>Extracted from CNE_02300_good.vhd</hb:GoodExDesc>
-			<hb:GoodExample >CNE_02300_good</hb:GoodExample>
-			<hb:BadExDesc>Extracted from CNE_02300_bad.vhd</hb:BadExDesc>
-			<hb:BadExample >CNE_02300_bad</hb:BadExample>
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
 	
-  <hb:Rule UID="CNE_02400">
-		<hb:RuleUID>CNE_02400</hb:RuleUID>
-		<hb:RuleHist>
-			<hb:Status>Active</hb:Status>
-			<hb:Version>3</hb:Version>
-			<hb:Creation>2015-02-17</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2015-02-17 : Creation
-				V2 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V3 : 2017-11-24 : Sonarqube ; Status
-			</hb:Revision>
-		</hb:RuleHist>
-		<hb:RuleContent>
-			<hb:Name>Preservation of reset name</hb:Name>
-			<hb:IsParent>false</hb:IsParent>
-			<hb:IsSon>true</hb:IsSon>
-			<hb:ParentUID>STD_00700</hb:ParentUID>
-			<hb:Technology>VLSI</hb:Technology>
-			<hb:ApplicationFields>General</hb:ApplicationFields>
-			<hb:Category>Formatting</hb:Category>
-			<hb:SubCategory>Naming</hb:SubCategory>
-			<hb:Severity>Minor</hb:Severity>
-			<hb:Rationale>Change of name through affectation of a signal to another one without any logical modification can lead to simulation mismatch as this affectation take an additional simulator tick to be processed. Moreover, renaming a reset signal can lead to break the reset tree.</hb:Rationale>
-			<hb:ShortDesc>Reset signal keeps its name through hierarchy levels.</hb:ShortDesc>
-			<hb:LongDesc>Reset signal is not renamed inside an entity through signal affectation. 
-It is also best practice to keep the reset name the same between entity ports within a project.</hb:LongDesc>
-		</hb:RuleContent>
-		<hb:Sonarqube>
-			<hb:SonarType>Code_Smell</hb:SonarType>
-			<hb:SonarSeverity>Minor</hb:SonarSeverity>
-			<hb:RemediationEffort>Medium</hb:RemediationEffort>
-			<hb:SonarTag>Bad-practice</hb:SonarTag>
-		</hb:Sonarqube>
-		<hb:RuleDesc>
-			<hb:GoodExDesc>Extracted from CNE_02400_good.vhd</hb:GoodExDesc>
-			<hb:GoodExample >CNE_02400_good</hb:GoodExample>
-			<hb:BadExDesc>Extracted from CNE_02400_bad.vhd</hb:BadExDesc>
-			<hb:BadExample >CNE_02400_bad</hb:BadExample>
-			<hb:FigureDesc />
-			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule>
+	
+	
+  
   
 	<hb:RuleSetHist>
 		<hb:Version>5</hb:Version>
@@ -2448,6 +2449,7 @@ V2 : 2014-12-01 : Update rules with results from CNES poll and 1st draft review.
 V3 : 2015-02-17 : Update of rules with remarks from partners about V2 revision.
 V4 : 2015-07-16 : Update rules with examples
 V5 : 2017-11-24 : Creation of Sonarqube data and update of some status
+V6 : 2020-04-23 : Update status to implemented for rules in software
 		</hb:Revision>
 	</hb:RuleSetHist>	
 
