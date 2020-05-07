@@ -7,16 +7,10 @@
 		<hb:RuleUID>CNE_00100</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>5</hb:Version>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Name   
-				V3 : 2015-02-17 : Technology
-				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V5 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Identification of active low signal</hb:Name>
@@ -33,10 +27,10 @@
 			<hb:LongDesc> By default, all signals are considered as active high signals.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>High</hb:RemediationEffort>
+			<hb:SonarTag>Bad-practice</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc>Extracted from CNE_00100_good.vhd</hb:GoodExDesc>
@@ -52,16 +46,10 @@
 		<hb:RuleUID>CNE_00200</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>5</hb:Version>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; ShortDesc ; LongDesc ; GoodExDesc ; BadExDesc 
-				V3 : 2015-02-17 : Technology
-				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V5 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Unsuitability of frequency in clock name</hb:Name>
@@ -79,10 +67,10 @@
 			<hb:LongDesc>The clock relation for derivative clock, like mainclk_div2 for mainclk with a frequency divided by two, is a good way to show relation between clocks.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Critical</hb:SonarSeverity>
+			<hb:RemediationEffort>Easy</hb:RemediationEffort>
+			<hb:SonarTag>Bad-practice</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc>Extracted from CNE_00200_good.vhd</hb:GoodExDesc>
@@ -96,16 +84,10 @@
 		<hb:RuleUID>CNE_00300</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>5</hb:Version>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Rationale ; GoodExDesc ; BadExDesc 
-				V3 : 2015-02-17 : Technology
-				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V5 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Unsuitability of pin number in signal name</hb:Name>
@@ -122,10 +104,10 @@
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Critical</hb:SonarSeverity>
+			<hb:RemediationEffort>Easy</hb:RemediationEffort>
+			<hb:SonarTag>Bad-practice</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc>Extracted from CNE_00300_good.vhd</hb:GoodExDesc>
@@ -139,14 +121,10 @@
 		<hb:RuleUID>CNE_00400</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
+			<hb:Version>4</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; RuleUID ; Name ; Technology ; Severity ; Rationale
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Name of testbench entity</hb:Name>
@@ -163,10 +141,10 @@
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Minor</hb:SonarSeverity>
+			<hb:RemediationEffort>Easy</hb:RemediationEffort>
+			<hb:SonarTag>Bad-practice</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -180,15 +158,10 @@
 		<hb:RuleUID>CNE_00500</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>4</hb:Version>
+			<hb:Version>5</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : ShortDesc ; LongDesc ; Severity  
-				V3 : 2015-02-17 : Technology
-				V4 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Convention for signal naming</hb:Name>
@@ -206,10 +179,10 @@
 The separation by uppercase (NameOfTheSignal) is not used.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Minor</hb:SonarSeverity>
+			<hb:RemediationEffort>Medium</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc></hb:GoodExDesc>
@@ -225,15 +198,10 @@ The separation by uppercase (NameOfTheSignal) is not used.</hb:LongDesc>
 		<hb:RuleUID>CNE_00600</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>4</hb:Version>
+			<hb:Version>5</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : ShortDesc ; LongDesc ; Severity  
-				V3 : 2015-02-17 : Technology
-				V4 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Convention for constant naming</hb:Name>
@@ -251,10 +219,10 @@ The separation by uppercase (NameOfTheSignal) is not used.</hb:LongDesc>
 The separation by uppercase (NameOfTheConstant) is not used.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Minor</hb:SonarSeverity>
+			<hb:RemediationEffort>Easy</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc></hb:GoodExDesc>
@@ -270,15 +238,10 @@ The separation by uppercase (NameOfTheConstant) is not used.</hb:LongDesc>
 		<hb:RuleUID>CNE_00700</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>4</hb:Version>
+			<hb:Version>5</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : ShortDesc ; LongDesc ; Severity  
-				V3 : 2015-02-17 : Technology
-				V4 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Convention for process naming</hb:Name>
@@ -296,10 +259,10 @@ The separation by uppercase (NameOfTheConstant) is not used.</hb:LongDesc>
 The separation by uppercase (NameOfTheProcess) is not used.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Minor</hb:SonarSeverity>
+			<hb:RemediationEffort>Easy</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc></hb:GoodExDesc>
@@ -315,15 +278,10 @@ The separation by uppercase (NameOfTheProcess) is not used.</hb:LongDesc>
 		<hb:RuleUID>CNE_00800</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>4</hb:Version>
+			<hb:Version>5</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : ShortDesc ; LongDesc ; Severity  
-				V3 : 2015-02-17 : Technology
-				V4 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Convention for generic ports</hb:Name>
@@ -341,10 +299,10 @@ The separation by uppercase (NameOfTheProcess) is not used.</hb:LongDesc>
 The separation by uppercase (NameOfTheGeneric) is not used.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Minor</hb:SonarSeverity>
+			<hb:RemediationEffort>Medium</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc></hb:GoodExDesc>
@@ -360,15 +318,10 @@ The separation by uppercase (NameOfTheGeneric) is not used.</hb:LongDesc>
 		<hb:RuleUID>CNE_00900</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>4</hb:Version>
+			<hb:Version>5</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : ShortDesc ; LongDesc; Severity  
-				V3 : 2015-02-17 : Technology
-				V4 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Convention for custom type naming</hb:Name>
@@ -386,10 +339,10 @@ The separation by uppercase (NameOfTheGeneric) is not used.</hb:LongDesc>
 The separation by uppercase (NameOfTheCustomtype) is not used.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Minor</hb:SonarSeverity>
+			<hb:RemediationEffort>Easy</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc></hb:GoodExDesc>
@@ -406,14 +359,7 @@ The separation by uppercase (NameOfTheCustomtype) is not used.</hb:LongDesc>
 			<hb:Version>5</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
 			<hb:Modified>2020-04-23</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Name ; Rationale ; Severity  
-				V3 : 2015-02-17 : Technology
-				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V5 : 2017-11-24 : Sonarqube
-				V6 : 2020-04-23 : Status
-			</hb:Revision>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Identification of variable name</hb:Name>
@@ -431,10 +377,10 @@ With this convention, designer will be able to track synthesis of variable and e
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Minor</hb:SonarSeverity>
+			<hb:RemediationEffort>Medium</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc>Extracted from CNE_01000_good.vhd</hb:GoodExDesc>
@@ -448,16 +394,10 @@ With this convention, designer will be able to track synthesis of variable and e
 		<hb:RuleUID>CNE_01100</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>5</hb:Version>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Name ; Severity ; Rationale ; ShortDesc ; LongDesc 
-				V3 : 2015-02-17 : Technology ; Severity
-				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V5 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Identification of ports direction inside entity port name</hb:Name>
@@ -477,10 +417,10 @@ With this convention, designer will be able to track synthesis of variable and e
 				"b_" for bidirectional port.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>Medium</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc>Extracted from CNE_01100_good.vhd</hb:GoodExDesc>
@@ -497,14 +437,7 @@ With this convention, designer will be able to track synthesis of variable and e
 			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
 			<hb:Modified>2020-04-23</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Name ; Rationale 
-				V3 : 2015-02-17 : Technology
-				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V5 : 2017-11-24 : Sonarqube ; Status
-				V6 : 2020-04-23 : Status
-			</hb:Revision>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Identification of process label</hb:Name>
@@ -545,16 +478,10 @@ With this convention, designer will be able to track synthesis of variable and e
 		<hb:RuleUID>CNE_01300</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>5</hb:Version>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Name ; Rationale 
-				V3 : 2015-02-17 : Technology
-				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V5 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Identification of constant name</hb:Name>
@@ -571,10 +498,10 @@ With this convention, designer will be able to track synthesis of variable and e
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Minor</hb:SonarSeverity>
+			<hb:RemediationEffort>Easy</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc>Extracted from CNE_01300_good.vhd</hb:GoodExDesc>
@@ -590,16 +517,10 @@ With this convention, designer will be able to track synthesis of variable and e
 		<hb:RuleUID>CNE_01400</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>5</hb:Version>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Name ; Severity 
-				V3 : 2015-02-17 : Technology
-				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V5 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Identification of generic port name</hb:Name>
@@ -617,10 +538,10 @@ With this convention, designer will be able to track synthesis of variable and e
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Minor</hb:SonarSeverity>
+			<hb:RemediationEffort>Medium</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc>Extracted from CNE_01400_good.vhd</hb:GoodExDesc>
@@ -636,16 +557,10 @@ With this convention, designer will be able to track synthesis of variable and e
 		<hb:RuleUID>CNE_01500</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>5</hb:Version>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Name ; Severity   
-				V3 : 2015-02-17 : Technology
-				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V5 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Identification of custom type name</hb:Name>
@@ -662,10 +577,10 @@ With this convention, designer will be able to track synthesis of variable and e
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Minor</hb:SonarSeverity>
+			<hb:RemediationEffort>Easy</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc>Extracted from CNE_01500_good.vhd</hb:GoodExDesc>
@@ -686,14 +601,7 @@ With this convention, designer will be able to track synthesis of variable and e
 			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
 			<hb:Modified>2020-04-23</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Name ; Rationale 
-				V3 : 2015-02-17 : Technology ; Severity ; ShortDesc
-				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V5 : 2017-11-24 : Sonarqube
-				V6 : 2020-04-23 : Status
-			</hb:Revision>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Identification of package element</hb:Name>
@@ -710,10 +618,10 @@ With this convention, designer will be able to track synthesis of variable and e
 			<hb:LongDesc>Package elements considered are: the package name itself and all VHDL object declared and defined inside the package.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>Major</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc>Extracted from CNE_01600_good.vhd</hb:GoodExDesc>
@@ -729,16 +637,10 @@ With this convention, designer will be able to track synthesis of variable and e
 		<hb:RuleUID>CNE_01700</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>5</hb:Version>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Name ; Rationale ; ShortDesc ; LongDesc
-				V3 : 2015-02-17 : Technology ; Severity
-				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V5 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Identification of rising edge detection signal</hb:Name>
@@ -756,10 +658,10 @@ With this convention, designer will be able to track synthesis of variable and e
 Thus, a signal that represents a rising edge of a signal named My_Sig is My_Sig_re.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>Major</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc>Extracted from CNE_01700_good.vhd</hb:GoodExDesc>
@@ -775,15 +677,10 @@ Thus, a signal that represents a rising edge of a signal named My_Sig is My_Sig_
 		<hb:RuleUID>CNE_01800</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>4</hb:Version>
+			<hb:Version>5</hb:Version>
 			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2015-02-17 : Technology ; Severity
-				V3 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V4 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Identification of falling edge detection signal</hb:Name>
@@ -801,10 +698,10 @@ Thus, a signal that represents a rising edge of a signal named My_Sig is My_Sig_
 Thus, a signal that represents a falling edge of a signal named My_Sig is My_Sig_fe.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>Major</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc>Extracted from CNE_01800_good.vhd</hb:GoodExDesc>
@@ -818,16 +715,10 @@ Thus, a signal that represents a falling edge of a signal named My_Sig is My_Sig
 		<hb:RuleUID>CNE_01900</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>5</hb:Version>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Name ; Severity ; Rationale ; LongDesc
-				V3 : 2015-02-17 : Technology ; Severity
-				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V5 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Identification of registered signals</hb:Name>
@@ -847,10 +738,10 @@ If a small number of registration of a same signal is used (less or equal to 3),
 If a significant number of registration of a same signal is used, use an array for registration level instead of different signals.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>High</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc>Extracted from CNE_01900_good.vhd</hb:GoodExDesc>
@@ -870,16 +761,10 @@ If a significant number of registration of a same signal is used, use an array f
 		<hb:RuleUID>CNE_02000</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>5</hb:Version>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Rationale ; ShortDesc ; Severity  
-				V3 : 2015-02-17 : Technology ; ShortDesc
-				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V5 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Identification of Finite State Machine</hb:Name>
@@ -896,10 +781,10 @@ If a significant number of registration of a same signal is used, use an array f
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Critical</hb:SonarSeverity>
+			<hb:RemediationEffort>Major</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc>Extracted from CNE_02000_good.vhd</hb:GoodExDesc>
@@ -918,14 +803,7 @@ If a significant number of registration of a same signal is used, use an array f
 			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
 			<hb:Modified>2020-04-23</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status 
-				V3 : 2015-02-17 : Technology
-				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V5 : 2017-11-24 : Sonarqube
-				V6 : 2020-04-23 : Status
-			</hb:Revision>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Name of RTL architectures</hb:Name>
@@ -942,10 +820,10 @@ If a significant number of registration of a same signal is used, use an array f
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Critical</hb:SonarSeverity>
+			<hb:RemediationEffort>Medium</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc>Extracted from CNE_02100_good.vhd</hb:GoodExDesc>
@@ -959,14 +837,10 @@ If a significant number of registration of a same signal is used, use an array f
 		<hb:RuleUID>CNE_02200</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
+			<hb:Version>4</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; RuleUID ; Name ; Technology ; Severity ; Rationale ; LongDesc
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Name of configuration entity</hb:Name>
@@ -983,10 +857,10 @@ If a significant number of registration of a same signal is used, use an array f
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Minor</hb:SonarSeverity>
+			<hb:RemediationEffort>Medium</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -1004,12 +878,7 @@ If a significant number of registration of a same signal is used, use an array f
 			<hb:Version>4</hb:Version>
 			<hb:Creation>2015-02-17</hb:Creation>
 			<hb:Modified>2020-04-23</hb:Modified>
-			<hb:Revision>
-				V1 : 2015-02-17 : Creation
-				V2 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V3 : 2017-11-24 : Sonarqube ; Status
-				V4 : 2020-04-23 : Status
-			</hb:Revision>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Preservation of clock name</hb:Name>
@@ -1048,12 +917,7 @@ It is also best practice to keep the clock name the same between entity ports wi
 			<hb:Version>4</hb:Version>
 			<hb:Creation>2015-02-17</hb:Creation>
 			<hb:Modified>2020-04-23</hb:Modified>
-			<hb:Revision>
-				V1 : 2015-02-17 : Creation
-				V2 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V3 : 2017-11-24 : Sonarqube ; Status
-				V4 : 2020-04-23 : Status
-			</hb:Revision>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Preservation of reset name</hb:Name>
@@ -1088,14 +952,10 @@ It is also best practice to keep the reset name the same between entity ports wi
 		<hb:RuleUID>CNE_02500</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
+			<hb:Version>4</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Technology
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Length of entities name</hb:Name>
@@ -1112,10 +972,10 @@ It is also best practice to keep the reset name the same between entity ports wi
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Minor</hb:SonarSeverity>
+			<hb:RemediationEffort>Medium</hb:RemediationEffort>
+			<hb:SonarTag>User-experience</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -1129,14 +989,10 @@ It is also best practice to keep the reset name the same between entity ports wi
 		<hb:RuleUID>CNE_02600</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
+			<hb:Version>4</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Technology
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Length of signals name</hb:Name>
@@ -1153,10 +1009,10 @@ It is also best practice to keep the reset name the same between entity ports wi
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Minor</hb:SonarSeverity>
+			<hb:RemediationEffort>Medium</hb:RemediationEffort>
+			<hb:SonarTag>User-experience</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -1170,15 +1026,10 @@ It is also best practice to keep the reset name the same between entity ports wi
 		<hb:RuleUID>CNE_02700</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>4</hb:Version>
+			<hb:Version>5</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Technology ; ShortDesc ; LongDesc
-				V3 : 2015-02-17 : LongDesc
-				V4 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Number of lines in file</hb:Name>
@@ -1197,10 +1048,10 @@ Too many lines inside a VHDL file might depict a badly designed module or an arc
 The definition area (for signals, constants components...) is not included in this area, nor are the comments lines.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>Complex</hb:RemediationEffort>
+			<hb:SonarTag>Suspicious</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -1214,14 +1065,10 @@ The definition area (for signals, constants components...) is not included in th
 		<hb:RuleUID>CNE_02800</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
+			<hb:Version>4</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; RuleUID ; IsSon ; ParentUID ; Technology ; Name ; SubCategory ; Rationale ; ShortDesc ; Severity
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Software VHDL generator in header of file</hb:Name>
@@ -1238,10 +1085,10 @@ The definition area (for signals, constants components...) is not included in th
 			<hb:LongDesc>When a VHDL code file is generated automatically by a software then the header of this file includes information about the software used and its version.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>Trivial</hb:RemediationEffort>
+			<hb:SonarTag>User-experience</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc> 
 			<hb:GoodExDesc />
@@ -1257,14 +1104,10 @@ The definition area (for signals, constants components...) is not included in th
 		<hb:RuleUID>CNE_02900</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
+			<hb:Version>4</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; RuleUID ; ParentUID ; Technology ; Rationale
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>File name in the header of file</hb:Name>
@@ -1281,10 +1124,10 @@ The definition area (for signals, constants components...) is not included in th
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>Trivial</hb:RemediationEffort>
+			<hb:SonarTag>User-experience</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -1298,15 +1141,10 @@ The definition area (for signals, constants components...) is not included in th
 		<hb:RuleUID>CNE_03000</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>4</hb:Version>
+			<hb:Version>5</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Rationale ; ParentUID 
-				V3 : 2015-02-17 : Technology
-				V4 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Creation date in the header of file</hb:Name>
@@ -1323,10 +1161,10 @@ The definition area (for signals, constants components...) is not included in th
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Minor</hb:SonarSeverity>
+			<hb:RemediationEffort>Trivial</hb:RemediationEffort>
+			<hb:SonarTag>User-experience</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -1340,14 +1178,10 @@ The definition area (for signals, constants components...) is not included in th
 		<hb:RuleUID>CNE_03100</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
+			<hb:Version>4</hb:Version>
 			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-12-01 : Creation 
-				V2 : 2015-02-17 : Technology ; LongDesc
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Project name in the header of file</hb:Name>
@@ -1364,10 +1198,10 @@ The definition area (for signals, constants components...) is not included in th
 			<hb:LongDesc>The project name could be an ID or a code name for critical projects.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>Trivial</hb:RemediationEffort>
+			<hb:SonarTag>User-experience</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -1381,14 +1215,10 @@ The definition area (for signals, constants components...) is not included in th
 		<hb:RuleUID>CNE_03200</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
+			<hb:Version>4</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : RuleUID ; ParentUID ; Technology ; Rationale
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Author in the header of file</hb:Name>
@@ -1405,10 +1235,10 @@ The definition area (for signals, constants components...) is not included in th
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>Trivial</hb:RemediationEffort>
+			<hb:SonarTag>User-experience</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -1422,14 +1252,10 @@ The definition area (for signals, constants components...) is not included in th
 		<hb:RuleUID>CNE_03300</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
+			<hb:Version>4</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : IsParent ; IsSon ; ParentUID ; Technology
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Functional description in the header of file</hb:Name>
@@ -1446,10 +1272,10 @@ The definition area (for signals, constants components...) is not included in th
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>Medium</hb:RemediationEffort>
+			<hb:SonarTag>User-experience</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -1463,13 +1289,10 @@ The definition area (for signals, constants components...) is not included in th
 		<hb:RuleUID>CNE_03400</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>2</hb:Version>
+			<hb:Version>3</hb:Version>
 			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-12-01 : Creation
-				V2 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Naming convention in the header of file</hb:Name>
@@ -1486,10 +1309,10 @@ The definition area (for signals, constants components...) is not included in th
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Minor</hb:SonarSeverity>
+			<hb:RemediationEffort>Trivial</hb:RemediationEffort>
+			<hb:SonarTag>User-experience</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -1503,13 +1326,10 @@ The definition area (for signals, constants components...) is not included in th
 		<hb:RuleUID>CNE_03500</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>2</hb:Version>
+			<hb:Version>3</hb:Version>
 			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-12-01 : Creation
-				V2 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Functional limitation in the header of file</hb:Name>
@@ -1526,10 +1346,10 @@ The definition area (for signals, constants components...) is not included in th
 			<hb:LongDesc>The limitation could be an assumption taken by the designer regarding an unclear specification that leads to a specific implementation.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Bug</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>Complex</hb:RemediationEffort>
+			<hb:SonarTag>Design</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -1543,14 +1363,10 @@ The definition area (for signals, constants components...) is not included in th
 		<hb:RuleUID>CNE_03600</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
+			<hb:Version>4</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation 
-				V2 : 2015-02-17 : ParentUID ; Technology
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Current version number in the header of file</hb:Name>
@@ -1567,10 +1383,10 @@ The definition area (for signals, constants components...) is not included in th
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>Easy</hb:RemediationEffort>
+			<hb:SonarTag>User-experience</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -1586,14 +1402,10 @@ The definition area (for signals, constants components...) is not included in th
 		<hb:RuleUID>CNE_03700</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
+			<hb:Version>4</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; RuleUID ; Technology ; ShortDesc ; Rationale
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Author of modification(s) in the header of file</hb:Name>
@@ -1610,10 +1422,10 @@ The definition area (for signals, constants components...) is not included in th
 			<hb:LongDesc>This information is added for each new version of the file.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>Trivial</hb:RemediationEffort>
+			<hb:SonarTag>User-experience</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -1627,15 +1439,10 @@ The definition area (for signals, constants components...) is not included in th
 		<hb:RuleUID>CNE_03800</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>4</hb:Version>
+			<hb:Version>5</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; RuleUID ; Technology ; ShortDesc ; LongDesc 
-				V3 : 2015-02-17 : Severity
-				V4 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Version history in the header of file</hb:Name>
@@ -1653,10 +1460,10 @@ Understanding the last modifications allows integrator to know if a bug was corr
 			<hb:LongDesc>The header of the file includes a version tag (like number, letters..) with a modification date that identifies the current and previous version of the code.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>Trivial</hb:RemediationEffort>
+			<hb:SonarTag>User-experience</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -1670,14 +1477,10 @@ Understanding the last modifications allows integrator to know if a bug was corr
 		<hb:RuleUID>CNE_03900</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
+			<hb:Version>4</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; RuleUID ; Technology; LongDesc
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Reason(s) of modification(s) in the header of file</hb:Name>
@@ -1694,10 +1497,10 @@ Understanding the last modifications allows integrator to know if a bug was corr
 			<hb:LongDesc>This information is added for each new version of the file. The reason could be, for example, a change in the specification document, a bug correction, an improvement...</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>Medium</hb:RemediationEffort>
+			<hb:SonarTag>User-experience</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -1711,15 +1514,10 @@ Understanding the last modifications allows integrator to know if a bug was corr
 		<hb:RuleUID>CNE_04000</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>4</hb:Version>
+			<hb:Version>5</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; RuleUID ; Technology ; LongDesc
-				V3 : 2015-02-17 : Severity
-				V4 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Functional impact(s) of modifications in the header of file</hb:Name>
@@ -1736,10 +1534,10 @@ Understanding the last modifications allows integrator to know if a bug was corr
 			<hb:LongDesc>This information is added for each new version of the file. The functional impact could be, for example, a change of output signal activation from edge to level, a change of compatible technology (from Xilinx to Atmel FPGAs)...</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>Medium</hb:RemediationEffort>
+			<hb:SonarTag>User-experience</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -1753,13 +1551,10 @@ Understanding the last modifications allows integrator to know if a bug was corr
 		<hb:RuleUID>CNE_04100</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>2</hb:Version>
+			<hb:Version>3</hb:Version>
 			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-12-01 : Creation
-				V2 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Functional description of modifications in the header of file</hb:Name>
@@ -1777,10 +1572,10 @@ Understanding the last modifications allows integrator to know if a bug was corr
 			<hb:LongDesc>This information is added for each new version of the file.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>Easy</hb:RemediationEffort>
+			<hb:SonarTag>User-experience</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -1794,13 +1589,10 @@ Understanding the last modifications allows integrator to know if a bug was corr
 		<hb:RuleUID>CNE_04200</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>2</hb:Version>
+			<hb:Version>3</hb:Version>
 			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-12-01 : Creation
-				V2 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Applicable license in header of file</hb:Name>
@@ -1817,10 +1609,10 @@ Understanding the last modifications allows integrator to know if a bug was corr
 			<hb:LongDesc>The license could be a GNU public one, all right reserved to the company owner or any additional information regarding the reuse, the transfer of the file by a third party to an other one.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>Easy</hb:RemediationEffort>
+			<hb:SonarTag>User-experience</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -1834,13 +1626,10 @@ Understanding the last modifications allows integrator to know if a bug was corr
 		<hb:RuleUID>CNE_04300</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>2</hb:Version>
+			<hb:Version>3</hb:Version>
 			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-12-01 : Creation
-				V2 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Company coding in the header of file</hb:Name>
@@ -1857,10 +1646,10 @@ Understanding the last modifications allows integrator to know if a bug was corr
 			<hb:LongDesc>If the VHDL is developed by a subcontractor, the name of this company will be written in the header.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Minor</hb:SonarSeverity>
+			<hb:RemediationEffort>Trivial</hb:RemediationEffort>
+			<hb:SonarTag>User-experience</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -1874,13 +1663,10 @@ Understanding the last modifications allows integrator to know if a bug was corr
 		<hb:RuleUID>CNE_04400</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>2</hb:Version>
+			<hb:Version>3</hb:Version>
 			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-12-01 : Creation
-				V2 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Company owner of code in the header of file</hb:Name>
@@ -1897,10 +1683,10 @@ Understanding the last modifications allows integrator to know if a bug was corr
 			<hb:LongDesc>The name of the company responsible for this FPGA is written in the header.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Minor</hb:SonarSeverity>
+			<hb:RemediationEffort>Easy</hb:RemediationEffort>
+			<hb:SonarTag>User-experience</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -1914,14 +1700,10 @@ Understanding the last modifications allows integrator to know if a bug was corr
 		<hb:RuleUID>CNE_04500</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>3</hb:Version>
+			<hb:Version>4</hb:Version>
 			<hb:Creation>2015-02-17</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2015-02-17 : Creation
-				V2 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V3 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Reset registers</hb:Name>
@@ -1939,10 +1721,10 @@ Isolating them from initialized signal improves identification of these signals 
 			<hb:LongDesc>Signal registers which are not initialized (by a reset signal) within a synchronous process are not located in the same process as initialized register signals.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Bug</hb:SonarType>
+			<hb:SonarSeverity>Critical</hb:SonarSeverity>
+			<hb:RemediationEffort>High</hb:RemediationEffort>
+			<hb:SonarTag>Design</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc>Extracted from CNE_04500_good.vhd</hb:GoodExDesc>
@@ -1956,15 +1738,10 @@ Isolating them from initialized signal improves identification of these signals 
 		<hb:RuleUID>CNE_04600</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>4</hb:Version>
+			<hb:Version>5</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Rationale ; ShortDesc
-				V3 : 2015-02-17 : Technology ; Severity
-				V4 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Finite State Machine coding style</hb:Name>
@@ -1981,10 +1758,10 @@ Isolating them from initialized signal improves identification of these signals 
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Bug</hb:SonarType>
+			<hb:SonarSeverity>Blocker</hb:SonarSeverity>
+			<hb:RemediationEffort>Major</hb:RemediationEffort>
+			<hb:SonarTag>User-experience</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -2000,16 +1777,10 @@ Isolating them from initialized signal improves identification of these signals 
 		<hb:RuleUID>CNE_04700</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>5</hb:Version>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Rationale ; ShortDesc ; Severity  
-				V3 : 2015-02-17 : Technology
-				V4 : 2015-07-16 : GoodExample ; GoodExDesc
-				V5 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Finite State Machine single process based</hb:Name>
@@ -2026,10 +1797,10 @@ Isolating them from initialized signal improves identification of these signals 
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>High</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc>Extracted from CNE_04700_good.vhd</hb:GoodExDesc>
@@ -2045,16 +1816,10 @@ Isolating them from initialized signal improves identification of these signals 
 		<hb:RuleUID>CNE_04800</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>5</hb:Version>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Rationale ; ShortDesc ; LongDesc ; Severity 
-				V3 : 2015-02-17 : Technology
-				V4 : 2015-07-16 : GoodExample ; GoodExDesc
-				V5 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Finite State Machine two processes based</hb:Name>
@@ -2071,10 +1836,10 @@ Isolating them from initialized signal improves identification of these signals 
 			<hb:LongDesc>FSM coding style use one synchronous process for state registration and one asynchronous process for states and outputs assertion.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Major</hb:SonarSeverity>
+			<hb:RemediationEffort>High</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc>Extracted from CNE_04800_good.vhd</hb:GoodExDesc>
@@ -2093,14 +1858,7 @@ Isolating them from initialized signal improves identification of these signals 
 			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
 			<hb:Modified>2020-04-23</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2: Status ; Severity ; Rationale  
-				V3 : 2015-02-17 : Technology
-				V4 : 2015-07-16 : GoodExample ; BadExample ; GoodExDesc ; BadExDesc
-				V5 : 2017-11-24 : Sonarqube ; Status
-				V6 : 2020-04-23 : Status
-			</hb:Revision>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Use of clock signal</hb:Name>
@@ -2136,15 +1894,10 @@ Isolating them from initialized signal improves identification of these signals 
 		<hb:RuleUID>CNE_05000</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>4</hb:Version>
+			<hb:Version>5</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Rationale ; ShortDesc
-				V3 : 2015-02-17 : Technology ; Severity
-				V4 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Multiplexor coding style</hb:Name>
@@ -2161,10 +1914,10 @@ Isolating them from initialized signal improves identification of these signals 
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Bug</hb:SonarType>
+			<hb:SonarSeverity>Critical</hb:SonarSeverity>
+			<hb:RemediationEffort>Major</hb:RemediationEffort>
+			<hb:SonarTag>Design</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -2180,16 +1933,10 @@ Isolating them from initialized signal improves identification of these signals 
 		<hb:RuleUID>CNE_05100</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>5</hb:Version>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Rationale ; ShortDesc ; Severity 
-				V3 : 2015-02-17 : Technology
-				V4 : 2015-07-16 : GoodExample ; GoodExDesc
-				V5 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Multiplexor single process based</hb:Name>
@@ -2206,10 +1953,10 @@ Isolating them from initialized signal improves identification of these signals 
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Bug</hb:SonarType>
+			<hb:SonarSeverity>Critical</hb:SonarSeverity>
+			<hb:RemediationEffort>Major</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc>Extracted from CNE_05100_good.vhd</hb:GoodExDesc>
@@ -2225,16 +1972,10 @@ Isolating them from initialized signal improves identification of these signals 
 		<hb:RuleUID>CNE_05200</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>5</hb:Version>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2014-09-30 : Creation
-				V2 : 2014-12-01 : Status ; Rationale ; Severity 
-				V3 : 2015-02-17 : Technology
-				V4 : 2015-07-16 : GoodExample ; GoodExDesc
-				V5 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Multiplexor direct assertion based</hb:Name>
@@ -2251,10 +1992,10 @@ Isolating them from initialized signal improves identification of these signals 
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Bug</hb:SonarType>
+			<hb:SonarSeverity>Critical</hb:SonarSeverity>
+			<hb:RemediationEffort>Major</hb:RemediationEffort>
+			<hb:SonarTag>Convention</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc>Extracted from CNE_05200_good.vhd</hb:GoodExDesc>
@@ -2312,13 +2053,10 @@ Isolating them from initialized signal improves identification of these signals 
 		<hb:RuleUID>CNE_05300</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>2</hb:Version>
+			<hb:Version>3</hb:Version>
 			<hb:Creation>2015-02-17</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2015-02-17 : Creation
-				V2 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Hierarchical level of entity</hb:Name>
@@ -2335,10 +2073,10 @@ Isolating them from initialized signal improves identification of these signals 
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Critical</hb:SonarSeverity>
+			<hb:RemediationEffort>Complex</hb:RemediationEffort>
+			<hb:SonarTag>Suspicious</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -2354,13 +2092,10 @@ Isolating them from initialized signal improves identification of these signals 
 		<hb:RuleUID>CNE_05400</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>2</hb:Version>
+			<hb:Version>3</hb:Version>
 			<hb:Creation>2015-02-17</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2015-02-17 : Creation
-				V2 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Number of nested packages</hb:Name>
@@ -2377,10 +2112,10 @@ Isolating them from initialized signal improves identification of these signals 
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Critical</hb:SonarSeverity>
+			<hb:RemediationEffort>Complex</hb:RemediationEffort>
+			<hb:SonarTag>Suspicious</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -2396,13 +2131,10 @@ Isolating them from initialized signal improves identification of these signals 
 		<hb:RuleUID>CNE_05500</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
-			<hb:Version>2</hb:Version>
+			<hb:Version>3</hb:Version>
 			<hb:Creation>2015-02-17</hb:Creation>
-			<hb:Modified>2017-11-24</hb:Modified>
-			<hb:Revision>
-				V1 : 2015-02-17 : Creation
-				V2 : 2017-11-24 : Sonarqube
-			</hb:Revision>
+			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
 			<hb:Name>Dimension of array</hb:Name>
@@ -2419,10 +2151,10 @@ Isolating them from initialized signal improves identification of these signals 
 			<hb:LongDesc>No additional information.</hb:LongDesc>
 		</hb:RuleContent>
 		<hb:Sonarqube>
-			<hb:SonarType>TBD</hb:SonarType>
-			<hb:SonarSeverity>TBD</hb:SonarSeverity>
-			<hb:RemediationEffort>TBD</hb:RemediationEffort>
-			<hb:SonarTag>TBD</hb:SonarTag>
+			<hb:SonarType>Bug</hb:SonarType>
+			<hb:SonarSeverity>Critical</hb:SonarSeverity>
+			<hb:RemediationEffort>High</hb:RemediationEffort>
+			<hb:SonarTag>Suspicious</hb:SonarTag>
 		</hb:Sonarqube>
 		<hb:RuleDesc>
 			<hb:GoodExDesc />
@@ -2443,13 +2175,13 @@ Isolating them from initialized signal improves identification of these signals 
 	<hb:RuleSetHist>
 		<hb:Version>5</hb:Version>
 		<hb:Creation>2014-11-13</hb:Creation>
-		<hb:Modified>2017-11-24</hb:Modified>
+		<hb:Modified>2020-04-23</hb:Modified>
 		<hb:Revision>V1 : 2014-11-13 : Creation
 V2 : 2014-12-01 : Update rules with results from CNES poll and 1st draft review.
 V3 : 2015-02-17 : Update of rules with remarks from partners about V2 revision.
 V4 : 2015-07-16 : Update rules with examples
 V5 : 2017-11-24 : Creation of Sonarqube data and update of some status
-V6 : 2020-04-23 : Update status to implemented for rules in software
+V6 : 2020-04-23 : Update status to implemented for rules in software. Correct sonarqube elements.
 		</hb:Revision>
 	</hb:RuleSetHist>	
 
