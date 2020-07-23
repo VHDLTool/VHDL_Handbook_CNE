@@ -1,256 +1,257 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="HANDBOOK" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
- 	elementFormDefault="qualified" xmlns:hb="HANDBOOK">
-    <!-- ======================= -->
-    <!--    Element definition   -->
-    <!-- ======================= -->
-    <xs:element name="RuleSet" type="hb:TRuleSet"/>
-    <!-- ======================= -->
-    <!-- Complex type definition -->
-    <!-- ======================= -->
+<xs:schema targetNamespace="HANDBOOK" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:hb="HANDBOOK">
+
+    <xs:element name="RuleSet" type="hb:TRuleSet"/>												<!-- VHDL handbook document including all the rules -->
     <xs:complexType name="TRuleSet">
         <xs:sequence>
-            <xs:element name="Rule" type="hb:TRule" maxOccurs="unbounded" minOccurs="1"/>
-            <xs:element name="RuleSetHist" type="hb:TRuleSetHist" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="Rule" type="hb:TRule" maxOccurs="unbounded" minOccurs="1"/>		<!-- One VHDL Rule content -->
+            <xs:element name="RuleSetHist" type="hb:TRuleSetHist" maxOccurs="1" minOccurs="1"/> <!-- History of the VHDL Rule -->
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="TRuleSetHist">
+    <xs:complexType name="TRuleSetHist">														<!-- Revision history for the handbook  -->
         <xs:sequence>
-            <xs:element name="Version" type="xs:positiveInteger" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="Creation" type="xs:date" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="Modified" type="xs:date" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="Revision" type="xs:string" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="Version" type="xs:positiveInteger" maxOccurs="1" minOccurs="1"/>  <!-- Current version number for handbook -->
+            <xs:element name="Creation" type="xs:date" maxOccurs="1" minOccurs="1"/>			<!-- Date of creation for handbook -->
+            <xs:element name="Modified" type="xs:date" maxOccurs="1" minOccurs="1"/>			<!-- Date of last modification for handbook -->
+            <xs:element name="Revision" type="xs:string" maxOccurs="1" minOccurs="1"/>			<!-- Revision history  for handbook -->
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="TRule">
+    <xs:complexType name="TRule">																<!-- One VHDL Rule content -->
         <xs:sequence>
-            <xs:element name="RuleUID" maxOccurs="1" minOccurs="1">
+            <xs:element name="RuleUID" maxOccurs="1" minOccurs="1">								<!-- Rule Unique identifier (for every handbooks) same as UID Attribute-->
                 <xs:simpleType>
                     <xs:restriction base="xs:ID">
                         <xs:pattern value="[A-Z]{3}_[0-9]{5}" />
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element name="RuleHist" type="hb:TRuleHist"	maxOccurs="1" minOccurs="1"/>
-            <xs:element name="RuleContent" type="hb:TRuleContent" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="Sonarqube" type="hb:TSonarqube" maxOccurs="1" minOccurs="0"/>
-            <xs:element name="RuleDesc" type="hb:TRuleDesc"	maxOccurs="1" minOccurs="0"/>
-            <xs:element name="RuleParams" type="hb:TRuleParams" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="RuleHist" type="hb:TRuleHist"	maxOccurs="1" minOccurs="1"/> 		<!-- History of the VHDL Rule  -->
+            <xs:element name="RuleContent" type="hb:TRuleContent" maxOccurs="1" minOccurs="1"/> <!-- Group of information relating to the content of the Rule -->
+            <xs:element name="Sonarqube" type="hb:TSonarqube" maxOccurs="1" minOccurs="0"/>     <!-- Group of information relating to Sonarqube rule display -->
+            <xs:element name="RuleDesc" type="hb:TRuleDesc"	maxOccurs="1" minOccurs="0"/>		<!-- Explanation regarding the Rule  -->
+            <xs:element name="RuleParams" type="hb:TRuleParams" maxOccurs="1" minOccurs="0"/>	<!-- Rulechecker’s parameters for the Rule --> 
         </xs:sequence>
-        <xs:attribute name="UID" type="hb:TRuleUID"/>
+        <xs:attribute name="UID" type="hb:TRuleUID"/>											<!-- Rule Unique identifier attribute (for every handbooks)-->
     </xs:complexType>
-    <xs:complexType name="TRuleHist">
+    <xs:complexType name="TRuleHist">															<!-- History of the VHDL Rule  -->
         <xs:sequence>
-            <xs:element name="Status" type="hb:EnumRuleStatus" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="Version" type="xs:positiveInteger" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="Creation" type="xs:date" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="Modified" type="xs:date" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="Revision" type="xs:string" maxOccurs="1" minOccurs="1"/>
-        </xs:sequence>
-    </xs:complexType>
-    <xs:complexType name="TRuleContent">
-        <xs:sequence>
-            <xs:element name="Name" type="xs:string" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="IsParent" type="xs:boolean" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="IsSon" type="xs:boolean" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="ParentUID" type="hb:TRuleUID" maxOccurs="1" minOccurs="1" nillable="true"/>
-            <xs:element name="Technology" type="hb:EnumTech" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="ApplicationFields" type="hb:ListAppliFields" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="Category" type="hb:EnumCat" maxOccurs="1"	minOccurs="1"/>
-            <xs:element name="SubCategory" type="hb:EnumSubCat"	maxOccurs="1" minOccurs="1"/>
-            <xs:element name="Severity" type="hb:EnumSeverity" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="Rationale" type="xs:string" maxOccurs="1"	minOccurs="1"/>
-            <xs:element name="ShortDesc" type="xs:string" maxOccurs="1"	minOccurs="1"/>
-            <xs:element name="LongDesc" type="xs:string" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="Status" type="hb:EnumRuleStatus" maxOccurs="1" minOccurs="1"/>	<!-- Current status of the rule -->
+            <xs:element name="Engine" type="hb:EnumRuleEngine" maxOccurs="1" minOccurs="1"/>	<!-- Engine which as to be used for rule checking -->
+            <xs:element name="Version" type="xs:positiveInteger" maxOccurs="1" minOccurs="1"/> 	<!-- Rule current version number  -->
+            <xs:element name="Creation" type="xs:date" maxOccurs="1" minOccurs="1"/>			<!-- Rule date of creation -->	
+            <xs:element name="Modified" type="xs:date" maxOccurs="1" minOccurs="1"/>			<!-- Rule date of last modification -->
+            <xs:element name="Revision" type="xs:string" maxOccurs="1" minOccurs="1"/>			<!-- Rule date of last modification -->
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="TSonarqube">
+    <xs:complexType name="TRuleContent">																	<!-- Group of information relating to the content of the Rule -->
         <xs:sequence>
-			<xs:element name="SonarType" type="hb:EnumSonarType" maxOccurs="1" minOccurs="1" />
-            <xs:element name="SonarSeverity" type="hb:EnumSonarSeverity" maxOccurs="1" minOccurs="1"/>			
-            <xs:element name="RemediationEffort" type="hb:EnumEffort" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="SonarTag" type="hb:EnumTag" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="Name" type="xs:string" maxOccurs="1" minOccurs="1"/>							<!-- Name of the Rule  -->
+            <xs:element name="IsParent" type="xs:boolean" maxOccurs="1" minOccurs="1"/>						<!-- True if the rule is parent of others rules. False otherwise  -->
+            <xs:element name="IsSon" type="xs:boolean" maxOccurs="1" minOccurs="1"/>						<!-- True if the rule is son of a rule. False otherwise  -->
+            <xs:element name="ParentUID" type="hb:TRuleUID" maxOccurs="1" minOccurs="1" nillable="true"/>	<!-- True if the rule is son of a rule. False otherwise --> 
+            <xs:element name="Technology" type="hb:EnumTech" maxOccurs="1" minOccurs="1"/>					<!-- Physical component targetted by the rule -->
+            <xs:element name="ApplicationFields" type="hb:ListAppliFields" maxOccurs="1" minOccurs="1"/>	<!-- Specifies fields of application (spatial, avionic, etc.) -->
+            <xs:element name="Category" type="hb:EnumCat" maxOccurs="1"	minOccurs="1"/>						<!-- Technical field category targeted by the rule -->
+            <xs:element name="SubCategory" type="hb:EnumSubCat"	maxOccurs="1" minOccurs="1"/>				<!-- General thematic subcategory for the rule  -->
+            <xs:element name="Severity" type="hb:EnumSeverity" maxOccurs="1" minOccurs="1"/>				<!-- Severity of the rule -->
+            <xs:element name="Rationale" type="xs:string" maxOccurs="1"	minOccurs="1"/>						<!-- Justification of the existence of the rule -->
+            <xs:element name="ShortDesc" type="xs:string" maxOccurs="1"	minOccurs="1"/>						<!-- Rule short description -->
+            <xs:element name="LongDesc" type="xs:string" maxOccurs="1" minOccurs="1"/>						<!-- Rule long description -->
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="TRuleDesc">
+    <xs:complexType name="TSonarqube">																		<!-- Group of information relating to Sonarqube rule display	 -->	
         <xs:sequence>
-            <xs:element name="GoodExDesc" type="xs:string" maxOccurs="1" minOccurs="1" nillable="true"/>
-            <xs:element name="GoodExample" type="xs:string"	maxOccurs="1" minOccurs="1" nillable="true"/>
-            <xs:element name="BadExDesc" type="xs:string" maxOccurs="1"	minOccurs="1" nillable="true"/>
-            <xs:element name="BadExample" type="xs:string" maxOccurs="1" minOccurs="1" nillable="true"/>
-            <xs:element name="FigureDesc" type="xs:string" maxOccurs="1" minOccurs="1" nillable="true"/>
-            <xs:element name="Figure" type="hb:TFigure" maxOccurs="1" minOccurs="1" nillable="true"/>
+			<xs:element name="SonarType" type="hb:EnumSonarType" maxOccurs="1" minOccurs="1" />				<!-- Tag to categorize the rule see https://docs.sonarqube.org/latest/extend/adding-coding-rules/ -->
+            <xs:element name="SonarSeverity" type="hb:EnumSonarSeverity" maxOccurs="1" minOccurs="1"/>		<!-- Severity based on Sonarqube definition see https://docs.sonarqube.org/latest/extend/adding-coding-rules/	 -->
+            <xs:element name="RemediationEffort" type="hb:EnumSonarEffort" maxOccurs="1" minOccurs="1"/>	<!-- Classification of the effort to do the remediation as defined in see https://docs.sonarqube.org/latest/extend/adding-coding-rules/ -->
+            <xs:element name="SonarTag" type="hb:EnumSonarTag" maxOccurs="1" minOccurs="1"/>				<!-- Tag to categorize issues generated by the rule violation see https://docs.sonarqube.org/latest/user-guide/concepts/ -->
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="TFigure">
-        <xs:attribute name="fileref" type="xs:anySimpleType"/>
-        <xs:attribute name="height" type="xs:string"/>
-        <xs:attribute name="width" type="xs:string"/>
-    </xs:complexType>
-    <xs:complexType name="TRuleParams">
+    <xs:complexType name="TRuleDesc">																		<!-- Explanation regarding the Rule --> 
         <xs:sequence>
-            <xs:element name="IntParam" type="hb:TIntParam" maxOccurs="unbounded" minOccurs="0" />
-            <xs:element name="StringParam" type="hb:TStringParam" maxOccurs="unbounded" minOccurs="0"/>
-            <xs:element name="RangeParam" type="hb:TRangeParam" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="GoodExDesc" type="xs:string" maxOccurs="1" minOccurs="1" nillable="true"/>	<!-- Description in plain text of the example -->
+            <xs:element name="GoodExample" type="xs:string"	maxOccurs="1" minOccurs="1" nillable="true"/>	<!-- Rule Example --> 
+            <xs:element name="BadExDesc" type="xs:string" maxOccurs="1"	minOccurs="1" nillable="true"/>		<!-- Description in plain text of the counter example -->
+            <xs:element name="BadExample" type="xs:string" maxOccurs="1" minOccurs="1" nillable="true"/>	<!-- Rule Counter Example --> 
+            <xs:element name="FigureDesc" type="xs:string" maxOccurs="1" minOccurs="1" nillable="true"/>	<!-- Description in plain text of the figure (legend) --> 
+            <xs:element name="Figure" type="hb:TFigure" maxOccurs="1" minOccurs="1" nillable="true"/>		<!-- Figure to illustrate the rule  -->
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="TIntParam">
+    <xs:complexType name="TFigure">								<!-- SVG figure to illustrate a rule	 -->
+        <xs:attribute name="fileref" type="xs:anySimpleType"/>	<!-- name of the figure (the path is set in the toolchain which will include it in the final PDF) -->
+        <xs:attribute name="height" type="xs:string"/>			<!-- height of the figure to be put in the pdf -->
+        <xs:attribute name="width" type="xs:string"/>			<!-- width of the figure to be put in the pdf -->
+    </xs:complexType>
+    <xs:complexType name="TRuleParams">																	<!-- Rulechecker’s parameters for the Rule -->		
         <xs:sequence>
-            <xs:element name="ParamID" type="hb:TParamID" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="Relation" type="hb:EnumRelation" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="Value" type="xs:positiveInteger" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="IntParam" type="hb:TIntParam" maxOccurs="unbounded" minOccurs="0" />		<!-- optional Integer parameter for a Rule  -->
+            <xs:element name="StringParam" type="hb:TStringParam" maxOccurs="unbounded" minOccurs="0"/>	<!-- optional String characters that have to be found at dedicated position --> 	
+            <xs:element name="RangeParam" type="hb:TRangeParam" maxOccurs="unbounded" minOccurs="0"/>	<!-- optional integer range parameter for the rule -->
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="TStringParam">
+    <xs:complexType name="TIntParam">															<!-- Integer parameter for a Rule -->
         <xs:sequence>
-            <xs:element name="ParamID" type="hb:TParamID" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="Position" type="hb:EnumPosition" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="Value" type="xs:string" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="ParamID" type="hb:TParamID" maxOccurs="1" minOccurs="1"/>			<!-- Identifier for the parameter to link with the current Rule text description .Param ID can be share with other parameters -->		
+            <xs:element name="Relation" type="hb:EnumRelation" maxOccurs="1" minOccurs="1"/>	<!-- Evaluation to be done with the value -->
+            <xs:element name="Value" type="xs:positiveInteger" maxOccurs="1" minOccurs="1"/>	<!-- Integer parameter value -->
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="TRangeParam">
+    <xs:complexType name="TStringParam">														<!-- String characters that have to be found at dedicated position -->
         <xs:sequence>
-            <xs:element name="ParamID" type="hb:TParamID" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="Range" type="hb:EnumRange" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="ValueMin" type="xs:integer" maxOccurs="1" minOccurs="1"/>
-            <xs:element name="ValueMax" type="xs:integer" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="ParamID" type="hb:TParamID" maxOccurs="1" minOccurs="1"/>			<!-- Identifier for the parameter to link with the current Rule text description .Param ID can be share with other parameters -->
+            <xs:element name="Position" type="hb:EnumPosition" maxOccurs="1" minOccurs="1"/>	<!-- Position of the researched string within a word -->
+            <xs:element name="Value" type="xs:string" maxOccurs="1" minOccurs="1"/>				<!-- Text to be match as substring -->
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TRangeParam">													<!-- integer range parameter for the rule -->
+        <xs:sequence>
+            <xs:element name="ParamID" type="hb:TParamID" maxOccurs="1" minOccurs="1"/> <!-- Identifier for the parameter to link with the current Rule text description .Param ID can be share with other parameters -->
+            <xs:element name="Range" type="hb:EnumRange" maxOccurs="1" minOccurs="1"/>	<!-- Operation to be done with the two values -->	
+            <xs:element name="ValueMin" type="xs:integer" maxOccurs="1" minOccurs="1"/>	<!-- Smallest integer value for range  --> 	
+            <xs:element name="ValueMax" type="xs:integer" maxOccurs="1" minOccurs="1"/>	<!-- Biggest integer value for range -->
         </xs:sequence>
 <!--    <xs:assert test="@ValueMax > @ValueMin"/> -->
     </xs:complexType>
-    <!-- ======================= -->
-    <!-- Simple type definition  -->
-    <!-- ======================= -->
-    <xs:simpleType name="TRuleUID">
-        <xs:restriction base="xs:string">
+
+    <xs:simpleType name="TRuleUID">					<!-- Format allowed for Rule UID -->
+        <xs:restriction base="xs:string">			<!-- type string with only one format: "3 upercase letters" + "_"+ "4 digits". Each ID is unique -->
             <xs:pattern value="[A-Z]{3}_[0-9]{5}"/>
         </xs:restriction>
     </xs:simpleType>
-    <xs:simpleType name="TParamID">
-        <xs:restriction base="xs:string">
+    <xs:simpleType name="TParamID">				<!-- Format allowed for parameter ID for a Rule -->
+        <xs:restriction base="xs:string">		<!-- type string with only one format: "P" + "digits". -->
             <xs:pattern value="P[0-9]+"/>
         </xs:restriction>
     </xs:simpleType>
-    <xs:simpleType name="EnumRuleStatus">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="Draft"/>
-            <xs:enumeration value="In progress"/>
-            <xs:enumeration value="Release candidate"/>
-            <xs:enumeration value="Validated"/>
-            <xs:enumeration value="Rejected"/>
-            <xs:enumeration value="Active"/>
-	    <xs:enumeration value="Implemented"/>
-            <xs:enumeration value="Deleted"/>
-            <xs:enumeration value="To be discussed"/>
-            <xs:enumeration value="Modified"/>
+    <xs:simpleType name="EnumRuleStatus">				
+        <xs:restriction base="xs:string">				<!-- Rule in draft version with name and origin -->
+            <xs:enumeration value="Draft"/>				<!-- Rule currently being filled -->
+            <xs:enumeration value="In progress"/>		<!-- Rule finished: ready for first stage review -->
+            <xs:enumeration value="Release candidate"/>	<!-- Rule needs to be analyzed and discussed -->
+            <xs:enumeration value="Validated"/>			<!-- Rule ready for second stage review -->
+            <xs:enumeration value="Rejected"/>			<!-- Rule was rejected – needs to be reworked or deleted -->
+            <xs:enumeration value="Active"/>			<!-- Rule final version after every reviews  -->
+	    	<xs:enumeration value="Implemented"/>		<!-- Rule implemented inside an engine -->
+            <xs:enumeration value="Deleted"/>			<!-- Rule is no longer part of the handbook -->
+            <xs:enumeration value="To be discussed"/>	<!-- Rule needs to be analyzed and discussed -->
+            <xs:enumeration value="Modified"/>			<!-- Rule has been modified since the last release -->
         </xs:restriction>
     </xs:simpleType>
-    <xs:simpleType name="EnumTech">
+        <xs:simpleType name="EnumRuleEngine">		<!-- Engine to be used to verify the rule -->
         <xs:restriction base="xs:string">
-            <xs:enumeration value="FPGA"/>
-            <xs:enumeration value="ASIC"/>
-            <xs:enumeration value="VLSI"/>
+            <xs:enumeration value="ZamiaCad"/> 		<!-- use of Zamaicad engine to evaluate the rule -->
+            <xs:enumeration value="Yosys-ghdl"/>	<!-- use of Yosys engine which ghdl frontend to evaluate the rule -->
+            <xs:enumeration value="Yosys"/>			<!-- use of Yosys engine to evaluate the rule -->
+            <xs:enumeration value="None"/>     		<!-- No engine identified for this rule-->  
         </xs:restriction>
     </xs:simpleType>
-    <xs:simpleType name="EnumCat">
+    <xs:simpleType name="EnumTech">			 <!-- Physical component targetted by the rule -->
         <xs:restriction base="xs:string">
-            <xs:enumeration value="Traceability"/>
-            <xs:enumeration value="Formatting"/>
-            <xs:enumeration value="Design"/>
-            <xs:enumeration value="Simulation"/>
+            <xs:enumeration value="FPGA"/>	<!-- The Rule apply only to FPGA -->
+            <xs:enumeration value="ASIC"/>	<!-- The Rule apply only to ASIC -->
+            <xs:enumeration value="VLSI"/>	<!-- The Rule this general an apply to every kind of IC (ASIC,FPGA, SOC) -->
         </xs:restriction>
     </xs:simpleType>
-    <xs:simpleType name="EnumSubCat">
+    <xs:simpleType name="EnumCat">					<!-- Technical field category targeted by the rule  -->
         <xs:restriction base="xs:string">
-            <xs:enumeration value="Versioning"/>
-            <xs:enumeration value="Reuse"/>
-            <xs:enumeration value="Requirement"/>
-            <xs:enumeration value="Miscellaneous"/>
-            <xs:enumeration value="Naming"/>
-            <xs:enumeration value="FileStructure"/>
-            <xs:enumeration value="StateMachine"/>
-            <xs:enumeration value="Reset"/>
-            <xs:enumeration value="Clocking"/>
-            <xs:enumeration value="I/O"/>
-            <xs:enumeration value="Synchronous"/>
-            <xs:enumeration value="Combinational"/>
-            <xs:enumeration value="Type"/>
-            <xs:enumeration value="Reliability"/>
+            <xs:enumeration value="Traceability"/>	<!-- Selected when the rule targets on the way of tracing VHDL code -->
+            <xs:enumeration value="Formatting"/>	<!-- Selected when the rule targets on the way of formatting VHDL code -->
+            <xs:enumeration value="Design"/>		<!-- Selected when the rule targets architectural VHDL design -->
+            <xs:enumeration value="Simulation"/>	<!-- Selected when the rule targets VHDL Simulation oriented modules only -->
         </xs:restriction>
     </xs:simpleType>
-    <xs:simpleType name="EnumSeverity">
+    <xs:simpleType name="EnumSubCat">				<!-- General thematic subcategory for the rule -->
         <xs:restriction base="xs:string">
-            <xs:enumeration value="Note"/>
-            <xs:enumeration value="Minor"/>
-            <xs:enumeration value="Major"/>
+            <xs:enumeration value="Versioning"/>	<!-- Selected when the rule targets versioning and file management topics -->
+            <xs:enumeration value="Reuse"/>			<!-- Selected when the rule targets the reuse of any element from a previous development or for a future one -->
+            <xs:enumeration value="Requirement"/>	<!-- Selected when the rule targets the link between specifications document and VHDL code -->
+            <xs:enumeration value="Miscellaneous"/>	<!-- Selected when the rule does not target any previous SubCat -->
+            <xs:enumeration value="Naming"/>		<!-- Selected when the rule targets naming of files, signals or entity names. -->
+            <xs:enumeration value="FileStructure"/>	<!-- Selected when the rule targets source file structure (architecture, entity, ports mapping…) -->
+            <xs:enumeration value="StateMachine"/>	<!-- Selected when the rule targets FSM in particular -->
+            <xs:enumeration value="Reset"/>			<!-- Selected when the rule targets Reset mechanism -->
+            <xs:enumeration value="Clocking"/>		<!-- Selected when the rule targets Clocks generation, domain change, clock tree -->
+            <xs:enumeration value="I/O"/>			<!-- Selected when the rule targets Input and Output component elements -->
+            <xs:enumeration value="Synchronous"/>	<!-- Selected when the rule targets synchronous process structure and behavior -->
+            <xs:enumeration value="Combinational"/>	<!-- Selected when the rule targets combinational elements -->
+            <xs:enumeration value="Type"/>			<!-- Selected when the rule targets signals, port and generic typing -->
+            <xs:enumeration value="Reliability"/>	<!-- Selected when the rule targets reliability topics -->
         </xs:restriction>
     </xs:simpleType>
-	<xs:simpleType name="EnumSonarType">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="Vulnerability"/>
-			<xs:enumeration value="Bug"/>
-			<xs:enumeration value="Code_Smell"/>
+    <xs:simpleType name="EnumSeverity">		<!-- Severity of the rule -->
+        <xs:restriction base="xs:string">	
+            <xs:enumeration value="Note"/>	<!-- Selected when rule is for information only. The handbook user is responsible for the application (or not) of this rule . -->
+            <xs:enumeration value="Minor"/>	<!-- Selected when rule might be critical. Non-conformance to a Minor rule can be approved in dedicated meeting, without Non-Conformance Report. -->
+            <xs:enumeration value="Major"/>	<!-- Selected when the rule is mandatory. Any deviation to a Major rule must be reported in a Non-Conformance Report and must be agreed by customer. -->
+        </xs:restriction>
+    </xs:simpleType>
+	<xs:simpleType name="EnumSonarType">			<!-- Tag to categorize the rule --> 		
+		<xs:restriction base="xs:string">	
+			<xs:enumeration value="Vulnerability"/> <!-- Bug with a high probability to impact the behavior of the application in production: unexpected synthesis result ... The code MUST be immediately fixed	 -->
+			<xs:enumeration value="Bug"/>			<!-- An issue that represents something wrong in the code. If this has not broken yet, it will, and probably at the worst possible moment. This needs to be fixed -->
+			<xs:enumeration value="Code_Smell"/>	<!-- A maintainability-related issue in the code. Leaving it as-is means that at best maintainers will have a harder time than they should making changes to the code. At worst, they'll be so confused by the state of the code that they'll introduce additional errors as they make changes. -->
 		</xs:restriction>
 	</xs:simpleType>
-    <xs:simpleType name="EnumEffort">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="Trivial"/>
-            <xs:enumeration value="Easy"/>
-            <xs:enumeration value="Medium"/>
-            <xs:enumeration value="Major"/>
-            <xs:enumeration value="High"/>
-            <xs:enumeration value="Complex"/>
+    <xs:simpleType name="EnumSonarEffort">		<!-- Classification of the effort to do the remediation as defined by Sonarqube --> 			
+        <xs:restriction base="xs:string">        
+            <xs:enumeration value="Trivial"/>	<!-- No need to understand the logic and no potential impact. Examples: remove unused signals, replace tabulations by spaces,.	 --> 	
+            <xs:enumeration value="Easy"/>		<!-- No need to understand the logic but potential impacts. Examples: rename a signal, rename a component, remove unused process… --> 
+            <xs:enumeration value="Medium"/>	<!-- Understanding the logic of a piece of code is required before doing a little and easy refactoring (1 or 2 lines of code). But understanding the big picture is not required. Examples: correct process sensitivity list, IF should be closed with END-IF, .. --> 
+            <xs:enumeration value="Major"/>		<!-- Understanding the logic of a piece of code is required and it's up to the developer to define the remediation action. Examples: Too many nested IF statements, add additional comments.. --> 
+            <xs:enumeration value="High"/>		<!-- The remediation action might lead to locally impact the design of the application.Examples: entities should not have too many lines of code, output components port are not registered... --> 
+            <xs:enumeration value="Complex"/>	<!-- The remediation action might lead to impact the overall design of the application.Examples: Avoid cycles between packages, ... -->
         </xs:restriction>
     </xs:simpleType>
-    <xs:simpleType name="EnumTag">
+    <xs:simpleType name="EnumSonarTag">					<!-- Tag to categorize issues generated by the rule violation  --> 
         <xs:restriction base="xs:string">
-            <xs:enumeration value="Brain-overload"/>
-            <xs:enumeration value="Bad-practice"/>
-            <xs:enumeration value="Bug"/>
-            <xs:enumeration value="Clumsty"/>
-            <xs:enumeration value="Confusing"/>
-            <xs:enumeration value="Convention"/>
-            <xs:enumeration value="Design"/>
-            <xs:enumeration value="Lock-in"/>
-            <xs:enumeration value="Pittfall"/>
-            <xs:enumeration value="Security"/>
-            <xs:enumeration value="Suspicious"/>
-            <xs:enumeration value="Unpredictable"/>
-            <xs:enumeration value="Unused"/>
-            <xs:enumeration value="User-experience"/>
+            <xs:enumeration value="Brain-overload"/>	<!-- There is too much to keep in your head at one time --> 
+            <xs:enumeration value="Bad-practice"/>		<!-- The code likely works as designed, but the way it was designed is widely recognized as being a bad idea --> 
+            <xs:enumeration value="Bug"/>				<!-- Something is wrong and it will probably affect production --> 
+            <xs:enumeration value="Clumsty"/>			<!-- Extra steps are used to accomplish something that could be done more clearly and concisely --> 
+            <xs:enumeration value="Confusing"/>			<!-- Will take maintainers longer to understand than is really justified by what the code actually does --> 
+            <xs:enumeration value="Convention"/>		<!-- Coding convention - typically formatting, naming, whitespace... --> 
+            <xs:enumeration value="Design"/>			<!-- There is something questionable about the design of the code --> 
+            <xs:enumeration value="Lock-in"/>			<!-- Environment-specific features are used --> 
+            <xs:enumeration value="Pittfall"/>			<!-- Nothing is wrong yet, but something could go wrong in the future; a trap has been set for the next guy, & he'll probably fall into it and screw up the code. --> 
+            <xs:enumeration value="Security"/>			<!-- Relates to the security of an application. --> 
+            <xs:enumeration value="Suspicious"/>		<!-- It's not guaranteed that this is a bug, but it looks suspiciously like one. At the very least, the code should be re-examined & likely refactored for clarity --> 
+            <xs:enumeration value="Unpredictable"/>		<!-- The code may work fine under current conditions, but may fail erratically if conditions change --> 
+            <xs:enumeration value="Unused"/>			<!-- Unused code. --> 
+            <xs:enumeration value="User-experience"/>	<!-- There's nothing technically wrong with your code, but it may make some or all of your users hate you --> 
         </xs:restriction>
     </xs:simpleType>
-    <xs:simpleType name="EnumSonarSeverity">
+    <xs:simpleType name="EnumSonarSeverity">	<!-- Severity based on Sonarqube definition --> 
         <xs:restriction base="xs:string">
-            <xs:enumeration value="Blocker"/>
-            <xs:enumeration value="Critical"/>
-            <xs:enumeration value="Major"/>
-            <xs:enumeration value="Minor"/>
-            <xs:enumeration value="Info"/>
+            <xs:enumeration value="Blocker"/>	<!-- Bug with a high probability to impact the behavior of the application in production: unexpected synthesis result ... The code MUST be immediately fixed --> 
+            <xs:enumeration value="Critical"/>	<!-- Either a bug with a low probability to impact the behavior of the application in production. The code MUST be immediately reviewed --> 
+            <xs:enumeration value="Major"/>		<!-- Quality flaw which can highly impact the developer productivity: uncovered piece of code, duplicated blocks ... and/or code which is so badly designed that we can't even be sure that the implementation fits developer's expectation: unused parameters.. --> 
+            <xs:enumeration value="Minor"/>		<!-- Quality flaw which can slightly impact the developer productivity: lines should not be too long, case statements should be complete... --> 
+            <xs:enumeration value="Info"/>		<!-- Neither a bug nor a quality flaw, just a finding --> 
         </xs:restriction>
     </xs:simpleType>
-    <xs:simpleType name="EnumRelation">
+    <xs:simpleType name="EnumRelation">		<!-- Evaluation to be done with the integer value -->
         <xs:restriction base="xs:string">
-            <xs:enumeration value="LT"/>
-            <xs:enumeration value="LET"/>
-            <xs:enumeration value="E"/>
-            <xs:enumeration value="GET"/>
-            <xs:enumeration value="GT"/>
+            <xs:enumeration value="LT"/>	<!-- Evaluated parameter must be lesser than the Value. Parameter < Value -->
+            <xs:enumeration value="LET"/>	<!-- Evaluated parameter must be lesser than the Value. Parameter < Value -->
+            <xs:enumeration value="E"/>		<!-- Evaluated parameter must be equal to the Value. Parameter = Value -->
+            <xs:enumeration value="GET"/>	<!-- Evaluated parameter must be greater or equal than the Value. Parameter >= Value -->
+            <xs:enumeration value="GT"/>	<!-- Evaluated parameter must be greater than the Value. Parameter > Value -->
         </xs:restriction>
     </xs:simpleType>
-    <xs:simpleType name="EnumPosition">
+    <xs:simpleType name="EnumPosition">			<!-- String characters that have to be found at dedicated position  -->
         <xs:restriction base="xs:string">
-            <xs:enumeration value="Prefix"/>
-            <xs:enumeration value="Contain"/>
-            <xs:enumeration value="Equal"/>
-            <xs:enumeration value="Suffix"/>
+            <xs:enumeration value="Prefix"/>	<!-- The requested string must be matched at the beginning of a word to be analyzed -->
+            <xs:enumeration value="Contain"/>	<!-- The requested string must be matched within of a word to be analyzed -->
+            <xs:enumeration value="Equal"/>		<!-- The requested string must be exactly the word to be analyzed -->
+            <xs:enumeration value="Suffix"/>	<!-- The requested string must be matched at the end of a word to be analyzed -->
         </xs:restriction>
     </xs:simpleType>
-    <xs:simpleType name="EnumRange">
+    <xs:simpleType name="EnumRange">			<!-- Operation to be done with the two values -->
         <xs:restriction base="xs:string">
-            <xs:enumeration value="LT_GT"/>
-            <xs:enumeration value="LET_GT"/>
-            <xs:enumeration value="LET_GET"/>
-            <xs:enumeration value="LT_GET"/>
+            <xs:enumeration value="LT_GT"/>		<!-- ValueMin < Parameter < ValueMax -->
+            <xs:enumeration value="LET_GT"/>	<!-- ValueMin < Parameter <= ValueMax -->
+            <xs:enumeration value="LET_GET"/>	<!-- ValueMin <= Parameter <= ValueMax -->
+            <xs:enumeration value="LT_GET"/>	<!-- ValueMin <= Parameter < ValueMax -->
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="ListAppliFields">
@@ -269,3 +270,84 @@
         </xs:restriction>
     </xs:simpleType>
 </xs:schema>
+
+
+<!-- 
+#################################
+	ADDITIONNAL INFORMATION REGARDING THE SCHEMA
+#################################
+Rule->RuleUID field is formatted as follows: LLL_DDDDD with L representing a Letter and D a Digit. Some three letters match is reserved:
+Acronym Description :
+
+ADS Airbus Defense and Space specific rule
+ALT Altran specific rule
+CNE CNES specific rule
+ERM Erems specific rule
+ESA ESA specific rule
+GEN Generic rule implementation in Rulechecker
+SOD Sodern specific rule
+STE Steel Electronique specific rule
+TAS Thalès Alenia Space specific rule
+TSA Thales Système Aeroporté specific rule
+STD VHDL handbook global rule
+TMP Draft/Temporary/Test rule
+#################################
+Rule->RuleContent->UID rule attribute shall be exactly the same as Rule->RuleContent->RuleUID. 
+It will ease the identification of a rule (by its UID) while using eclipse.
+#################################
+Rule->RuleContent->Category and Rule->RuleContent->SubCategory fields shall be
+filled as follows (where + indicates match availability and – indicates forbidden match)
+
+                                             EnumCat
+                            Design    Formatting Traceability  Simulation
+EnumsubCat   Clocking          +         -          -              -
+             Combinational     +         -          -              -
+             FileStructure     -         +          -              -
+             I/O               +         -          -              -
+             Miscellaneous     +         +          +              +
+             Naming            -         +          -              -
+             Requirement       -         -          +              -
+             Reset             +         -          -              -
+             Reuse             -         -          +              -
+             StateMachine      +         -          -              -
+             Synchronous       +         -          -              -
+             Type              +         -          -              -
+             Versioning        -         -          +              -
+             Reliability       +         -          -              -
+#################################
+Rule->RuleContent->IsParent is selected to true if there is a rule identified as its son
+which exists inside the Ruleset.
+A parent shall not be a son of another rule (that is to say nested parenting is not allowed).
+ #################################
+Rule->RuleContent->IsSon field is selected to true if the rule is an additional
+enhancement to a dedicated parent rule (identified by a unique ParentUID value).
+ #################################
+Parent and Son rules shall have the same category/subcategory value.
+#################################
+RuleSetHist ->Revision and Rule->RuleHist->Revision are used to records changes.
+Those fields are fulfilled as follow:
+
+- RuleSetHist ->Revision
+V1: yyyy-mm-dd: Creation
+V2: yyyy-mm-dd: "Information about the V2 release"
+
+-Rule->RuleHist->Revision
+V1: yyyy-mm-dd: Creation
+V2: yyyy-mm-dd: "Modified Fields for V2 rule release
+#################################
+Rule-> Sonarqube shall be respect the following statements :
+	 The tag should not appear on any rule of less than a CRITICAL for Rule->RuleContent->SonarSeverity.
+	 When we're talking about a bad design, or coding practice that might lead to an unexpected behavior the suspicious tag should be used instead of bug.
+#################################
+Rule->RuleContent-> Sonarqube ->SonarSeverity shall always be minor for convention rules.
+#################################
+The following table ([DR4]) is used to get the remediation cost per violation according to the
+required remediation E (Rule->RuleContent-> Sonarqube -> RemediationEffort):
+
+							TRIVIAL   EASY     MEDIUM    MAJOR     HIGH     COMPLEX
+Other languages : VHDL      5 mn      10 mn     20 mn     1 h      3 h       1 d
+#################################
+
+
+
+-->

@@ -50,6 +50,7 @@ A rule has the following template :
 	<hb:RuleUID>LLL_DDDDD</hb:RuleUID>
 	<hb:RuleHist>
 		<hb:Status>Status</hb:Status>
+		<hb:Engine>Engine</hb:Engine>
 		<hb:Version>X</hb:Version>
 		<hb:Creation>YYYY-MM-DD</hb:Creation>
 		<hb:Modified>YYYY-MM-DD</hb:Modified>
