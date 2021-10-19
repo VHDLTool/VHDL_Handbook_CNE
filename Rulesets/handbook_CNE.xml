@@ -46,11 +46,11 @@
 	<hb:Rule UID="CNE_00200">
 		<hb:RuleUID>CNE_00200</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>6</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Yosys-ghdl</hb:Engine>
+			<hb:Version>7</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -82,14 +82,16 @@
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule><hb:Rule UID="CNE_00300">
+	</hb:Rule>
+
+	<hb:Rule UID="CNE_00300">
 		<hb:RuleUID>CNE_00300</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>6</hb:Version>
+            <hb:Status>Implemented</hb:Status>
+			<hb:Engine>Java</hb:Engine>
+			<hb:Version>7</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -120,7 +122,9 @@
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule><hb:Rule UID="CNE_00400">
+	</hb:Rule>
+
+	<hb:Rule UID="CNE_00400">
 		<hb:RuleUID>CNE_00400</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
@@ -158,7 +162,9 @@
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule><hb:Rule UID="CNE_00500">
+	</hb:Rule>
+
+	<hb:Rule UID="CNE_00500">
 		<hb:RuleUID>CNE_00500</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
@@ -826,6 +832,13 @@ If a significant number of registration of a same signal is used, use an array f
 			<hb:FigureDesc></hb:FigureDesc>
 			<hb:Figure />
 		</hb:RuleDesc>
+		<hb:RuleParams>
+			<hb:StringParam>
+			   <hb:ParamID>P1</hb:ParamID>
+			   <hb:Position>Prefix</hb:Position>
+			   <hb:Value>sm_</hb:Value>
+		   </hb:StringParam>
+	   </hb:RuleParams>
 	</hb:Rule>
 
 	<hb:Rule UID="CNE_02100">
@@ -1082,11 +1095,11 @@ It is also best practice to keep the reset name the same between entity ports wi
 	</hb:Rule><hb:Rule UID="CNE_02700">
 		<hb:RuleUID>CNE_02700</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>5</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Java</hb:Engine>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -1119,14 +1132,22 @@ The definition area (for signals, constants components...) is not included in th
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule><hb:Rule UID="CNE_02800">
+	<hb:RuleParams>
+			<hb:IntParam>
+				<hb:ParamID>P1</hb:ParamID>
+				<hb:Relation>LET</hb:Relation>
+				<hb:Value>450</hb:Value>
+			</hb:IntParam>
+		</hb:RuleParams>
+	</hb:Rule>
+	<hb:Rule UID="CNE_02800">	
 		<hb:RuleUID>CNE_02800</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>4</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Java</hb:Engine>
+			<hb:Version>5</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -1156,17 +1177,24 @@ The definition area (for signals, constants components...) is not included in th
 			<hb:BadExample />
 			<hb:FigureDesc />
 			<hb:Figure />
-		</hb:RuleDesc>
+		</hb:RuleDesc>		
+		<hb:RuleParams>
+			<hb:StringParam>
+				<hb:ParamID>P1</hb:ParamID>
+				<hb:Position>Equal</hb:Position>
+				<hb:Value>Automatic VHDL coding</hb:Value>
+			</hb:StringParam>
+		</hb:RuleParams>
 	</hb:Rule>
 	
 	<hb:Rule UID="CNE_02900">
 		<hb:RuleUID>CNE_02900</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>4</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Java</hb:Engine>
+			<hb:Version>5</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -1197,14 +1225,22 @@ The definition area (for signals, constants components...) is not included in th
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule><hb:Rule UID="CNE_03000">
+			<hb:RuleParams>
+			<hb:StringParam>
+				<hb:ParamID>P1</hb:ParamID>
+				<hb:Position>Equal</hb:Position>
+				<hb:Value>File name</hb:Value>
+			</hb:StringParam>
+		</hb:RuleParams>
+	</hb:Rule>
+	<hb:Rule UID="CNE_03000">
 		<hb:RuleUID>CNE_03000</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>5</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Java</hb:Engine>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -1235,14 +1271,22 @@ The definition area (for signals, constants components...) is not included in th
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule><hb:Rule UID="CNE_03100">
+				<hb:RuleParams>
+			<hb:StringParam>
+				<hb:ParamID>P1</hb:ParamID>
+				<hb:Position>Equal</hb:Position>
+				<hb:Value>File Creation date</hb:Value>
+			</hb:StringParam>
+		</hb:RuleParams>
+	</hb:Rule>
+	<hb:Rule UID="CNE_03100">
 		<hb:RuleUID>CNE_03100</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>4</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Java</hb:Engine>
+			<hb:Version>5</hb:Version>
 			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -1273,14 +1317,23 @@ The definition area (for signals, constants components...) is not included in th
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule><hb:Rule UID="CNE_03200">
+		<hb:RuleParams>
+			<hb:StringParam>
+				<hb:ParamID>P1</hb:ParamID>
+				<hb:Position>Equal</hb:Position>
+				<hb:Value>Project name</hb:Value>
+			</hb:StringParam>
+		</hb:RuleParams>
+
+	</hb:Rule>
+	<hb:Rule UID="CNE_03200">
 		<hb:RuleUID>CNE_03200</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>4</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Java</hb:Engine>
+			<hb:Version>5</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -1311,14 +1364,22 @@ The definition area (for signals, constants components...) is not included in th
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule><hb:Rule UID="CNE_03300">
+		<hb:RuleParams>
+			<hb:StringParam>
+				<hb:ParamID>P1</hb:ParamID>
+				<hb:Position>Equal</hb:Position>
+				<hb:Value>Author</hb:Value>
+			</hb:StringParam>
+		</hb:RuleParams>
+	</hb:Rule>
+	<hb:Rule UID="CNE_03300">
 		<hb:RuleUID>CNE_03300</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>4</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Java</hb:Engine>
+			<hb:Version>5</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -1349,14 +1410,22 @@ The definition area (for signals, constants components...) is not included in th
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule><hb:Rule UID="CNE_03400">
+	<hb:RuleParams>
+			<hb:StringParam>
+				<hb:ParamID>P1</hb:ParamID>
+				<hb:Position>Equal</hb:Position>
+				<hb:Value>Description</hb:Value>
+			</hb:StringParam>
+		</hb:RuleParams>
+	</hb:Rule>
+	<hb:Rule UID="CNE_03400">
 		<hb:RuleUID>CNE_03400</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>3</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Java</hb:Engine>
+			<hb:Version>4</hb:Version>
 			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -1387,14 +1456,22 @@ The definition area (for signals, constants components...) is not included in th
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule><hb:Rule UID="CNE_03500">
+		<hb:RuleParams>
+			<hb:StringParam>
+				<hb:ParamID>P1</hb:ParamID>
+				<hb:Position>Equal</hb:Position>
+				<hb:Value>Naming conventions</hb:Value>
+			</hb:StringParam>
+		</hb:RuleParams>
+	</hb:Rule>
+	<hb:Rule UID="CNE_03500">
 		<hb:RuleUID>CNE_03500</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>3</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Java</hb:Engine>
+			<hb:Version>4</hb:Version>
 			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -1425,14 +1502,22 @@ The definition area (for signals, constants components...) is not included in th
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule><hb:Rule UID="CNE_03600">
+		<hb:RuleParams>
+			<hb:StringParam>
+				<hb:ParamID>P1</hb:ParamID>
+				<hb:Position>Equal</hb:Position>
+				<hb:Value>Limitations</hb:Value>
+			</hb:StringParam>
+		</hb:RuleParams>
+	</hb:Rule>
+	<hb:Rule UID="CNE_03600">
 		<hb:RuleUID>CNE_03600</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>4</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Java</hb:Engine>
+			<hb:Version>5</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -1463,16 +1548,23 @@ The definition area (for signals, constants components...) is not included in th
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule>
+		<hb:RuleParams>
+			<hb:StringParam>
+				<hb:ParamID>P1</hb:ParamID>
+				<hb:Position>Equal</hb:Position>
+				<hb:Value>Version</hb:Value>
+			</hb:StringParam>
+		</hb:RuleParams>	
+		</hb:Rule>
 	
 	<hb:Rule UID="CNE_03700">
 		<hb:RuleUID>CNE_03700</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>4</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Java</hb:Engine>
+			<hb:Version>5</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -1503,14 +1595,22 @@ The definition area (for signals, constants components...) is not included in th
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule><hb:Rule UID="CNE_03800">
+		<hb:RuleParams>
+			<hb:StringParam>
+				<hb:ParamID>P1</hb:ParamID>
+				<hb:Position>Equal</hb:Position>
+				<hb:Value>Author name's</hb:Value>
+			</hb:StringParam>
+		</hb:RuleParams>
+	</hb:Rule>
+	<hb:Rule UID="CNE_03800">
 		<hb:RuleUID>CNE_03800</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>5</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Java</hb:Engine>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -1542,14 +1642,22 @@ Understanding the last modifications allows integrator to know if a bug was corr
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule><hb:Rule UID="CNE_03900">
+		<hb:RuleParams>
+			<hb:StringParam>
+				<hb:ParamID>P1</hb:ParamID>
+				<hb:Position>Equal</hb:Position>
+				<hb:Value>Version history</hb:Value>
+			</hb:StringParam>
+		</hb:RuleParams>
+	</hb:Rule>
+	<hb:Rule UID="CNE_03900">
 		<hb:RuleUID>CNE_03900</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>4</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Java</hb:Engine>
+			<hb:Version>5</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -1580,14 +1688,22 @@ Understanding the last modifications allows integrator to know if a bug was corr
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule><hb:Rule UID="CNE_04000">
+		<hb:RuleParams>
+			<hb:StringParam>
+				<hb:ParamID>P1</hb:ParamID>
+				<hb:Position>Equal</hb:Position>
+				<hb:Value>Version</hb:Value>
+			</hb:StringParam>
+		</hb:RuleParams>
+	</hb:Rule>
+	<hb:Rule UID="CNE_04000">
 		<hb:RuleUID>CNE_04000</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>5</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Java</hb:Engine>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -1618,14 +1734,22 @@ Understanding the last modifications allows integrator to know if a bug was corr
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule><hb:Rule UID="CNE_04100">
+		<hb:RuleParams>
+			<hb:StringParam>
+				<hb:ParamID>P1</hb:ParamID>
+				<hb:Position>Equal</hb:Position>
+				<hb:Value>Modifications impacts</hb:Value>
+			</hb:StringParam>
+		</hb:RuleParams>	
+		</hb:Rule>
+	<hb:Rule UID="CNE_04100">
 		<hb:RuleUID>CNE_04100</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>3</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Java</hb:Engine>
+			<hb:Version>4</hb:Version>
 			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -1657,14 +1781,23 @@ Understanding the last modifications allows integrator to know if a bug was corr
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule><hb:Rule UID="CNE_04200">
+		<hb:RuleParams>
+			<hb:StringParam>
+				<hb:ParamID>P1</hb:ParamID>
+				<hb:Position>Equal</hb:Position>
+				<hb:Value>Modification description </hb:Value>
+			</hb:StringParam>
+		</hb:RuleParams>
+	</hb:Rule>
+	
+	<hb:Rule UID="CNE_04200">
 		<hb:RuleUID>CNE_04200</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>3</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Java</hb:Engine>
+			<hb:Version>4</hb:Version>
 			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -1694,15 +1827,23 @@ Understanding the last modifications allows integrator to know if a bug was corr
 			<hb:BadExample />
 			<hb:FigureDesc />
 			<hb:Figure />
-		</hb:RuleDesc>
-	</hb:Rule><hb:Rule UID="CNE_04300">
+		</hb:RuleDesc>	
+		<hb:RuleParams>
+			<hb:StringParam>
+				<hb:ParamID>P1</hb:ParamID>
+				<hb:Position>Equal</hb:Position>
+				<hb:Value>Licensing</hb:Value>
+			</hb:StringParam>
+		</hb:RuleParams>
+	</hb:Rule>
+	<hb:Rule UID="CNE_04300">
 		<hb:RuleUID>CNE_04300</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>3</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Java</hb:Engine>
+			<hb:Version>4</hb:Version>
 			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -1733,14 +1874,23 @@ Understanding the last modifications allows integrator to know if a bug was corr
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule><hb:Rule UID="CNE_04400">
+		<hb:RuleParams>
+			<hb:StringParam>
+				<hb:ParamID>P1</hb:ParamID>
+				<hb:Position>Equal</hb:Position>
+				<hb:Value>Developper Company</hb:Value>
+			</hb:StringParam>
+		</hb:RuleParams>
+	</hb:Rule>
+	
+	<hb:Rule UID="CNE_04400">
 		<hb:RuleUID>CNE_04400</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>3</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Java</hb:Engine>
+			<hb:Version>4</hb:Version>
 			<hb:Creation>2014-12-01</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -1771,7 +1921,16 @@ Understanding the last modifications allows integrator to know if a bug was corr
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule><hb:Rule UID="CNE_04500">
+		<hb:RuleParams>
+			<hb:StringParam>
+				<hb:ParamID>P1</hb:ParamID>
+				<hb:Position>Equal</hb:Position>
+				<hb:Value> on behalf of</hb:Value>
+			</hb:StringParam>
+		</hb:RuleParams>
+	</hb:Rule>
+
+	<hb:Rule UID="CNE_04500">
 		<hb:RuleUID>CNE_04500</hb:RuleUID>
 		<hb:RuleHist>
 			<hb:Status>Validated</hb:Status>
@@ -1810,14 +1969,16 @@ Isolating them from initialized signal improves identification of these signals 
 			<hb:FigureDesc />
 			<hb:Figure />
 		</hb:RuleDesc>
-	</hb:Rule><hb:Rule UID="CNE_04600">
+	</hb:Rule>
+	
+	<hb:Rule UID="CNE_04600">
 		<hb:RuleUID>CNE_04600</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>5</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Yosys-ghdl</hb:Engine>
+			<hb:Version>6</hb:Version>
 			<hb:Creation>2014-09-30</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -2213,12 +2374,13 @@ Isolating them from initialized signal improves identification of these signals 
 		<hb:Creation>2014-11-13</hb:Creation>
 		<hb:Modified>2020-07-23</hb:Modified>
 		<hb:Revision>V1 : 2014-11-13 : Creation
-V2 : 2014-12-01 : Update rules with results from CNES poll and 1st draft review.
-V3 : 2015-02-17 : Update of rules with remarks from partners about V2 revision.
-V4 : 2015-07-16 : Update rules with examples
-V5 : 2017-11-24 : Creation of Sonarqube data and update of some status
-V6 : 2020-04-23 : Update status to implemented for rules in software. Correct sonarqube elements. Add parameters.
-V7 : 2020-07-23 : update engine feature
+V2   : 2014-12-01 : Update rules with results from CNES poll and 1st draft review.
+V3   : 2015-02-17 : Update of rules with remarks from partners about V2 revision.
+V4   : 2015-07-16 : Update rules with examples
+V5   : 2017-11-24 : Creation of Sonarqube data and update of some status
+V6   : 2020-04-23 : Update status to implemented for rules in software. Correct sonarqube elements. Add parameters.
+V7   : 2020-07-23 : update engine feature
+V7.1 : 2021-10-19 : add impleted status to selected rules
 		</hb:Revision>
 	</hb:RuleSetHist>	
 

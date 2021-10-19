@@ -1,15 +1,15 @@
 -------------------------------------------------------------------------------------------------
 -- Company   : CNES
--- Author    : John Doe (JohnDoeCompany)
+-- Author    : John Doe (Developper Company JohnDoeCompany on behalf of ContractorBigcompany )
 -- Copyright : Copyright (c) CNES.
 -- Licensing : This VHDL entity can be licensed to be be used in the frame of CNES contracts.
 --             Ask CNES for an end-user license agreement (EULA). 
 -------------------------------------------------------------------------------------------------
 -- Version         : V1
 -- Version history : 
---    V1 : yyyy-mm-dd : John Doe (JohnDoeCompany): Creation
---    V2 : yyyy-mm-dd : John Toe (JohnToeCompany): 
---                         Modification descriptions
+--    V1 : yyyy-mm-dd : Author name's John Doe (JohnDoeCompany): Creation
+--    V2 : yyyy-mm-dd : Author name's John Toe (JohnToeCompany): 
+--                         Modification description
 --                         Modifications impacts
 --                         Modifications reasons
 -------------------------------------------------------------------------------------------------
