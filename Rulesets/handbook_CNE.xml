@@ -2293,11 +2293,11 @@ Isolating them from initialized signal improves identification of these signals 
 	<hb:Rule UID="CNE_05400">
 		<hb:RuleUID>CNE_05400</hb:RuleUID>
 		<hb:RuleHist>
-			<hb:Status>Validated</hb:Status>
-			<hb:Engine>None</hb:Engine>
-			<hb:Version>3</hb:Version>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Java</hb:Engine>
+			<hb:Version>4</hb:Version>
 			<hb:Creation>2015-02-17</hb:Creation>
-			<hb:Modified>2020-04-23</hb:Modified>
+			<hb:Modified>2021-10-19</hb:Modified>
 			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
 		</hb:RuleHist>
 		<hb:RuleContent>
@@ -2380,7 +2380,7 @@ V4   : 2015-07-16 : Update rules with examples
 V5   : 2017-11-24 : Creation of Sonarqube data and update of some status
 V6   : 2020-04-23 : Update status to implemented for rules in software. Correct sonarqube elements. Add parameters.
 V7   : 2020-07-23 : update engine feature
-V7.1 : 2021-10-19 : add impleted status to selected rules
+V7.1 : 2021-10-19 : add implemented status to selected rules
 		</hb:Revision>
 	</hb:RuleSetHist>	
 
