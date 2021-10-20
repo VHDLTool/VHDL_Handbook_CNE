@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema targetNamespace="HANDBOOK" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:hb="HANDBOOK">
-
+<!--
+ schema version 1  : inuitial release
+               1.1 : add implementation to the Technical field category targeted by the rule 
+                     add Analysis,Elaboration and synthesis as General thematic subcategory
+-->
     <xs:element name="RuleSet" type="hb:TRuleSet"/>												<!-- VHDL handbook document including all the rules -->
     <xs:complexType name="TRuleSet">
         <xs:sequence>
@@ -142,6 +146,7 @@
             <xs:enumeration value="ZamiaCad"/> 		<!-- use of Zamaicad engine to evaluate the rule -->
             <xs:enumeration value="Yosys-ghdl"/>	<!-- use of Yosys engine which ghdl frontend to evaluate the rule -->
             <xs:enumeration value="Yosys"/>			<!-- use of Yosys engine to evaluate the rule -->
+            <xs:enumeration value="Java"/>			<!-- use of direct sonarque java plugin to evaluate the rule -->
             <xs:enumeration value="None"/>     		<!-- No engine identified for this rule-->  
         </xs:restriction>
     </xs:simpleType>
@@ -158,6 +163,7 @@
             <xs:enumeration value="Formatting"/>	<!-- Selected when the rule targets on the way of formatting VHDL code -->
             <xs:enumeration value="Design"/>		<!-- Selected when the rule targets architectural VHDL design -->
             <xs:enumeration value="Simulation"/>	<!-- Selected when the rule targets VHDL Simulation oriented modules only -->
+            <xs:enumeration value="Implementation"/><!-- Selected when the rule targets implementation of code (synthesis, P&R, botstream generation) for a dedicated target -->
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="EnumSubCat">				<!-- General thematic subcategory for the rule -->
@@ -176,6 +182,9 @@
             <xs:enumeration value="Combinational"/>	<!-- Selected when the rule targets combinational elements -->
             <xs:enumeration value="Type"/>			<!-- Selected when the rule targets signals, port and generic typing -->
             <xs:enumeration value="Reliability"/>	<!-- Selected when the rule targets reliability topics -->
+            <xs:enumeration value="Analysis"/>	    <!-- Selected when the rule targets post analysis (activity performed by a VHDL code parser) topics -->
+            <xs:enumeration value="Synthesis"/>	    <!-- Selected when the rule targets synthesis  topics -->
+            <xs:enumeration value="Elaboration"/>	<!-- Selected when the rule targets post elaboration topics -->
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="EnumSeverity">		<!-- Severity of the rule -->
@@ -212,7 +221,7 @@
             <xs:enumeration value="Convention"/>		<!-- Coding convention - typically formatting, naming, whitespace... --> 
             <xs:enumeration value="Design"/>			<!-- There is something questionable about the design of the code --> 
             <xs:enumeration value="Lock-in"/>			<!-- Environment-specific features are used --> 
-            <xs:enumeration value="Pittfall"/>			<!-- Nothing is wrong yet, but something could go wrong in the future; a trap has been set for the next guy, & he'll probably fall into it and screw up the code. --> 
+            <xs:enumeration value="Pitfall"/>			<!-- Nothing is wrong yet, but something could go wrong in the future; a trap has been set for the next guy, & he'll probably fall into it and screw up the code. --> 
             <xs:enumeration value="Security"/>			<!-- Relates to the security of an application. --> 
             <xs:enumeration value="Suspicious"/>		<!-- It's not guaranteed that this is a bug, but it looks suspiciously like one. At the very least, the code should be re-examined & likely refactored for clarity --> 
             <xs:enumeration value="Unpredictable"/>		<!-- The code may work fine under current conditions, but may fail erratically if conditions change --> 
@@ -285,6 +294,7 @@ CNE CNES specific rule
 ERM Erems specific rule
 ESA ESA specific rule
 GEN Generic rule implementation in Rulechecker
+NXE NanoXplore specific Rule
 SOD Sodern specific rule
 STE Steel Electronique specific rule
 TAS Thalès Alenia Space specific rule
@@ -299,21 +309,24 @@ Rule->RuleContent->Category and Rule->RuleContent->SubCategory fields shall be
 filled as follows (where + indicates match availability and – indicates forbidden match)
 
                                              EnumCat
-                            Design    Formatting Traceability  Simulation
-EnumsubCat   Clocking          +         -          -              -
-             Combinational     +         -          -              -
-             FileStructure     -         +          -              -
-             I/O               +         -          -              -
-             Miscellaneous     +         +          +              +
-             Naming            -         +          -              -
-             Requirement       -         -          +              -
-             Reset             +         -          -              -
-             Reuse             -         -          +              -
-             StateMachine      +         -          -              -
-             Synchronous       +         -          -              -
-             Type              +         -          -              -
-             Versioning        -         -          +              -
-             Reliability       +         -          -              -
+                            Design    Formatting Traceability  Simulation  Implementation
+EnumsubCat   Clocking          +         -          -              -            -
+             Combinational     +         -          -              -            -
+             FileStructure     -         +          -              -            -
+             I/O               +         -          -              -            -
+             Miscellaneous     +         +          +              +            +
+             Naming            -         +          -              -            -
+             Requirement       -         -          +              -            -
+             Reset             +         -          -              -            -
+             Reuse             -         -          +              -            -
+             StateMachine      +         -          -              -            -
+             Synchronous       +         -          -              -            - 
+             Type              +         -          -              -            -
+             Versioning        -         -          +              -            -
+             Reliability       +         -          -              -            -
+             Analysis          -         -          -              -            +
+             Synthesis         -         -          -              -            +
+             Elaboration       -         -          -              -            + 
 #################################
 Rule->RuleContent->IsParent is selected to true if there is a rule identified as its son
 which exists inside the Ruleset.

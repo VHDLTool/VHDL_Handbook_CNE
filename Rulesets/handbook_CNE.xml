@@ -2369,8 +2369,51 @@ Isolating them from initialized signal improves identification of these signals 
 			<hb:Figure />
 		</hb:RuleDesc>
 	</hb:Rule>
+<hb:Rule UID="CNE_06000">
+		<hb:RuleUID>CNE_06000</hb:RuleUID>
+		<hb:RuleHist>
+			<hb:Status>Implemented</hb:Status>
+			<hb:Engine>Yosys-ghdl</hb:Engine>
+			<hb:Version>1</hb:Version>
+			<hb:Creation>2021-10-20</hb:Creation>
+			<hb:Modified>2021-10-20</hb:Modified>
+			<hb:Revision>Not used anymore.See Git logs.</hb:Revision>
+		</hb:RuleHist>
+		<hb:RuleContent>
+			<hb:Name>GHDL Analysis messages reports</hb:Name>
+			<hb:IsParent>false</hb:IsParent>
+			<hb:IsSon>true</hb:IsSon>
+			<hb:ParentUID>STD_08000</hb:ParentUID>
+			<hb:Technology>VLSI</hb:Technology>
+			<hb:ApplicationFields>General</hb:ApplicationFields>
+			<hb:Category>Implementation</hb:Category>
+			<hb:SubCategory>Analysis</hb:SubCategory>
+			<hb:Severity>Minor</hb:Severity>
+			<hb:Rationale>Using a language checker (from a linter, parser, simulator...) during the coding phase ensures that any errors (with regard to the VHDL language) are identified early in the design and can be corrected without to much overhead.</hb:Rationale>
+			<hb:ShortDesc>All warnings and errors coming from GHDL should be analyzed, understood and corrected if needed.</hb:ShortDesc>
+			<hb:LongDesc>This rule reports all GHDL analysis errors and warning messages.The analysis is performed per file basis with 
+			GHDL-s command.
+			GHDL is not yet fully compliant with VHDL 2008, therefore some VHDL language constructs might not be supported and raise error.
+			</hb:LongDesc>
+		</hb:RuleContent>
+		<hb:Sonarqube>
+			<hb:SonarType>Code_Smell</hb:SonarType>
+			<hb:SonarSeverity>Minor</hb:SonarSeverity>
+			<hb:RemediationEffort>Easy</hb:RemediationEffort>
+			<hb:SonarTag>Pitfall</hb:SonarTag>
+		</hb:Sonarqube>
+		<hb:RuleDesc>
+			<hb:GoodExDesc />
+			<hb:GoodExample />
+			<hb:BadExDesc />
+			<hb:BadExample />
+			<hb:FigureDesc />
+			<hb:Figure />
+		</hb:RuleDesc>
+	</hb:Rule>
+
 	<hb:RuleSetHist>
-		<hb:Version>5</hb:Version>
+		<hb:Version>8</hb:Version>
 		<hb:Creation>2014-11-13</hb:Creation>
 		<hb:Modified>2020-07-23</hb:Modified>
 		<hb:Revision>V1 : 2014-11-13 : Creation
@@ -2380,7 +2423,7 @@ V4   : 2015-07-16 : Update rules with examples
 V5   : 2017-11-24 : Creation of Sonarqube data and update of some status
 V6   : 2020-04-23 : Update status to implemented for rules in software. Correct sonarqube elements. Add parameters.
 V7   : 2020-07-23 : update engine feature
-V7.1 : 2021-10-19 : add implemented status to selected rules
+V8   : 2021-10-20 : add implemented status to selected rules and add 
 		</hb:Revision>
 	</hb:RuleSetHist>	
 
